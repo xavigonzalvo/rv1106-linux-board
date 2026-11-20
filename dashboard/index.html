@@ -1,0 +1,371 @@
+<meta name="dash-one-writer">
+<style>
+  /* Layout: one centered column; "now + board" pair, phase stepper, then activity | findings, then test points. */
+  .bp { --bp-max: 76rem; max-width: var(--bp-max); margin-inline: auto; display: grid; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
+  .bp * { box-sizing: border-box; }
+  .bp :is(p, li, dd, span, summary, div) { overflow-wrap: anywhere; }
+  .bp-head { display: grid; gap: var(--cds-gap-xs); }
+  .bp-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+  .bp-head p { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+  .bp-head b { color: var(--color-fg); font-weight: 500; }
+
+  .bp-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; display: grid; gap: var(--cds-gap-sm); align-content: start; }
+  .bp-card > h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .bp-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; max-width: 65ch; }
+  .bp-row { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); align-items: start; }
+  .bp-row > * { min-width: 0; }
+
+  /* Pills */
+  .bp-pill { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-size: var(--cds-font-size-caption); }
+  .bp-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--color-border-line); flex: none; }
+  .bp-pill.in_progress::before { background: var(--cds-chart-reference); }
+  .bp-pill.in_review::before { background: var(--color-warn); }
+  .bp-pill.needs_fix::before, .bp-pill.failed::before, .bp-pill.open::before { background: var(--color-bad); }
+  .bp-pill.verified::before, .bp-pill.in_schematic::before, .bp-pill.measured_ok::before, .bp-pill.fixed::before { background: var(--color-ok); }
+  .bp-pill.carried::before { background: var(--color-warn); }
+
+  /* Now panel */
+  .bp-now { border-top: 3px solid var(--cds-chart-reference); }
+  .bp-now-top { display: flex; align-items: center; justify-content: space-between; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+  .bp-eyebrow { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .05em; text-transform: uppercase; }
+  .bp-now-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.2; margin: 0; text-wrap: balance; }
+  .bp-now-goal { margin: 0; }
+  .bp-facts { display: grid; gap: var(--cds-gap-xs); margin: 0; font-size: var(--cds-font-size-caption); }
+  .bp-facts > div { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--cds-gap-sm); }
+  .bp-facts dt { color: var(--color-fg-muted); }
+  .bp-facts dd { margin: 0; min-width: 0; }
+  .bp-sub { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); margin: var(--cds-gap-sm) 0 0; }
+
+  /* Board drawing */
+  .bp-board { position: relative; min-height: 220px; }
+  .bp-board svg { display: block; width: 100%; height: auto; }
+  .bp-pcb { fill: color-mix(in srgb, var(--color-ok) 8%, var(--color-bg)); stroke: var(--color-border-line); stroke-width: 2; }
+  .bp-hole { fill: var(--color-bg); stroke: var(--color-border-line); }
+  .bp-trace { stroke: var(--cds-chart-grid); stroke-width: 3; fill: none; stroke-linecap: round; }
+  .bp-blk rect { stroke-width: 1.5; }
+  .bp-blk text { fill: var(--color-fg); font-family: var(--font-anthropic-sans); }
+  .bp-blk .bp-bsub { fill: var(--color-fg-muted); font-size: 10px; }
+  .st-not_started rect { fill: var(--color-panel); stroke: var(--color-border-line); stroke-dasharray: 4 3; }
+  .st-in_progress rect { fill: color-mix(in srgb, var(--cds-chart-reference) 18%, var(--color-panel)); stroke: var(--cds-chart-reference); }
+  .st-in_review rect { fill: color-mix(in srgb, var(--color-warn) 18%, var(--color-panel)); stroke: var(--color-warn); }
+  .st-needs_fix rect { fill: color-mix(in srgb, var(--color-bad) 18%, var(--color-panel)); stroke: var(--color-bad); }
+  .st-verified rect { fill: color-mix(in srgb, var(--color-ok) 22%, var(--color-panel)); stroke: var(--color-ok); }
+  .bp-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .bp-legend span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
+  .bp-sw { width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid; display: inline-block; }
+  .bp-sw.not_started { border-color: var(--color-border-line); border-style: dashed; }
+  .bp-sw.in_progress { border-color: var(--cds-chart-reference); background: color-mix(in srgb, var(--cds-chart-reference) 18%, transparent); }
+  .bp-sw.in_review { border-color: var(--color-warn); background: color-mix(in srgb, var(--color-warn) 18%, transparent); }
+  .bp-sw.needs_fix { border-color: var(--color-bad); background: color-mix(in srgb, var(--color-bad) 18%, transparent); }
+  .bp-sw.verified { border-color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 22%, transparent); }
+  .bp-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); max-width: min(18rem, 90%); z-index: 2; }
+  .bp-tip .bp-tip-k { color: var(--cds-text-secondary); }
+
+  /* Phase stepper */
+  .bp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--cds-gap-sm); grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr)); }
+  .bp-step { display: grid; gap: 4px; align-content: start; padding: var(--cds-pad-sm); border-radius: var(--cds-radius); border: 1px solid var(--color-border-line); background: var(--color-bg); min-width: 0; }
+  .bp-step.current { border-color: var(--cds-chart-reference); box-shadow: inset 0 3px 0 var(--cds-chart-reference); }
+  .bp-step.verified { box-shadow: inset 0 3px 0 var(--color-ok); }
+  .bp-step.needs_fix { box-shadow: inset 0 3px 0 var(--color-bad); }
+  .bp-step-n { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+  .bp-step-name { font-weight: 500; font-size: var(--cds-font-size-caption); line-height: 1.3; }
+  .bp-step-meta { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+
+  /* Activity feed + findings list */
+  .bp-feed { list-style: none; margin: 0; padding: 0; display: grid; }
+  .bp-feed > li { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--cds-gap-sm); padding: var(--cds-pad-sm) 0; border-top: 1px solid var(--color-border-line); font-size: var(--cds-font-size-caption); }
+  .bp-feed > li:first-child { border-top: 0; }
+  .bp-when { color: var(--color-fg-muted); font-variant-numeric: tabular-nums; line-height: 1.35; }
+  .bp-what { min-width: 0; display: grid; gap: 2px; }
+  .bp-ev { font-weight: 500; }
+  .bp-ev .bp-who { color: var(--color-fg-muted); font-weight: 400; }
+  .bp-ev.passed { color: var(--color-ok); } .bp-ev.rejected { color: var(--color-bad); }
+  .bp-clamp { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--color-fg-muted); }
+  .bp-scrollbox { max-height: 34rem; overflow-y: auto; overscroll-behavior: contain; padding-right: 4px; }
+
+  .bp-chips { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+  .bp-chip { font: inherit; font-size: var(--cds-font-size-caption); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; }
+  .bp-chip[aria-pressed="true"] { border-color: var(--color-fg); background: var(--color-fg); color: var(--color-bg); }
+  .bp-chip:focus-visible, .bp-more:focus-visible, .bp-find summary:focus-visible { outline: 2px solid var(--cds-chart-reference); outline-offset: 2px; }
+  .bp-chip b { font-weight: 500; font-variant-numeric: tabular-nums; }
+
+  .bp-flist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--cds-gap-xs); }
+  .bp-find { border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); font-size: var(--cds-font-size-caption); }
+  .bp-find summary { list-style: none; cursor: pointer; padding: var(--cds-pad-sm); display: grid; gap: 4px; }
+  .bp-find summary::-webkit-details-marker { display: none; }
+  .bp-find-top { display: flex; flex-wrap: wrap; gap: 4px var(--cds-gap-sm); align-items: center; }
+  .bp-sev { font-weight: 500; text-transform: capitalize; }
+  .bp-sev.blocker, .bp-sev.major { color: var(--color-bad); }
+  .bp-sev.minor { color: var(--color-warn); }
+  .bp-tag { color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+  .bp-find[open] .bp-clamp { -webkit-line-clamp: unset; display: block; color: var(--color-fg); }
+  .bp-find-fix { padding: 0 var(--cds-pad-sm) var(--cds-pad-sm); display: grid; gap: 2px; }
+  .bp-find-fix b { font-weight: 500; }
+  .bp-empty { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+  .bp-more { font: inherit; font-size: var(--cds-font-size-caption); justify-self: start; background: none; border: 0; padding: 0; color: var(--cds-chart-reference); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+  /* Test points */
+  .bp-scroll { overflow-x: auto; }
+  .bp-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .bp-table th { text-align: left; color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .bp-table td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+  .bp-table td:first-child, .bp-table td:nth-child(2) { white-space: nowrap; }
+
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  @media (max-width: 30rem) { .bp-feed > li { grid-template-columns: 1fr; gap: 2px; } .bp-facts > div { grid-template-columns: 1fr; gap: 0; } }
+</style>
+
+<div class="bp">
+  <header class="bp-head">
+    <h1>RV1106 Linux board, Rev A</h1>
+    <p><b data-draw="verified" data-source="progress" data-field="verified">—</b> of <b data-draw="total" data-source="progress" data-field="total">—</b> design gates passed. Now on <b data-draw="current" data-source="progress" data-field="current">—</b>.</p>
+  </header>
+
+  <div class="bp-row">
+    <section class="bp-card bp-now" id="now">
+      <div class="bp-now-top">
+        <span class="bp-eyebrow">Current phase</span>
+        <span class="bp-pill" data-draw="nowstep" data-source="now" data-field="step">—</span>
+      </div>
+      <h2 class="bp-now-title" data-draw="nowname" data-source="now" data-field="title">—</h2>
+      <p class="bp-now-goal" data-draw="nowgoal" data-source="now" data-field="goal">—</p>
+      <dl class="bp-facts">
+        <div><dt>Produces</dt><dd data-draw="nowout" data-source="now" data-field="outputs">—</dd></div>
+        <div><dt>Passes when</dt><dd data-draw="nowgate" data-source="now" data-field="gate_text">—</dd></div>
+        <div><dt>Round</dt><dd><span data-draw="nowround" data-source="now" data-field="rounds">—</span> of 3 allowed</dd></div>
+      </dl>
+      <h3 class="bp-sub">Latest in this phase</h3>
+      <ol class="bp-feed" data-draw="nowfeed" data-source="activity"></ol>
+      <h3 class="bp-sub">Open findings in this phase</h3>
+      <ul class="bp-flist" data-draw="nowfind" data-source="findings"></ul>
+      <p class="bp-empty bp-nofind" hidden>None open. The verifier hasn't rejected anything in this phase.</p>
+    </section>
+
+    <section class="bp-card" id="board">
+      <h2>Board</h2>
+      <p class="bp-note">Each PCB block, colored by where its design stands. Hover or focus a block for its latest note.</p>
+      <div class="bp-board" data-draw="board" data-source="blocks">—</div>
+      <div class="bp-legend">
+        <span><i class="bp-sw not_started"></i>Not started</span>
+        <span><i class="bp-sw in_progress"></i>Executor working</span>
+        <span><i class="bp-sw in_review"></i>Verifier reviewing</span>
+        <span><i class="bp-sw needs_fix"></i>Needs fix</span>
+        <span><i class="bp-sw verified"></i>Verified</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="bp-card" id="phases">
+    <h2>Design gates</h2>
+    <p class="bp-note">Each phase passes only when the verifier signs off its gate. Up to 3 executor/verifier rounds per phase.</p>
+    <ol class="bp-steps" data-draw="steps" data-source="phases"></ol>
+  </section>
+
+  <div class="bp-row">
+    <section class="bp-card" id="activity">
+      <h2>Activity</h2>
+      <p class="bp-note">Every executor and verifier step, newest first.</p>
+      <div class="bp-scrollbox">
+        <ol class="bp-feed" data-draw="actlist" data-source="activity"></ol>
+      </div>
+    </section>
+
+    <section class="bp-card" id="findings">
+      <h2>Verifier findings</h2>
+      <p class="bp-note">Open: the executor is fixing it now. Carried: a minor item handed to a later phase. Fixed: resolved and confirmed by the next review. Open a finding to read the full text and the fix.</p>
+      <div class="bp-chips" role="group" aria-label="Filter findings">
+        <button type="button" class="bp-chip" data-filter="open" aria-pressed="false">Open <b data-draw="cnt-open" data-source="findings">—</b></button>
+        <button type="button" class="bp-chip" data-filter="carried" aria-pressed="false">Carried <b data-draw="cnt-carried" data-source="findings">—</b></button>
+        <button type="button" class="bp-chip" data-filter="fixed" aria-pressed="false">Fixed <b data-draw="cnt-fixed" data-source="findings">—</b></button>
+        <button type="button" class="bp-chip" data-filter="all" aria-pressed="true">All <b data-draw="cnt-all" data-source="findings">—</b></button>
+      </div>
+      <div class="bp-scrollbox">
+        <ul class="bp-flist" data-draw="findlist" data-source="findings"></ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="bp-card" id="testpoints">
+    <h2>Physical test points</h2>
+    <p class="bp-note">Probe points for bring-up: planned, then placed in the schematic, then measured on the real board.</p>
+    <div class="bp-scroll">
+      <table class="bp-table" data-source="testpoints" data-row-key="tp">
+        <thead><tr><th data-field="tp">TP</th><th data-field="net">Net</th><th data-field="expected">Expected</th><th data-field="status">Status</th></tr></thead>
+        <tbody data-draw="tprows"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+  const STATUS_LABEL = { not_started: 'Not started', in_progress: 'Executor working', in_review: 'Verifier reviewing', needs_fix: 'Needs fix', verified: 'Verified', planned: 'Planned', in_schematic: 'In schematic', measured_ok: 'Measured OK', failed: 'Failed', open: 'Open', carried: 'Carried', fixed: 'Fixed' };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const fmtTime = (s) => { const d = new Date(s); return isNaN(d) ? String(s) : d3.utcFormat('%b %-d %H:%M')(d); };
+
+  dash.calc('progress', {
+    inputs: ['phases'],
+    title: 'Gate progress',
+    description: 'Counts verified phases and names the first phase not yet verified.',
+    fn: (phases) => {
+      const verified = phases.filter((p) => p.status === 'verified').length;
+      const cur = phases.find((p) => p.status !== 'verified');
+      return [{ verified, total: phases.length, current: cur ? `phase ${cur.phase}, ${cur.name.toLowerCase()}` : 'bring-up handoff' }];
+    },
+  });
+
+  dash.calc('now', {
+    inputs: ['phases'],
+    title: 'Current phase',
+    description: 'The first phase not yet verified, with its goal, outputs, gate and round.',
+    fn: (phases) => {
+      const p = phases.find((x) => x.status !== 'verified') || phases[phases.length - 1];
+      return [{ phase: p.phase, title: `Phase ${p.phase} of ${phases.length}: ${p.name}`, goal: p.goal || '', outputs: p.outputs || '', gate_text: p.gate_text || '', rounds: p.rounds, status: p.status, step: p.step || p.status }];
+    },
+  });
+
+  for (const f of ['verified', 'total', 'current']) {
+    dash.draw(f, (e) => { const d = dash.data('progress'); e.textContent = d.status === 'ok' && d.data.length ? String(d.data[0][f]) : '—'; });
+  }
+
+  const nowRow = () => { const d = dash.data('now'); return d.status === 'ok' && d.data.length ? d.data[0] : null; };
+  for (const [name, f] of [['nowname', 'title'], ['nowgoal', 'goal'], ['nowout', 'outputs'], ['nowgate', 'gate_text'], ['nowround', 'rounds']]) {
+    dash.draw(name, (e) => { const r = nowRow(); e.textContent = r ? String(r[f]) : '—'; });
+  }
+  dash.draw('nowstep', (e) => { const r = nowRow(); e.textContent = r ? r.step : '—'; e.className = `bp-pill ${r ? r.status : ''}`; });
+
+  const feedItem = (x, showPhase) => {
+    const li = el('li');
+    li.append(el('span', 'bp-when', fmtTime(x.at)));
+    const w = el('div', 'bp-what');
+    const ev = el('span', `bp-ev ${String(x.event).toLowerCase()}`, x.event + ' ');
+    ev.append(el('span', 'bp-who', `· ${x.actor}${showPhase ? ` · phase ${x.phase}` : ''} · round ${x.round}`));
+    w.append(ev, el('span', 'bp-clamp', x.detail));
+    li.append(w);
+    return li;
+  };
+
+  dash.draw('nowfeed', (ol) => {
+    ol.replaceChildren();
+    const r = nowRow(), a = dash.data('activity');
+    if (!r || a.status !== 'ok') return;
+    a.data.filter((x) => Number(x.phase) === Number(r.phase)).sort((x, y) => Number(y.seq) - Number(x.seq)).slice(0, 3).forEach((x) => ol.append(feedItem(x, false)));
+  });
+
+  dash.draw('actlist', (ol) => {
+    ol.replaceChildren();
+    const a = dash.data('activity');
+    if (a.status !== 'ok') return;
+    [...a.data].sort((x, y) => Number(y.seq) - Number(x.seq)).forEach((x) => ol.append(feedItem(x, true)));
+  });
+
+  const findItem = (x) => {
+    const li = el('li');
+    const d = el('details', 'bp-find');
+    const s = el('summary');
+    const top = el('div', 'bp-find-top');
+    top.append(el('span', `bp-sev ${x.severity}`, x.severity), el('span', 'bp-tag', `${x.id}${x.block ? ' · ' + x.block : ''}`), el('span', `bp-pill ${x.status}`, STATUS_LABEL[x.status] || x.status));
+    s.append(top, el('span', 'bp-clamp', x.issue));
+    const fix = el('div', 'bp-find-fix');
+    fix.append(el('b', null, 'Fix'), el('span', null, x.fix));
+    d.append(s, fix);
+    li.append(d);
+    return li;
+  };
+
+  const openFindings = () => {
+    const r = nowRow(), f = dash.data('findings');
+    if (!r || f.status !== 'ok') return null;
+    return f.data.filter((x) => Number(x.phase) === Number(r.phase) && x.status === 'open');
+  };
+  dash.draw('nowfind', (ul) => { ul.replaceChildren(); (openFindings() || []).forEach((x) => ul.append(findItem(x))); });
+  dash.onData(() => {
+    const open = openFindings();
+    document.querySelectorAll('.bp-nofind').forEach((p) => { p.hidden = !(open && open.length === 0); });
+  });
+
+  window.bpFilter = 'all';
+  const counts = () => { const f = dash.data('findings'); if (f.status !== 'ok') return null; const c = { all: f.data.length, open: 0, carried: 0, fixed: 0 }; f.data.forEach((x) => { c[x.status] = (c[x.status] || 0) + 1; }); return c; };
+  for (const k of ['open', 'carried', 'fixed', 'all']) dash.draw(`cnt-${k}`, (e) => { const c = counts(); e.textContent = c ? String(c[k] || 0) : '—'; });
+  document.querySelectorAll('.bp-chip').forEach((b) => b.addEventListener('click', () => {
+    window.bpFilter = b.dataset.filter;
+    document.querySelectorAll('.bp-chip').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    dash.draw('findlist');
+  }));
+  dash.draw('findlist', (ul) => {
+    ul.replaceChildren();
+    const f = dash.data('findings');
+    if (f.status !== 'ok') return;
+    const order = { open: 0, carried: 1, fixed: 2 }, sev = { blocker: 0, major: 1, minor: 2 };
+    f.data.filter((x) => window.bpFilter === 'all' || x.status === window.bpFilter)
+      .sort((x, y) => (order[x.status] ?? 3) - (order[y.status] ?? 3) || Number(y.phase) - Number(x.phase) || (sev[x.severity] ?? 3) - (sev[y.severity] ?? 3))
+      .forEach((x) => ul.append(findItem(x)));
+    if (!ul.children.length) ul.append(el('li', 'bp-empty', 'Nothing in this group.'));
+  });
+
+  dash.draw('steps', (ol) => {
+    ol.replaceChildren();
+    const d = dash.data('phases');
+    if (d.status !== 'ok') return;
+    const cur = d.data.find((p) => p.status !== 'verified');
+    for (const p of d.data) {
+      const li = el('li', `bp-step ${p.status}${cur && p.phase === cur.phase ? ' current' : ''}`);
+      li.append(el('span', 'bp-step-n', `${p.phase} · ${p.gate}`), el('span', 'bp-step-name', p.name), el('span', `bp-pill ${p.status}`, STATUS_LABEL[p.status] || p.status));
+      li.append(el('span', 'bp-step-meta', Number(p.rounds) ? `${p.rounds} round${Number(p.rounds) > 1 ? 's' : ''}` : 'Not run yet'));
+      ol.append(li);
+    }
+  });
+
+  // Block positions on a 640 × 420 board drawing (layout, not data).
+  const LAYOUT = {
+    usbc: [30, 40, 110, 70], prot: [160, 40, 120, 55], pmu: [300, 40, 150, 55], eth: [470, 40, 140, 80],
+    onoff: [30, 125, 110, 60], soc: [170, 120, 250, 190], usb: [470, 135, 140, 60],
+    uart: [30, 200, 110, 60], xtal: [440, 210, 80, 50], nand: [530, 210, 80, 50],
+    sd: [440, 275, 170, 45], gpio: [30, 335, 410, 50], ui: [460, 335, 150, 50],
+  };
+  const TRACES = [['usbc', 'prot'], ['prot', 'pmu'], ['onoff', 'pmu'], ['pmu', 'soc'], ['soc', 'eth'], ['soc', 'usb'], ['soc', 'uart'], ['soc', 'xtal'], ['soc', 'nand'], ['soc', 'sd'], ['soc', 'gpio'], ['soc', 'ui'], ['onoff', 'soc']];
+  const ctr = (id) => { const [x, y, w, h] = LAYOUT[id]; return [x + w / 2, y + h / 2]; };
+
+  dash.draw('board', (host) => {
+    const d = dash.data('blocks');
+    if (d.status !== 'ok') { host.textContent = '—'; return; }
+    host.textContent = '';
+    const byId = new Map(d.data.map((r) => [r.id, r]));
+    const svg = d3.select(host).append('svg').attr('viewBox', '0 0 640 420').attr('width', '100%').attr('role', 'img').attr('aria-label', 'Board block diagram colored by design status');
+    svg.append('rect').attr('class', 'bp-pcb').attr('x', 10).attr('y', 10).attr('width', 620).attr('height', 400).attr('rx', 18);
+    for (const [cx, cy] of [[28, 28], [612, 28], [28, 392], [612, 392]]) svg.append('circle').attr('class', 'bp-hole').attr('cx', cx).attr('cy', cy).attr('r', 6);
+    svg.append('g').selectAll('path').data(TRACES).join('path').attr('class', 'bp-trace')
+      .attr('d', ([a, b]) => { const [x1, y1] = ctr(a), [x2, y2] = ctr(b); return `M${x1},${y1} L${x2},${y1} L${x2},${y2}`; });
+    const tip = d3.select(host).append('div').attr('class', 'bp-tip').attr('hidden', true);
+    const g = svg.append('g').selectAll('g').data(Object.keys(LAYOUT).filter((id) => byId.has(id))).join('g')
+      .attr('class', (id) => `bp-blk st-${byId.get(id).status}`)
+      .attr('transform', (id) => `translate(${LAYOUT[id][0]},${LAYOUT[id][1]})`)
+      .attr('tabindex', 0);
+    g.append('rect').attr('width', (id) => LAYOUT[id][2]).attr('height', (id) => LAYOUT[id][3]).attr('rx', 6);
+    g.append('text').attr('x', 8).attr('y', 18).attr('font-size', (id) => id === 'soc' ? 15 : 11).attr('font-weight', 500).text((id) => byId.get(id).name);
+    g.append('text').attr('class', 'bp-bsub').attr('x', 8).attr('y', (id) => id === 'soc' ? 36 : 32).text((id) => STATUS_LABEL[byId.get(id).status] || byId.get(id).status);
+    g.filter((id) => id === 'soc').append('text').attr('class', 'bp-bsub').attr('x', 8).attr('y', 54).text('Cortex-A7 · 256 MB DDR3L · QFN-128');
+    const show = (ev, id) => {
+      const r = byId.get(id), box = host.getBoundingClientRect(), [x, y, w, h] = LAYOUT[id], s = box.width / 640;
+      tip.attr('hidden', null).html('');
+      tip.append('div').attr('class', 'bp-tip-k').text(`${r.name} · ${r.req}${r.phase ? ' · ' + r.phase : ''}`);
+      tip.append('div').text(r.note || '');
+      const tw = tip.node().offsetWidth, th = tip.node().offsetHeight;
+      const top = y * s - th - 6 < 0 ? (y + h) * s + 6 : y * s - th - 6;
+      tip.style('left', `${Math.max(0, Math.min(box.width - tw, (x + w / 2) * s - tw / 2))}px`).style('top', `${top}px`);
+    };
+    g.on('mouseenter focus', show).on('mouseleave blur', () => tip.attr('hidden', true));
+  });
+
+  dash.draw('tprows', (tb) => {
+    const d = dash.data('testpoints');
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    for (const r of d.data) {
+      const tr = tb.insertRow();
+      tr.insertCell().textContent = r.tp;
+      tr.insertCell().textContent = r.net;
+      tr.insertCell().textContent = r.expected;
+      tr.insertCell().append(el('span', `bp-pill ${r.status}`, STATUS_LABEL[r.status] || r.status));
+    }
+  });
+</script>

@@ -1,0 +1,1196 @@
+{
+ "th_hidden": [
+  "TH3",
+  "TH4",
+  "TH2"
+ ],
+ "moved": [
+  {
+   "label": "1",
+   "owner": "J5.1",
+   "why": "3.54 mm from own copper > 2.0",
+   "at": [
+    3.58,
+    7.98,
+    0
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "39",
+   "owner": "J5.39",
+   "why": "nearer J5.40 (1.03) than own (1.35)",
+   "at": [
+    2.12,
+    59.96,
+    0
+   ],
+   "own_mm": 0.673,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "40",
+   "owner": "J5.40",
+   "why": "nearer R40.2 (0.88) than own (1.34)",
+   "at": [
+    5.36,
+    60.01,
+    0
+   ],
+   "own_mm": 0.673,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "J3",
+   "owner": "J3",
+   "why": "nearer C83.1 (0.82) than own (1.58)",
+   "at": [
+    21.89,
+    19.23,
+    0
+   ],
+   "own_mm": 0.153,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "J4",
+   "owner": "J4",
+   "why": "3.82 mm from own copper > 3.0",
+   "at": [
+    30.74,
+    66.41,
+    90
+   ],
+   "own_mm": 0.185,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "U10",
+   "owner": "U10",
+   "why": "nearer C81.2 (1.28) than own (1.51)",
+   "at": [
+    51.43,
+    45.63,
+    90
+   ],
+   "own_mm": 1.416,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "J6",
+   "owner": "J6",
+   "why": "nearer SW2.1 (1.26) than own (1.21)",
+   "at": [
+    29.18,
+    1.2,
+    0
+   ],
+   "own_mm": 0.19,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "POWER",
+   "owner": "SW1",
+   "why": "nearer R12.1 (0.83) than own (0.88)",
+   "at": [
+    71.47,
+    59.29,
+    0
+   ],
+   "own_mm": 0.186,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "SW3",
+   "owner": "SW3",
+   "why": "nearer SW2.4 (0.87) than own (1.05)",
+   "at": [
+    57.09,
+    4.49,
+    0
+   ],
+   "own_mm": 0.167,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "D1",
+   "owner": "D1",
+   "why": "nearer C2.1 (1.41) than own (1.27)",
+   "at": [
+    68.39,
+    69.01,
+    0
+   ],
+   "own_mm": 0.161,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "L2",
+   "owner": "L2",
+   "why": "nearer C27.2 (0.51) than own (0.66)",
+   "at": [
+    69.0,
+    40.28,
+    90
+   ],
+   "own_mm": 0.6,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "D2",
+   "owner": "D2",
+   "why": "nearer TP23.1 (0.69) than own (0.87)",
+   "at": [
+    41.51,
+    48.84,
+    90
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "U4",
+   "owner": "U4",
+   "why": "nearer C12.2 (0.67) than own (1.84)",
+   "at": [
+    75.22,
+    33.83,
+    0
+   ],
+   "own_mm": 0.232,
+   "nearest_other": [
+    0.448,
+    "R13.2"
+   ]
+  },
+  {
+   "label": "U8",
+   "owner": "U8",
+   "why": "nearer R61.1 (0.44) than own (1.06)",
+   "at": [
+    45.98,
+    60.71,
+    90
+   ],
+   "own_mm": 0.164,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "Q1",
+   "owner": "Q1",
+   "why": "nearer C2.2 (0.55) than own (0.89)",
+   "at": [
+    60.94,
+    64.97,
+    90
+   ],
+   "own_mm": 0.15,
+   "nearest_other": [
+    0.362,
+    "R9.2"
+   ]
+  },
+  {
+   "label": "Q2",
+   "owner": "Q2",
+   "why": "nearer C4.2 (1.19) than own (1.03)",
+   "at": [
+    54.74,
+    59.37,
+    90
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "B",
+   "owner": "JP1.1",
+   "why": "nearer JP1.2 (0.72) than own (0.80)",
+   "at": [
+    64.45,
+    33.32,
+    0
+   ],
+   "own_mm": 0.4,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "U11",
+   "owner": "U11",
+   "why": "nearer R60.2 (1.02) than own (1.05)",
+   "at": [
+    38.53,
+    52.06,
+    90
+   ],
+   "own_mm": 0.7,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C10",
+   "owner": "C10",
+   "why": "nearer C15.1 (0.62) than own (0.59)",
+   "at": [
+    75.09,
+    28.57,
+    0
+   ],
+   "own_mm": 0.176,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C2",
+   "owner": "C2",
+   "why": "nearer C3.2 (0.65) than own (1.43)",
+   "at": [
+    62.66,
+    65.26,
+    0
+   ],
+   "own_mm": 0.186,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C25",
+   "owner": "C25",
+   "why": "nearer C18.1 (0.83) than own (0.98)",
+   "at": [
+    65.84,
+    12.28,
+    0
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C26",
+   "owner": "C26",
+   "why": "nearer C23.1 (0.76) than own (0.92)",
+   "at": [
+    17.96,
+    58.03,
+    0
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C41",
+   "owner": "C41",
+   "why": "nearer R4.2 (0.66) than own (0.67)",
+   "at": [
+    47.34,
+    44.06,
+    0
+   ],
+   "own_mm": 0.238,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C6",
+   "owner": "C6",
+   "why": "nearer R3.1 (0.47) than own (0.58)",
+   "at": [
+    59.61,
+    61.61,
+    0
+   ],
+   "own_mm": 0.214,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C7",
+   "owner": "C7",
+   "why": "nearer C30.2 (0.63) than own (0.58)",
+   "at": [
+    73.19,
+    39.2,
+    90
+   ],
+   "own_mm": 0.182,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C8",
+   "owner": "C8",
+   "why": "nearer TP5.1 (0.70) than own (0.67)",
+   "at": [
+    70.41,
+    46.8,
+    90
+   ],
+   "own_mm": 0.186,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C9",
+   "owner": "C9",
+   "why": "nearer C14.1 (0.62) than own (0.59)",
+   "at": [
+    74.41,
+    19.8,
+    90
+   ],
+   "own_mm": 0.214,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "FB1",
+   "owner": "FB1",
+   "why": "nearer TP26.1 (0.83) than own (0.67)",
+   "at": [
+    23.48,
+    30.93,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "FB2",
+   "owner": "FB2",
+   "why": "2.07 mm from own copper > 2.0",
+   "at": [
+    49.01,
+    46.92,
+    0
+   ],
+   "own_mm": 0.219,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "FB3",
+   "owner": "FB3",
+   "why": "nearer R57.1 (0.69) than own (0.59)",
+   "at": [
+    27.95,
+    24.26,
+    0
+   ],
+   "own_mm": 0.19,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "STAT",
+   "owner": "LED2",
+   "why": "nearer LED3.1 (0.85) than own (0.70)",
+   "at": [
+    63.13,
+    1.57,
+    0
+   ],
+   "own_mm": 0.423,
+   "nearest_other": [
+    0.642,
+    "LED1.2"
+   ]
+  },
+  {
+   "label": "R32",
+   "owner": "R32",
+   "why": "nearer TP22.1 (0.92) than own (0.94)",
+   "at": [
+    23.86,
+    47.39,
+    90
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R55",
+   "owner": "R55",
+   "why": "3.87 mm from own copper > 2.0",
+   "at": [
+    49.66,
+    42.42,
+    90
+   ],
+   "own_mm": 0.224,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R56",
+   "owner": "R56",
+   "why": "nearer C82.2 (0.49) than own (0.59)",
+   "at": [
+    23.16,
+    22.94,
+    90
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C4",
+   "owner": "C4",
+   "why": "nearer R2.2 (0.59) than own (0.54)",
+   "at": [
+    55.41,
+    61.61,
+    90
+   ],
+   "own_mm": 0.185,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C80",
+   "owner": "C80",
+   "why": "2.14 mm from own copper > 2.0",
+   "at": [
+    59.09,
+    35.08,
+    0
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "B",
+   "owner": "R29.1",
+   "why": "nearer R52.1 (0.49) than own (0.54)",
+   "at": [
+    62.43,
+    41.95,
+    0
+   ],
+   "own_mm": 0.214,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "B",
+   "owner": "R30.1",
+   "why": "nearer R30.2 (0.64) than own (0.80)",
+   "at": [
+    62.3,
+    16.12,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R30",
+   "owner": "R30",
+   "why": "nearer C18.1 (0.72) than own (0.59)",
+   "at": [
+    61.89,
+    18.51,
+    0
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "B",
+   "owner": "R31.1",
+   "why": "nearer R31.2 (0.64) than own (0.80)",
+   "at": [
+    62.3,
+    24.22,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R31",
+   "owner": "R31",
+   "why": "nearer R26.1 (0.67) than own (0.98)",
+   "at": [
+    61.89,
+    27.51,
+    0
+   ],
+   "own_mm": 0.163,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "13",
+   "owner": "TP13",
+   "why": "2.44 mm from own copper > 2.0",
+   "at": [
+    61.11,
+    47.47,
+    90
+   ],
+   "own_mm": 0.419,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP18\nRTC",
+   "owner": "TP18",
+   "why": "nearer FB2.1 (0.54) than own (1.49)",
+   "at": [
+    49.54,
+    51.23,
+    0
+   ],
+   "own_mm": 0.378,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP2\n3V3",
+   "owner": "TP2",
+   "why": "nearer C13.1 (0.65) than own (0.92)",
+   "at": [
+    76.12,
+    46.99,
+    90
+   ],
+   "own_mm": 0.38,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP20\nGND",
+   "owner": "TP20",
+   "why": "nearer J6.1 (0.99) than own (0.89)",
+   "at": [
+    27.13,
+    6.04,
+    90
+   ],
+   "own_mm": 0.385,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP23",
+   "owner": "TP23",
+   "why": "nearer U11.5 (0.90) than own (0.84)",
+   "at": [
+    41.03,
+    54.14,
+    90
+   ],
+   "own_mm": 0.378,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "3 -> TP3",
+   "owner": "TP3",
+   "why": "nearer TP14.1 (0.90) than own (0.84); between the test-pad rows of TP3 and TP28/TP27/TP14/TP8 (reads as a label of the row below)",
+   "at": [
+    72.76,
+    51.26,
+    0
+   ],
+   "own_mm": 0.444,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP4",
+   "owner": "TP4",
+   "why": "nearer R27.2 (0.49) than own (1.05)",
+   "at": [
+    66.41,
+    48.07,
+    90
+   ],
+   "own_mm": 0.398,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP30\nDET",
+   "owner": "TP30",
+   "why": "nearer C26.1 (0.57) than own (0.75)",
+   "at": [
+    14.34,
+    58.23,
+    0
+   ],
+   "own_mm": 0.378,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "FID2",
+   "owner": "FID2",
+   "why": "nearer R38.2 (0.51) than own (1.08)",
+   "at": [
+    16.78,
+    50.65,
+    0
+   ],
+   "own_mm": 0.7,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP26\nE33",
+   "owner": "TP26",
+   "why": "nearer FB1.2 (0.67) than own (0.92)",
+   "at": [
+    19.53,
+    36.24,
+    90
+   ],
+   "own_mm": 0.378,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "27",
+   "owner": "TP27",
+   "why": "nearer R11.2 (0.49) than own (0.83)",
+   "at": [
+    69.47,
+    51.72,
+    0
+   ],
+   "own_mm": 0.408,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "29",
+   "owner": "TP29",
+   "why": "nearer R7.2 (0.72) than own (0.92)",
+   "at": [
+    61.69,
+    51.77,
+    90
+   ],
+   "own_mm": 0.385,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP31\nGND -> bare number",
+   "owner": "TP31",
+   "why": "nearer C69.1 (0.81) than own (1.55)",
+   "at": [
+    38.74,
+    20.22,
+    90
+   ],
+   "own_mm": 0.373,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "TP9",
+   "owner": "TP9",
+   "why": "nearer R62.1 (0.86) than own (0.84)",
+   "at": [
+    32.21,
+    10.32,
+    90
+   ],
+   "own_mm": 0.43,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R45",
+   "owner": "R45",
+   "why": "2.96 mm from own copper > 2.0",
+   "at": [
+    45.4,
+    23.57,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R48",
+   "owner": "R48",
+   "why": "nearer C64.2 (0.47) than own (0.43)",
+   "at": [
+    34.67,
+    46.89,
+    0
+   ],
+   "own_mm": 0.228,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R64",
+   "owner": "R64",
+   "why": "nearer R65.2 (0.56) than own (0.56)",
+   "at": [
+    9.31,
+    40.33,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R65",
+   "owner": "R65",
+   "why": "nearer R64.1 (0.47) than own (0.47)",
+   "at": [
+    12.04,
+    44.15,
+    0
+   ],
+   "own_mm": 0.152,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R1",
+   "owner": "R1",
+   "why": "nearer R2.1 (0.60) than own (0.49)",
+   "at": [
+    54.99,
+    67.49,
+    90
+   ],
+   "own_mm": 0.161,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R14",
+   "owner": "R14",
+   "why": "nearer C13.2 (0.66) than own (1.19)",
+   "at": [
+    75.69,
+    40.71,
+    0
+   ],
+   "own_mm": 0.168,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R38",
+   "owner": "R38",
+   "why": "nearer C22.2 (0.48) than own (0.47)",
+   "at": [
+    18.35,
+    53.69,
+    90
+   ],
+   "own_mm": 0.152,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R39",
+   "owner": "R39",
+   "why": "3.76 mm from own copper > 2.0",
+   "at": [
+    8.91,
+    51.93,
+    90
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R40",
+   "owner": "R40",
+   "why": "nearer R39.1 (0.60) than own (0.83)",
+   "at": [
+    7.74,
+    60.08,
+    0
+   ],
+   "own_mm": 0.2,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "R43",
+   "owner": "R43",
+   "why": "2.93 mm from own copper > 2.0",
+   "at": [
+    45.53,
+    28.04,
+    0
+   ],
+   "own_mm": 0.214,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C14",
+   "owner": "C14",
+   "why": "3.63 mm from own copper > 2.0",
+   "at": [
+    75.61,
+    16.62,
+    0
+   ],
+   "own_mm": 0.16,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C31",
+   "owner": "C31",
+   "why": "nearer C33.2 (0.71) than own (0.56)",
+   "at": [
+    71.55,
+    12.3,
+    0
+   ],
+   "own_mm": 0.161,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C58",
+   "owner": "C58",
+   "why": "nearer C65.2 (0.49) than own (0.49)",
+   "at": [
+    36.78,
+    47.24,
+    90
+   ],
+   "own_mm": 0.206,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C59",
+   "owner": "C59",
+   "why": "2.87 mm from own copper > 2.0",
+   "at": [
+    28.07,
+    44.99,
+    90
+   ],
+   "own_mm": 0.162,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C67",
+   "owner": "C67",
+   "why": "nearer C56.1 (0.54) than own (0.56)",
+   "at": [
+    29.94,
+    27.51,
+    90
+   ],
+   "own_mm": 0.185,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  },
+  {
+   "label": "C78",
+   "owner": "C78",
+   "why": "nearer Y2.2 (0.82) than own (1.51)",
+   "at": [
+    33.45,
+    54.1,
+    0
+   ],
+   "own_mm": 0.168,
+   "nearest_other": [
+    99.0,
+    ""
+   ]
+  }
+ ],
+ "hidden": [
+  {
+   "label": "U9",
+   "owner": "U9",
+   "why": "nearer C56.1 (0.43) than own (1.80)"
+  },
+  {
+   "label": "L3",
+   "owner": "L3",
+   "why": "2.26 mm from own copper > 2.0"
+  },
+  {
+   "label": "U5",
+   "owner": "U5",
+   "why": "4.03 mm from own copper > 2.0"
+  },
+  {
+   "label": "U6",
+   "owner": "U6",
+   "why": "nearer C14.2 (0.67) than own (1.84)"
+  },
+  {
+   "label": "U7",
+   "owner": "U7",
+   "why": "nearer C15.2 (0.67) than own (1.84)"
+  },
+  {
+   "label": "C28",
+   "owner": "C28",
+   "why": "2.99 mm from own copper > 2.0"
+  },
+  {
+   "label": "R17",
+   "owner": "R17",
+   "why": "3.78 mm from own copper > 2.0"
+  },
+  {
+   "label": "C70",
+   "owner": "C70",
+   "why": "nearer R33.2 (0.47) than own (1.60)"
+  },
+  {
+   "label": "R18",
+   "owner": "R18",
+   "why": "nearer C32.2 (0.55) than own (0.83)"
+  },
+  {
+   "label": "R19",
+   "owner": "R19",
+   "why": "2.93 mm from own copper > 2.0"
+  },
+  {
+   "label": "R22",
+   "owner": "R22",
+   "why": "nearer C31.2 (0.55) than own (0.83)"
+  },
+  {
+   "label": "R42",
+   "owner": "R42",
+   "why": "nearer C66.1 (0.83) than own (1.76)"
+  },
+  {
+   "label": "R44",
+   "owner": "R44",
+   "why": "nearer C72.2 (0.56) than own (0.56)"
+  },
+  {
+   "label": "R46",
+   "owner": "R46",
+   "why": "nearer R43.2 (0.39) than own (1.49)"
+  },
+  {
+   "label": "R51",
+   "owner": "R51",
+   "why": "2.96 mm from own copper > 2.0"
+  },
+  {
+   "label": "R67",
+   "owner": "R67",
+   "why": "nearer TP10.1 (0.66) than own (1.06)"
+  },
+  {
+   "label": "C22",
+   "owner": "C22",
+   "why": "nearer R38.1 (0.55) than own (0.56)"
+  },
+  {
+   "label": "C48",
+   "owner": "C48",
+   "why": "nearer C59.2 (0.43) than own (0.70)"
+  },
+  {
+   "label": "C72",
+   "owner": "C72",
+   "why": "nearer C73.2 (0.66) than own (1.08)"
+  }
+ ],
+ "to_fab": [],
+ "improved": [
+  {
+   "label": "L1",
+   "owner": "L1",
+   "margin_before": 0.219,
+   "at": [
+    68.9,
+    38.38,
+    90
+   ],
+   "own_mm": 0.918
+  },
+  {
+   "label": "R4",
+   "owner": "R4",
+   "margin_before": 0.226,
+   "at": [
+    44.52,
+    43.62,
+    0
+   ],
+   "own_mm": 0.161
+  }
+ ]
+}

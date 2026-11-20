@@ -1,0 +1,30 @@
+pad,net,x,y,via_net,centre_to_opening_mm,reason
+C45.1,VCC_DDR,44.49,35.99,VCC_DDR,0.024,"verifier L5 r4: L4_CRITICAL VCC_DDR via, drill partly inside the pad (centre 0.02 mm outside)"
+C47.1,VCC_1V8,44.96,33.95,VCC_1V8,0.000,D-116 m: VCC_1V8 decoupler boxed on L1 (no dog-bone site); via in the pad
+C58.1,AVDD1V8_USB,36.886,44.46,AVDD1V8_USB,0.000,D-116 m: AVDD1V8_USB decoupler boxed on L1; via in the pad (C58 moved 0.176 mm east / 0.25 mm north in L5G round 2; D-128)
+C58.2,GND,36.886,45.42,GND,0.000,D-128 (L5G round 2): C58 GND via moved from the dog-bone site (36.88; 46.29) into the pad so RTC_XIN keeps 0.5 mm from RTC_XOUT
+C66.1,FEPHY_AVDD3V3,26.29,32.28,FEPHY_AVDD3V3,0.000,D-116 m: FEPHY_AVDD3V3 decoupler boxed on L1; via in the pad
+C69.1,VCC_1V8,36.70,19.08,VCC_1V8,0.000,D-115 a / D-116 m: VCC_1V8 4.7 uF bulk off the lane corridor; via in the pad
+F1.1,VBUS_IN,55.84,70.71,VBUS_IN,0.055,"verifier L5 r4: L4_CRITICAL VBUS_IN via, drill partly inside the pad"
+FB2.2,VCC1V8_CODEC,47.08,47.18,VCC1V8_CODEC,0.000,"D-116 d/m: VCC1V8_CODEC ferrite, codec loop via in the pad"
+R27.1,VCC_1V8,62.37,47.63,VCC_1V8,0.018,"verifier L5 r4: L4_CRITICAL VCC_1V8 via, drill partly inside the pad"
+R27.2,GND,63.75,46.98,GND,0.228,D-H6: GND via ring within 0.10 mm of the 1:1 mask opening
+R33.2,AVDD1V8_USB,42.75,44.71,AVDD1V8_USB,0.000,D-116 m: AVDD1V8_USB 1 R series part boxed on L1; via in the pad
+R40.1,VCC3V3_SD,10.14,58.68,VCC3V3_SD,0.230,D-H6: VCC3V3_SD via ring within 0.10 mm of the 1:1 mask opening
+TP16.1,VCC3V3_SD,24.93,59.72,VCC3V3_SD,0.209,"L5F search (D-117 b): VCC3V3_SD test-pad via, ring 0.04 mm inside the pad / drill 0.06 mm from it"
+U9.129,GND,32.20,35.35,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,32.20,37.65,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,33.35,34.20,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,33.35,35.35,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,33.35,36.50,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,33.35,37.65,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,33.35,38.80,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,34.50,35.35,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,34.50,37.65,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,35.65,34.20,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,35.65,35.35,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,35.65,36.50,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,35.65,37.65,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,35.65,38.80,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,36.80,35.35,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"
+U9.129,GND,36.80,37.65,GND,0.000,"layout.md §6.2, D-119: EP thermal via, GND board via 0.5/0.3 (ViaDrill) inside the exposed pad; filled + capped (IPC-4761 VII)"

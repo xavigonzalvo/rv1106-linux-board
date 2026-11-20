@@ -1,0 +1,341 @@
+PASS netlist   footprints                                                                           226                    226        
+PASS netlist   nets                                                                                 135                    135        
+PASS netlist   pads with their netlist net                                                          0 missing/wrong        0          
+PASS side      parts on the bottom                                                                  0                      0          
+DEV  zone      C69                                                                                  5.17 mm outside Z-SOC  inside     courtyard (35.97,16.83)-(37.42,19.78); D-115: VCC_1V8 4.7 uF bulk moved north-east of the U9 north lane field (unzoned strip y 17-22)
+DEV  zone      C78                                                                                  3.45 mm outside Z-SOC  inside     courtyard (32.75,52.55)-(34.56,53.45); D-105: RTC load cap under Y2 pad 2, in Z-USB with Y2
+DEV  zone      C79                                                                                  3.45 mm outside Z-SOC  inside     courtyard (35.25,52.55)-(37.06,53.45); D-105: RTC load cap under Y2 pad 1, in Z-USB with Y2
+DEV  zone      C82                                                                                  0.11 mm outside Z-ETH  inside     courtyard (17.20,21.89)-(18.11,23.70); D-106 (b): centre-tap cap right under J3 pin 4, courtyard 0.11 mm north of Z-ETH (J3 strip)
+DEV  zone      C83                                                                                  0.11 mm outside Z-ETH  inside     courtyard (15.94,21.89)-(16.84,23.70); D-106 (b): centre-tap cap under the 6|4 gap, courtyard 0.11 mm north of Z-ETH (J3 strip)
+DEV  zone      J1                                                                                   0.50 mm outside J1-USBC inside     courtyard (44.19,71.08)-(54.81,80.50); D-103 (a): J1 courtyard follows the HRO footprint (mouth 0.55 mm over the routed edge)
+DEV  zone      J2                                                                                   1.48 mm outside J2-SD  inside     courtyard (10.02,63.66)-(27.23,80.00); D-103 (a): J2 courtyard 17.3 mm wide does not fit the 16 mm rectangle; moved 0.9 mm west
+DEV  zone      J3                                                                                   0.49 mm outside J3-RJ45 inside     courtyard (7.52,-0.49)-(26.52,21.80); D-103 (a): J3 courtyard follows the HR911105A footprint (0.55 mm over the routed edge)
+DEV  zone      J4                                                                                   0.50 mm outside J4-USBA inside     courtyard (27.50,64.70)-(44.00,79.84); D-103 (a): J4 courtyard 16.5 mm wide (drawing) does not fit the 15.5 mm rectangle
+DEV  zone      R53                                                                                  3.03 mm outside Z-NAND inside     courtyard (46.47,40.78)-(48.33,41.72); D-106 (c): D2 pull-up on the D2 run west of U10 (FSPI order), 3 mm into Z-SOC
+DEV  zone      R54                                                                                  1.72 mm outside Z-NAND inside     courtyard (47.78,38.33)-(49.62,39.27); D-106 (c): CS pull-up between the CLK and CS runs west of R55, 1.7 mm into Z-SOC
+DEV  zone      R56                                                                                  2.12 mm outside Z-ETH  inside     courtyard (19.67,22.28)-(22.62,23.72); D-106 (b): TXP 0R bridge east of the RX field (TX joins J3 pins 1/2 from the south-east)
+DEV  zone      R57                                                                                  1.38 mm outside Z-ETH  inside     courtyard (20.42,23.83)-(21.88,26.78); D-106 (b): TXN 0R below R56, same
+DEV  zone      R61                                                                                  0.97 mm outside Z-USB  inside     courtyard (45.53,62.47)-(46.47,64.33); D-103 (e): U8 EN pull-down next to pin 4, 0.1 mm east of Z-USB (no room inside)
+DEV  zone      R66                                                                                  0.23 mm outside Z-UART inside     courtyard (32.14,4.77)-(33.06,6.62); D-115: UART2_TX series resistor moved next to J6 / TP9 (Z-UART) to free the north exit of U9
+DEV  zone      R67                                                                                  0.23 mm outside Z-UART inside     courtyard (34.94,4.77)-(35.86,6.62); D-115: UART2_RX series resistor moved next to J6 / TP10 (Z-UART), same
+DEV  zone      TP15                                                                                 0.24 mm outside Z-HDR  inside     courtyard (18.25,40.25)-(20.74,42.75); D-115: VDD_ARM test pad moved from the power test row to 3.4 mm from C44.1 (Z-HDR edge): its 58 mm load-free L4 branch on the core rail is gone (verifier L5 r2 minor soc)
+DEV  zone      TP18                                                                                 0.55 mm outside Z-USBA-PWR inside     courtyard (45.65,49.45)-(48.14,51.95); D-115: VCC3V3_RTC test pad moved next to its rail south of U9 (Z-USBA-PWR)
+DEV  zone      TP2                                                                                  2.70 mm outside Z-PMU  inside     courtyard (74.35,48.20)-(76.84,50.70); D-103 (d): power test row at the top of Z-PWRIN (layout.md §5.4)
+DEV  zone      TP24                                                                                 6.74 mm outside Z-USB  inside     courtyard (49.75,44.95)-(52.24,47.45); D-105: VCC1V8_CODEC test pad in the unzoned strip under U10 (Z-SOC full once the FSPI run is kept free), 3-4 mm from FB2
+DEV  zone      TP3                                                                                  2.70 mm outside Z-PMU  inside     courtyard (71.60,48.20)-(74.09,50.70); D-103 (d): power test row at the top of Z-PWRIN (layout.md §5.4)
+DEV  zone      TP31                                                                                 2.10 mm outside Z-SOC  inside     courtyard (35.75,19.90)-(38.24,22.40); D-115: TP6's GND reference pad moved north-east of TP6 (2.7 mm), half out of Z-SOC
+DEV  zone      TP4                                                                                  2.70 mm outside Z-PMU  inside     courtyard (63.35,48.20)-(65.84,50.70); D-103 (d): power test row at the top of Z-PWRIN (layout.md §5.4)
+DEV  zone      TP5                                                                                  2.70 mm outside Z-PMU  inside     courtyard (68.85,48.20)-(71.34,50.70); D-103 (d): power test row at the top of Z-PWRIN (layout.md §5.4)
+DEV  zone      Y2                                                                                   2.44 mm outside Z-SOC  inside     courtyard (32.91,50.16)-(36.89,52.44); D-105: RTC crystal below the SDMMC corridor, at the top of Z-USB (corridor >= 2.4 mm)
+PASS zone      parts with the courtyard inside their placement.csv zone                             201                    226        
+PASS zonefill  BOARD courtyard fill (bbox areas)                                                    0.1 %                  <= 55 %    
+PASS zonefill  Z-ETH courtyard fill (bbox areas)                                                    13.6 %                 <= 55 %    
+PASS zonefill  Z-HDR courtyard fill (bbox areas)                                                    4.8 %                  <= 55 %    
+PASS zonefill  Z-NAND courtyard fill (bbox areas)                                                   37.2 %                 <= 55 %    
+PASS zonefill  Z-PMU courtyard fill (bbox areas)                                                    50.9 %                 <= 55 %    
+PASS zonefill  Z-PWRIN courtyard fill (bbox areas)                                                  45.7 %                 <= 55 %    
+PASS zonefill  Z-SDPWR courtyard fill (bbox areas)                                                  19.2 %                 <= 55 %    
+PASS zonefill  Z-SOC courtyard fill (bbox areas)                                                    49.6 %                 <= 55 %    
+PASS zonefill  Z-UART courtyard fill (bbox areas)                                                   30.7 %                 <= 55 %    
+PASS zonefill  Z-UI courtyard fill (bbox areas)                                                     35.6 %                 <= 55 %    
+PASS zonefill  Z-USB courtyard fill (bbox areas)                                                    51.2 %                 <= 55 %    
+PASS zonefill  Z-USBA-PWR courtyard fill (bbox areas)                                               13.2 %                 <= 55 %    
+PASS connector J3 RJ45 mouth on the north edge (fab front y)                                        -0.05                  0 +-0.5    
+PASS connector J1 mouth on the south edge (fab front y)                                             80.05                  80 +-0.5   
+PASS connector J2 mouth on the south edge (fab front y)                                             79.80                  80 +-0.5   
+PASS connector J4 mouth on the south edge (fab front y)                                             79.65                  80 +-0.5   
+PASS connector nothing overhangs the west/east (V-cut) edges                                        0                      0          
+PASS fixed     U9                                                                                   (34.50, 36.50) 90      (34.50, 36.50) 90 
+PASS fixed     U8                                                                                   (43.40, 62.60) 0       (43.40, 62.60) 0 
+PASS fixed     JP1                                                                                  (63.70, 35.00) 180     (63.70, 35.00) 180 
+PASS fixed     J1                                                                                   (49.50, 76.35) 0       (49.50, 76.35) 0 
+PASS fixed     J3                                                                                   (21.46, 17.26) 180     (21.46, 17.26) 180 
+PASS fixed     R30                                                                                  (63.50, 16.50)         (63.50, 16.50) 
+PASS fixed     U9 pin 1 in the south-west corner                                                    (29.08, 42.58)         SW         
+PASS fixed     FID1 clear of the U9 courtyard                                                       clear                  clear      
+PASS fixed     FID2 clear of the U9 courtyard                                                       clear                  clear      
+PASS ring2     C36.1 -> U9.54                                                                       5.38 (centre 6.28)     <= 8.0     
+PASS ring2     C37.1 -> U9.116                                                                      7.86 (centre 8.76)     <= 8.0     
+PASS ring2     C38.1 -> U9.115                                                                      5.91 (centre 6.79)     <= 8.0     
+PASS ring2     C39.1 -> U9.49                                                                       6.07 (centre 6.97)     <= 8.0     
+PASS ring2     C40.1 -> U9.50                                                                       5.58 (centre 6.41)     <= 8.0     
+PASS ring2     C41.1 -> U9.31                                                                       6.83 (centre 7.56)     <= 8.0     
+PASS ring2     C42.1 -> U9.51                                                                       4.73 (centre 5.42)     <= 8.0     
+PASS ring2     C43.1 -> U9.82                                                                       5.67 (centre 6.38)     <= 8.0     
+PASS ring2     C44.1 -> U9.115                                                                      5.75 (centre 6.47)     <= 8.0     
+PASS ring2     C45.1 -> U9.50                                                                       3.56 (centre 4.22)     <= 8.0     
+PASS ring2     C46.1 -> U9.56                                                                       4.23 (centre 4.94)     <= 8.0     
+PASS ring2     C47.1 -> U9.53                                                                       3.80 (centre 4.49)     <= 8.0     
+PASS ring1     C48.1 -> U9.10                                                                       1.66 (centre 2.38)     <= 3.0     
+PASS ring1     C49.1 -> U9.55                                                                       1.67 (centre 2.39)     <= 3.0     
+PASS ring1     C50.1 -> U9.103                                                                      1.63 (centre 2.35)     <= 3.0     
+PASS ring1     C51.1 -> U9.67                                                                       1.71 (centre 2.43)     <= 3.0     
+PASS ring1     C52.1 -> U9.115                                                                      1.80 (centre 2.51)     <= 3.0     
+PASS ring1     C53.1 -> U9.49                                                                       1.51 (centre 2.21)     <= 3.0     
+PASS ring1     C54.1 -> U9.53                                                                       1.58 (centre 2.29)     <= 3.0     
+PASS ring1     C55.1 -> U9.70                                                                       1.51 (centre 2.20)     <= 3.0     
+PASS ring1     C56.1 -> U9.96                                                                       1.63 (centre 2.35)     <= 3.0     
+PASS ring1     C57.1 -> U9.31                                                                       1.85 (centre 2.56)     <= 3.0     
+PASS ring1     C58.1 -> U9.24                                                                       1.49 (centre 2.17)     <= 3.0     
+PASS ring1     C59.1 -> U9.1                                                                        1.48 (centre 2.13)     <= 3.0     
+DEV  ring1     C60.1 -> U9.70                                                                       5.77 (centre 6.46)     <= 3.0     D-104 (c): second 100 nF of VCC_1V8 moved from pin 70 to the other VCC_1V8 pin 53 (checked there)
+PASS ring1     C61.1 -> U9.61                                                                       1.58 (centre 2.30)     <= 3.0     
+PASS ring1     C62.1 -> U9.81                                                                       1.68 (centre 2.40)     <= 3.0     
+PASS ring1     C63.1 -> U9.43                                                                       1.62 (centre 2.33)     <= 3.0     
+PASS ring1     C64.1 -> U9.13                                                                       1.52 (centre 2.22)     <= 3.0     
+PASS ring1     C65.1 -> U9.28                                                                       1.48 (centre 2.14)     <= 3.0     
+PASS ring1     C66.1 -> U9.101                                                                      1.48 (centre 2.14)     <= 3.0     
+PASS ring1     C67.1 -> U9.88                                                                       1.61 (centre 2.32)     <= 3.0     
+PASS ring1     C68.1 -> U9.108                                                                      1.73 (centre 2.45)     <= 3.0     
+DEV  ring2     C69.1 -> U9.70                                                                       10.59 (centre 11.45)   <= 8.0     D-115: pin-70 bulk 4.7 uF moved out of the north lane corridor (the 100 nF C55 stays at pin 70); fed by a via in its pad and L4 to C55's rail via
+PASS ring1     C70.1 -> U9.30                                                                       1.50 (centre 2.37)     <= 3.0     
+PASS ring1     C71.1 -> U9.66                                                                       2.42 (centre 3.10)     <= 3.0     
+DEV  ring1     C72.1 -> U9.23                                                                       19.08 (centre 19.79)   <= 3.0     D-104 (e): RECOVERY drops to L4 at the via ring; its RC sits in the NE of Z-SOC
+DEV  ring1     C73.1 -> U9.22                                                                       19.81 (centre 20.52)   <= 3.0     D-104 (e): SARADC_IN1 drops to L4 at the via ring; its RC sits in the NE of Z-SOC
+PASS ring1     C74.1 -> U9.71                                                                       1.69 (centre 2.41)     <= 3.0     
+DEV  ring2     C75.1 -> U9.19                                                                       10.16 (centre 10.76)   <= 8.0     D-104 (h): VCC3V3_RTC 1 uF (uA RTC rail, no battery) in the SE corner, fed from the pin-19 L4 via
+PASS ring2     D2.1 -> U9.19                                                                        6.40 (centre 7.43)     <= 8.0     
+PASS ring2     FB1.2 -> U9.101                                                                      4.51 (centre 5.37)     <= 8.0     
+PASS ring2     FB2.2 -> U9.31                                                                       7.98 (centre 8.80)     <= 8.0     
+PASS ring2     FB3.2 -> U9.96                                                                       4.32 (centre 5.23)     <= 8.0     
+PASS ring2     R32.2 -> U9.1                                                                        6.05 (centre 6.75)     <= 8.0     
+PASS ring2     R33.2 -> U9.24                                                                       5.28 (centre 6.02)     <= 8.0     
+DEV  ring2     R34.2 -> U9.19                                                                       10.67 (centre 11.31)   <= 8.0     D-104 (h): RTC series resistor beside C75, same
+PASS ring1     R41.1 -> U9.52                                                                       1.53 (centre 2.23)     <= 3.0     
+PASS ring1     R42.1 -> U9.102                                                                      1.48 (centre 2.16)     <= 3.0     
+DEV  ring1     R43.2 -> U9.66                                                                       4.05 (centre 4.61)     <= 3.0     D-104 (g): NPOR pull-up in the NE corner square; C71 (the filter cap) takes the gate slot
+DEV  ring1     R44.2 -> U9.23                                                                       19.31 (centre 20.03)   <= 3.0     D-104 (e): RECOVERY pull-up, same
+DEV  ring1     R45.2 -> U9.22                                                                       18.89 (centre 19.61)   <= 3.0     D-104 (e): SARADC_IN1 pull-up, same
+PASS ring1     R46.1 -> U9.58                                                                       1.62 (centre 2.33)     <= 3.0     
+PASS ring1     R47.1 -> U9.48                                                                       1.71 (centre 2.42)     <= 2.0     
+PASS ring1     R48.1 -> U9.15                                                                       1.48 (centre 2.13)     <= 2.0     
+DEV  ring1     R50.1 -> U9.69                                                                       3.35 (centre 4.03)     <= 2.0     D-104 (d): R50 on the OSC_XOUT lane just past the ring-1 row (R51 takes the row slot)
+PASS ring1     R51.1 -> U9.69                                                                       1.49 (centre 2.18)     <= 2.0     
+PASS ring2     TP18.1 -> U9.19                                                                      1.77 (centre 14.10)    <= 8.0     SoC pin 13.06; feeder R34 1.77
+PASS ring2     TP22.1 -> U9.1                                                                       7.88 (centre 8.93)     <= 8.0     
+PASS ring2     TP23.1 -> U9.24                                                                      5.55 (centre 9.67)     <= 8.0     SoC pin 8.54; feeder R33 5.55
+PASS ring2     TP24.1 -> U9.31                                                                      2.78 (centre 11.99)    <= 8.0     SoC pin 11.04; feeder FB2 2.78
+PASS ring2     TP25.1 -> U9.96                                                                      6.77 (centre 7.90)     <= 8.0     
+PASS ring2     TP26.1 -> U9.101                                                                     6.17 (centre 7.28)     <= 8.0     
+PASS ring2     R4.1 -> U9.25 (layout.md §5.3 ring 2)                                                7.64 (centre 8.42)     <= 8.0     
+PASS ring2     C1.1 -> U9.25 (layout.md §5.3 ring 2)                                                7.45 (centre 8.10)     <= 8.0     
+PASS ring1     C60 -> U9.53 (D-104 c: the other VCC_1V8 pin)                                        1.48 (centre 2.14)     <= 3.0     
+PASS ring2     ring-2 courtyards outside the ring-1 gate bands (r < 9.65 mm)                        0                      0           (NT1 sits on pin 115 by design, layout.md §3, in front of NC pins 117-121)
+DEV  escape    pin 22 SARADC_IN1 (SENSE) drops to L4 at the via ring                                L4                     §2.3 classes D-104 (e): SARADC_IN1 (SENSE, DC) on L4 instead of L1 (§2.3)
+DEV  escape    pin 23 RECOVERY (SENSE) drops to L4 at the via ring                                  L4                     §2.3 classes D-104 (e): RECOVERY (SENSE, DC key) on L4 instead of L1 (§2.3)
+DEV  escape    pin 25 USB_DET_IN (SENSE) drops to L4 at the via ring                                L4                     §2.3 classes D-104 (e): USB_DET_IN (SENSE, DC divider) on L4 under the USB pair (§2.3)
+PASS escape    S: via ring r 7.20-7.90 free of part copper                                          0                      0          
+PASS escape    S: C59 pad on MIPI_CSI_AVDD_1V8 faces pin 1, sideways shift                          0.00                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: C48 pad on VDD_0V9 faces pin 10, sideways shift                                   1.04                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: C64 pad on VCC_3V3 faces pin 13, sideways shift                                   0.63                   <= 1.45    pins in front: 12
+PASS escape    S: R48 pad on SDMMC_CLK faces pin 15, sideways shift                                 0.14                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: C58 pad on AVDD1V8_USB faces pin 24, sideways shift                               0.41                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: C65 pad on VCC_3V3 faces pin 28, sideways shift                                   0.06                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: C70 pad on CODEC_VCM faces pin 30, sideways shift                                 0.56                   <= 1.45    pins in front: 31
+PASS escape    S: C57 pad on VCC1V8_CODEC faces pin 31, sideways shift                              1.41                   <= 2.60    crosses only NC/same-net pins
+PASS escape    S: ring-1 parts within 0.5 mm of their pin (verifier target; D-104)                  4 of 8                 info       
+PASS escape    S: 9 lanes pass the gate between ring-1 parts at class width/clearance               0 unplaced             0          
+PASS escape    S: gaps used (width inside |t| <= 7.45 / demand)                                     4                      info       pins 11,12: gap 0.85 mm, need 0.85; pins 14: gap 0.55 mm, need 0.55; pins 16,17,18,20,21: gap 2.25 mm, need 2.25; pins 26: gap 1.26 mm, need 1.26
+PASS escape    S: 4 via-ring vias + lanes + links fit along r 7.45 in pin order                     fits                   fits       
+PASS escape    S: free width 1-2 mm beyond the gate >= lane demand                                  13.95 free / 3.91      >= demand  
+PASS escape    S: RTC_XOUT lane to the USB_DM pair lane at the gate                                 1.67                   >= 0.76    RTC: D-104
+PASS escape    S: RTC_XIN lane to the USB_DM pair lane at the gate                                  1.22                   >= 0.76    RTC: D-104
+PASS escape    E: via ring r 7.20-7.90 free of part copper                                          0                      0          
+PASS escape    E: C61 pad on VCC_3V3 faces pin 61, sideways shift                                   0.84                   <= 1.45    pins in front: 62
+PASS escape    E: R46 pad on GPIO0_A0_PD faces pin 58, sideways shift                               0.95                   <= 1.45    pins in front: 60 59
+PASS escape    E: C49 pad on VDD_0V9 faces pin 55, sideways shift                                   1.06                   <= 1.45    pins in front: 57 56
+PASS escape    E: C54 pad on VCC_1V8 faces pin 53, sideways shift                                   0.83                   <= 1.45    pins in front: 54
+PASS escape    E: C60 pad on VCC_1V8 faces pin 53, sideways shift                                   0.09                   <= 2.60    crosses only NC/same-net pins
+PASS escape    E: R41 pad on DRAM_ZQ faces pin 52, sideways shift                                   0.68                   <= 1.45    pins in front: 51
+PASS escape    E: C53 pad on VCC_DDR faces pin 49, sideways shift                                   0.57                   <= 1.45    pins in front: 48
+PASS escape    E: R47 pad on FSPI_CLK faces pin 48, sideways shift                                  1.16                   <= 1.45    pins in front: 47
+PASS escape    E: C63 pad on VCC_3V3 faces pin 43, sideways shift                                   0.95                   <= 1.45    pins in front: 42 41
+PASS escape    E: ring-1 parts within 0.5 mm of their pin (verifier target; D-104)                  1 of 9                 info       
+PASS escape    E: 8 lanes pass the gate between ring-1 parts at class width/clearance               0 unplaced             0          
+PASS escape    E: gaps used (width inside |t| <= 7.45 / demand)                                     3                      info       pins 62,63,64: gap 1.92 mm, need 1.05; pins 44,47: gap 0.90 mm, need 0.90; pins 39,41,42: gap 4.27 mm, need 1.25
+PASS escape    E: 6 via-ring vias + lanes + links fit along r 7.45 in pin order                     fits                   fits       
+PASS escape    E: free width 1-2 mm beyond the gate >= lane demand                                  11.47 free / 2.65      >= demand  
+PASS escape    N: via ring r 7.20-7.90 free of part copper                                          0                      0          
+PASS escape    N: C56 pad on ETH_AVDD1V8 faces pin 96, sideways shift                               0.98                   <= 2.60    crosses only NC/same-net pins
+PASS escape    N: C67 pad on VCC_3V3 faces pin 88, sideways shift                                   0.91                   <= 1.45    pins in front: 90 89
+PASS escape    N: C62 pad on VCC_3V3 faces pin 81, sideways shift                                   1.09                   <= 1.45    pins in front: 83 82
+PASS escape    N: C74 pad on VDD_0V9 faces pin 71, sideways shift                                   1.12                   <= 1.45    pins in front: 73 72
+PASS escape    N: C55 pad on VCC_1V8 faces pin 70, sideways shift                                   0.55                   <= 2.60    crosses only NC/same-net pins
+PASS escape    N: R51 pad on OSC_XOUT faces pin 69, sideways shift                                  0.48                   <= 2.60    crosses only NC/same-net pins
+PASS escape    N: C51 pad on VDD_0V9 faces pin 67, sideways shift                                   1.17                   <= 1.45    pins in front: 66 65
+PASS escape    N: ring-1 parts within 0.5 mm of their pin (verifier target; D-104)                  1 of 7                 info       
+PASS escape    N: 24 lanes pass the gate between ring-1 parts at class width/clearance              0 unplaced             0          
+PASS escape    N: gaps used (width inside |t| <= 7.45 / demand)                                     6                      info       pins 89,90,91,92,93,94,95: gap 2.25 mm, need 2.25; pins 83,84,85,86,87: gap 1.65 mm, need 1.65; pins 72,73,74,75,76,77,78,79,80: gap 2.85 mm, need 2.85; pins 69: gap 0.75 mm, need 0.75; pins 68: gap 0.75 mm, need 0.75; pins 66: gap 0.81 mm, need 0.65
+PASS escape    N: 2 via-ring vias + lanes + links fit along r 7.45 in pin order                     fits                   fits       
+PASS escape    N: free width 1-2 mm beyond the gate >= lane demand                                  10.41 free / 7.60      >= demand  
+PASS escape    W: via ring r 7.20-7.90 free of part copper                                          0                      0          
+PASS escape    W: C66 pad on FEPHY_AVDD3V3 faces pin 101, sideways shift                            0.20                   <= 2.60    crosses only NC/same-net pins
+PASS escape    W: R42 pad on ETH_EXTR faces pin 102, sideways shift                                 0.39                   <= 2.60    crosses only NC/same-net pins
+PASS escape    W: C50 pad on VDD_0V9 faces pin 103, sideways shift                                  0.98                   <= 1.45    pins in front: 104 105
+PASS escape    W: C68 pad on VCC_3V3 faces pin 108, sideways shift                                  1.20                   <= 1.45    pins in front: 109 110
+PASS escape    W: C52 pad on VDD_ARM faces pin 115, sideways shift                                  1.32                   <= 1.45    pins in front: 116
+PASS escape    W: ring-1 parts within 0.5 mm of their pin (verifier target; D-104)                  2 of 5                 info       
+PASS escape    W: 12 lanes pass the gate between ring-1 parts at class width/clearance              0 unplaced             0          
+PASS escape    W: gaps used (width inside |t| <= 7.45 / demand)                                     3                      info       pins 97,99: gap 2.92 mm, need 2.24; pins 104,105,106,107: gap 1.35 mm, need 1.35; pins 109,110,111,112,113,114: gap 1.95 mm, need 1.95
+PASS escape    W: 1 via-ring vias + lanes + links fit along r 7.45 in pin order                     fits                   fits       
+PASS escape    W: free width 1-2 mm beyond the gate >= lane demand                                  7.42 free / 4.94       >= demand  
+DEV  xtal      Y1.1 (XIN) -> U9.68                                                                  3.99 (centre 5.18)     <= 3.0     D-104 (d): Y1 directly beyond the ring-1 row (the row now starts 1.45 mm out); XIN <= 5 mm still
+PASS xtal      OSC_XIN lower bound U9.68 -> Y1.1 (length rule <= 5 mm)                              3.99                   <= 5.0     
+DEV  xtal      Y1 nearest pad (Y1.4) -> U9.68 (the crystal body, verifier figure)                   3.55                   <= 3.0     D-104 (d): Y1 directly beyond the ring-1 row (the row now starts 1.45 mm out); XIN <= 5 mm still
+PASS xtal      Y1.3 (XOUT_X) -> U9.69 (info)                                                        5.77 (centre 6.89)     info       
+DEV  xtal      R50.1 -> U9.69                                                                       3.35 (centre 4.03)     <= 2.0     D-104 (d): R50 on the OSC_XOUT lane just past the ring-1 row
+PASS xtal      OSC_XOUT_X lower bound R50.2 -> Y1.3 (length rule <= 5 mm)                           1.33                   <= 5.0     
+DEV  xtal      Y2.1 -> U9.21                                                                        7.45 (centre 8.73)     <= 4.0     D-105: RTC crystal moved south of the SDMMC corridor (verifier L2 r2); RTC unused on Rev A (D-75)
+DEV  xtal      Y2.2 -> U9.20                                                                        7.60 (centre 8.97)     <= 4.0     D-105: RTC crystal moved south of the SDMMC corridor (verifier L2 r2); RTC unused on Rev A (D-75)
+PASS xtal      C77.1 -> Y1.1 (load cap)                                                             0.49 (centre 1.48)     <= 2.0     
+PASS xtal      C76.1 -> Y1.3 (load cap)                                                             0.59 (centre 1.57)     <= 2.0     
+PASS xtal      C79.1 -> Y2.1 (load cap)                                                             0.49 (centre 1.77)     <= 2.0     
+PASS xtal      C78.1 -> Y2.2 (load cap)                                                             0.49 (centre 1.77)     <= 2.0     
+DEV  xtal      TP6 -> U9.69 (centre)                                                                7.18                   <= 5.0     D-104 (d): TP6 beyond the row; stub to R50.1 <= 3 mm still met
+PASS xtal      TP6 stub lower bound (TP6 -> R50.1)                                                  2.20 (centre 3.30)     <= 3.0     
+PASS xtal      OSC_XOUT lower bound: U9.69 -> R50 + TP6 stub (<= 8 mm incl. R51 in the row)         5.55                   <= 8.0     
+DEV  xtal      RTC lower bound U9.21 -> Y2.1 (length rule <= 6 mm)                                  7.45                   <= 6.0     D-105: RTC lanes ~7-8 mm (> 6 mm) to keep the SDMMC corridor; RTC unused on Rev A (D-75)
+DEV  xtal      RTC lower bound U9.20 -> Y2.2 (length rule <= 6 mm)                                  7.60                   <= 6.0     D-105: RTC lanes ~7-8 mm (> 6 mm) to keep the SDMMC corridor; RTC unused on Rev A (D-75)
+PASS xtal      TP31 -> TP6 (centre)                                                                 2.74                   <= 3.0     
+PASS buck      U6 C_IN C14.1 -> U6.4 (VIN)                                                          0.54 (centre 1.51)     <= 1.0     
+DEV  buck      U6 C_IN C14.2 -> U6.2 (GND side of the 1 mm rule)                                    2.81                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U6 C_IN C9.1 -> U6.4 (VIN)                                                           0.83 (centre 1.60)     <= 1.0     
+DEV  buck      U6 C_IN C9.2 -> U6.2 (GND side of the 1 mm rule)                                     3.30                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U6 inductor L3.1 -> U6.3 (SW)                                                        0.85 (centre 3.36)     <= 3.0     
+PASS buck      U6 divider R22.2 -> U6.5 (FB)                                                        1.23 (centre 1.90)     <= 3.0     
+PASS buck      U6 divider R15.1 -> U6.5 (FB)                                                        1.23 (centre 1.96)     <= 3.0     
+PASS buck      U6 divider C31.2 -> U6.5 (FB)                                                        2.34 (centre 2.99)     <= 3.0     
+PASS buck      U6 divider on the regulator side of R30                                              VCC_3V3_BUCK           *_BUCK     
+PASS buck      U6 cell band y 12-21                                                                 17.20                  12-21      
+PASS buck      U6 link R30 in the x 62-65 strip                                                     (63.50, 16.50)         x 62-65    
+PASS buck      U6 input east / inductor west                                                        ok                     layout.md §4.5 
+PASS buck      U7 C_IN C15.1 -> U7.4 (VIN)                                                          0.54 (centre 1.51)     <= 1.0     
+DEV  buck      U7 C_IN C15.2 -> U7.2 (GND side of the 1 mm rule)                                    2.81                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U7 C_IN C10.1 -> U7.4 (VIN)                                                          0.83 (centre 1.60)     <= 1.0     
+DEV  buck      U7 C_IN C10.2 -> U7.2 (GND side of the 1 mm rule)                                    3.30                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U7 inductor L4.1 -> U7.3 (SW)                                                        0.85 (centre 3.36)     <= 3.0     
+PASS buck      U7 divider R18.2 -> U7.5 (FB)                                                        1.23 (centre 1.90)     <= 3.0     
+PASS buck      U7 divider R16.1 -> U7.5 (FB)                                                        1.23 (centre 1.96)     <= 3.0     
+PASS buck      U7 divider C32.2 -> U7.5 (FB)                                                        2.34 (centre 2.99)     <= 3.0     
+PASS buck      U7 divider on the regulator side of R31                                              VCC_DDR_BUCK           *_BUCK     
+PASS buck      U7 cell band y 21-30                                                                 26.20                  21-30      
+PASS buck      U7 link R31 in the x 62-65 strip                                                     (63.50, 25.50)         x 62-65    
+PASS buck      U7 input east / inductor west                                                        ok                     layout.md §4.5 
+PASS buck      U4 C_IN C12.1 -> U4.4 (VIN)                                                          0.74 (centre 1.53)     <= 1.0     
+DEV  buck      U4 C_IN C12.2 -> U4.2 (GND side of the 1 mm rule)                                    2.43                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U4 C_IN C7.1 -> U4.4 (VIN)                                                           0.64 (centre 1.78)     <= 1.0     
+DEV  buck      U4 C_IN C7.2 -> U4.2 (GND side of the 1 mm rule)                                     2.93                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U4 inductor L1.1 -> U4.3 (SW)                                                        0.85 (centre 3.36)     <= 3.0     
+PASS buck      U4 divider R17.2 -> U4.5 (FB)                                                        1.08 (centre 2.00)     <= 3.0     
+PASS buck      U4 divider R13.1 -> U4.5 (FB)                                                        1.23 (centre 1.90)     <= 3.0     
+PASS buck      U4 divider C29.2 -> U4.5 (FB)                                                        2.74 (centre 3.54)     <= 3.0     
+PASS buck      U4 divider on the regulator side of JP1                                              VDD_0V9_BUCK           *_BUCK     
+PASS buck      U4 cell band y 30-39                                                                 35.20                  30-39      
+PASS buck      U4 link JP1 in the x 62-65 strip                                                     (63.70, 35.00)         x 62-65    
+PASS buck      U4 input east / inductor west                                                        ok                     layout.md §4.5 
+PASS buck      U5 C_IN C13.1 -> U5.4 (VIN)                                                          0.54 (centre 1.51)     <= 1.0     
+DEV  buck      U5 C_IN C13.2 -> U5.2 (GND side of the 1 mm rule)                                    2.81                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U5 C_IN C8.1 -> U5.4 (VIN)                                                           0.83 (centre 1.60)     <= 1.0     
+DEV  buck      U5 C_IN C8.2 -> U5.2 (GND side of the 1 mm rule)                                     3.30                   <= 1.0     D-107: the 1 mm C_IN rule applies to the VIN pad; on SOT-23-5 GND pin 2 is on the far side, the GND pad returns through the L1 pour and its vias as in [TLV] SLVSDG1C Fig. 20 p.13
+PASS buck      U5 inductor L2.1 -> U5.3 (SW)                                                        0.85 (centre 3.36)     <= 3.0     
+PASS buck      U5 divider R19.2 -> U5.5 (FB)                                                        1.23 (centre 1.90)     <= 3.0     
+PASS buck      U5 divider R14.1 -> U5.5 (FB)                                                        1.23 (centre 1.96)     <= 3.0     
+PASS buck      U5 divider C30.2 -> U5.5 (FB)                                                        2.34 (centre 2.99)     <= 3.0     
+PASS buck      U5 divider on the regulator side of R29                                              VCC_1V8_BUCK           *_BUCK     
+PASS buck      U5 cell band y 39-48                                                                 44.20                  39-48      
+PASS buck      U5 link R29 in the x 62-65 strip                                                     (63.50, 43.50)         x 62-65    
+PASS buck      U5 input east / inductor west                                                        ok                     layout.md §4.5 
+PASS power     C11.1 -> U8.5                                                                        1.27 (centre 2.06)     <= 2.0     
+PASS power     C34.1 -> U8.1                                                                        1.08 (centre 2.50)     <= 2.0     
+PASS power     R37.1 -> U8.3                                                                        0.62 (centre 1.69)     <= 2.0     
+PASS power     R61.1 -> U8.4                                                                        0.49 (centre 1.51)     <= 2.0     
+PASS power     C35.1 -> J4.1                                                                        2.77 (centre 5.55)     <= 5.0     
+PASS power     C3.1 -> U3.1                                                                         0.77 (centre 1.30)     <= 2.0     
+PASS power     C6.1 -> U3.7                                                                         0.67 (centre 1.81)     <= 3.0     
+PASS power     C21.1 -> Q4.2                                                                        0.69 (centre 1.35)     <= 2.0     
+PASS power     C22.1 -> Q4.3                                                                        0.47 (centre 1.48)     <= 2.0     
+PASS power     VBUS_USBA U8.1 -> J4.1 (octilinear x 1.2 estimate)                                   14.57                  <= 15.0    
+PASS power     input chain J1.B4 -> F1.1                                                            3.65 (centre 4.94)     <= 5.0     
+PASS power     input chain F1.2 -> D1.1                                                             0.85 (centre 2.68)     <= 5.0     
+PASS power     input chain F1.2 -> Q1.2                                                             1.60 (centre 3.81)     <= 5.0     
+PASS power     input chain F1.2 -> U3.1                                                             7.78 (centre 9.93)     <= 12.0    U3 is the on/off controller beside Q1; info limit
+PASS power     PB_IN U3.2 -> R11.2 (octilinear)                                                     5.30                   <= 10.0    
+PASS power     SW1 next to U3: U3.2 -> R11 -> SW1.1 (octilinear)                                    8.98                   <= 12.0    
+PASS power     TP29 -> TP1 (centre)                                                                 5.29                   <= 10.0    
+PASS usb       U1 within 3 mm of J1 data pins                                                       0.88                   <= 3.0     
+PASS usb       U2 within 3 mm of J4 data pins                                                       1.85                   <= 3.0     
+PASS local     C84.1 -> U11.10                                                                      0.56 (centre 1.16)     <= 2.0     
+PASS local     C81.1 -> U10.8                                                                       1.28 (centre 1.85)     <= 2.0     
+PASS local     C80.1 -> U10.8                                                                       0.78 (centre 1.69)     <= 2.0     
+PASS local     R55.2 -> U10.1                                                                       0.55 (centre 1.35)     <= 2.0     
+PASS local     C23.1 -> J2.4                                                                        0.92 (centre 1.85)     <= 2.0     
+DEV  local     C26.1 -> J2.4                                                                        3.06 (centre 4.16)     <= 2.0     D-103 (g): 10 uF in line behind C23 in the free VDD column of the J2 contact row
+PASS local     C82.1 -> J3.4                                                                        1.49 (centre 2.52)     <= 3.0     
+DEV  local     C83.1 -> J3.5                                                                        4.03 (centre 5.06)     <= 3.0     D-103 (f), D-106 (b): J3 pin 5 lies under the jack body; C83 under the 6|4 gap, RCT straight up
+PASS local     R56.2 (ETH_TXP_J) -> own jack pin J3.1 (same net, edge)                              4.52                   <= 5.0     
+PASS local     R57.2 (ETH_TXN_J) -> own jack pin J3.2 (same net, edge)                              3.58                   <= 5.0     
+DEV  local     R58.2 (ETH_RXP_J) -> own jack pin J3.3 (same net, edge)                              6.48                   <= 5.0     D-108 (b): RXP_J pad 6.48 mm from its own pin J3.3 (top row, behind pin 4); R58 cannot move north (C83/C82 under pins 5/4) and the RX swap needs it here
+DEV  local     R59.2 (ETH_RXN_J) -> own jack pin J3.6 (same net, edge)                              5.13                   <= 5.0     D-106 (b), D-108 (b): R59 0.13 mm over: the RX P/N bridge R58 sits between it and the jack
+PASS power     R12 (53 mW) >= 2 mm body gap from other parts                                        0                      0          
+PASS vcut      no MLCC body within 3 mm of x = 0 / 80                                               0                      0          
+PASS vcut      MLCCs within 5 mm of a V-cut parallel to it                                          0                      0          
+PASS sd        SDMMC corridor under the S row (row pad bottom 45.99 -> Y2.1 guard 49.40)            3.41                   >= 2.40    lanes need 1.70 mm + C64 GND via; the trial route below is the proof
+PASS nt1       NT1 pads to the nearest other-net pad (C44.2 GND)                                    0.27                   >= 0.20    
+PASS nt1       NT1 pads outside other parts' courtyards (U9 excepted: the tie sits at pin 115)      0                      0          
+PASS trial     critical nets routed at their class rules (38 nets, layer policy D-106)              0 unrouted/conflicting 0          
+PASS trial     L4 / vias used only by the planned D-106 hops                                        ETH_TXN ETH_TXP USBA_DM USBC_DM USBC_DP USB_DM VCC3V3_SD D-106 list 
+PASS trial     ETH_TXN vias / L4 length                                                             2 / 3.9 mm             <= 2 vias  at (26.0, 31.2) (23.4, 28.6)
+PASS trial     ETH_TXP vias / L4 length                                                             2 / 3.7 mm             <= 2 vias  at (25.4, 31.4) (22.8, 28.9)
+PASS trial     USBA_DM vias / L4 length                                                             2 / 1.2 mm             <= 4 vias  at (37.6, 57.8) (38.7, 57.7)
+PASS trial     USBC_DM vias / L4 length                                                             4 / 6.5 mm             <= 4 vias  at (51.4, 70.5) (47.6, 70.5) (37.5, 60.0) (37.1, 57.5)
+PASS trial     USBC_DP vias / L4 length                                                             2 / 3.4 mm             <= 4 vias  at (39.6, 57.5) (36.5, 57.1)
+PASS trial     USB_DM vias / L4 length                                                              2 / 1.5 mm             <= 4 vias  at (37.9, 49.7) (38.9, 50.7)
+PASS trial     VCC3V3_SD vias / L4 length                                                           4 / 5.3 mm             info       at (14.6, 56.8) (16.9, 60.1) (21.8, 60.5) (22.9, 60.5)
+PASS trial     XTAL lengths (mm, trial grid route from the U9 gate)                                 5                      info       OSC_XIN 6.1, OSC_XOUT 4.1, OSC_XOUT_X 1.5, RTC_XIN 6.5, RTC_XOUT 7.0
+PASS trial     ETH_DIFF lengths (mm, trial grid route from the U9 gate)                             8                      info       ETH_RXN 13.2, ETH_RXP 17.0, ETH_RXN_J 5.3, ETH_RXP_J 7.5, ETH_TXN 7.4, ETH_TXP 12.2, ETH_TXN_J 3.9, ETH_TXP_J 4.9
+PASS trial     ETH_CT lengths (mm, trial grid route from the U9 gate)                               2                      info       ETH_RCT 4.1, ETH_TCT 1.6
+PASS trial     USB_DIFF lengths (mm, trial grid route from the U9 gate)                             6                      info       USBA_DM 10.3, USBA_DP 8.9, USBC_DM 28.9, USBC_DP 24.4, USB_DM 10.2, USB_DP 10.1
+PASS trial     FSPI lengths (mm, trial grid route from the U9 gate)                                 8                      info       FSPI_CLK 0.0, FSPI_CLK_NAND 16.9, FSPI_CS0N 8.3, FSPI_CS0N_NAND 1.0, FSPI_D0 17.7, FSPI_D1 13.1, FSPI_D2 9.8, FSPI_D3 21.7
+PASS trial     PWR_SD lengths (mm, trial grid route from the U9 gate)                               1                      info       VCC3V3_SD 23.1
+PASS trial     SDMMC lengths (mm, trial grid route from the U9 gate)                                7                      info       SDMMC_CLK 0.0, SDMMC_CLK_SD 28.3, SDMMC_CMD 27.0, SDMMC_D0 30.5, SDMMC_D1 29.9, SDMMC_D2 26.7, SDMMC_D3 27.1
+PASS trial     DEFAULT lengths (mm, trial grid route from the U9 gate)                              1                      info       SDMMC_DET 28.5
+PASS trial     ETH TX vs RX separation, exact (tracks, vias, link pads; J3 pins exempt)             0.816                  >= 0.76    ETH_TXN/ETH_RXP track-track L1 near (26.48, 31.12)
+PASS trial     ETH_TXN via (26.03, 31.18) to nearest other-net pad, no-via areas                    0.550                  >= 0.15 (target 0.20) C66.1 (FEPHY_AVDD3V3)
+PASS trial     ETH_TXN via (23.38, 28.62) to nearest other-net pad, no-via areas                    > 3                    >= 0.15 (target 0.20) no other-net pad within 3 mm
+PASS trial     ETH_TXP via (25.38, 31.43) to nearest other-net pad, no-via areas                    0.290                  >= 0.15 (target 0.20) C66.2 (GND)
+PASS trial     ETH_TXP via (22.78, 28.93) to nearest other-net pad, no-via areas                    2.480                  >= 0.15 (target 0.20) R57.1 (ETH_TXN)
+PASS trial     USBA_DM via (37.62, 57.78) to nearest other-net pad, no-via areas                    1.179                  >= 0.15 (target 0.20) R60.2 (GND)
+PASS trial     USBA_DM via (38.73, 57.73) to nearest other-net pad, no-via areas                    1.550                  >= 0.15 (target 0.20) U11.3 (USBA_DP)
+PASS trial     USBC_DM via (51.38, 70.53) to nearest other-net pad, no-via areas                    0.806                  >= 0.15 (target 0.20) J1.B5 (CC2)
+PASS trial     USBC_DM via (47.62, 70.53) to nearest other-net pad, no-via areas                    0.375                  >= 0.15 (target 0.20) U1.1 (USBC_DP)
+PASS trial     USBC_DM via (37.52, 60.03) to nearest other-net pad, no-via areas                    0.400                  >= 0.15 (target 0.20) U2.1 (USBA_DP)
+PASS trial     USBC_DM via (37.08, 57.53) to nearest other-net pad, no-via areas                    0.707                  >= 0.15 (target 0.20) R60.2 (GND)
+PASS trial     USBC_DP via (39.58, 57.48) to nearest other-net pad, no-via areas                    1.302                  >= 0.15 (target 0.20) U11.4 (USBA_DM)
+PASS trial     USBC_DP via (36.48, 57.12) to nearest other-net pad, no-via areas                    0.255                  >= 0.15 (target 0.20) R60.2 (GND)
+PASS trial     USB_DM via (37.88, 49.68) to nearest other-net pad, no-via areas                     0.854                  >= 0.15 (target 0.20) D2.1 (VCC3V3_RTC_IN)
+PASS trial     USB_DM via (38.93, 50.73) to nearest other-net pad, no-via areas                     1.041                  >= 0.15 (target 0.20) D2.1 (VCC3V3_RTC_IN)
+PASS trial     VCC3V3_SD via (14.62, 56.78) to nearest other-net pad, no-via areas                  1.900                  >= 0.15 (target 0.20) C22.2 (GND)
+PASS trial     VCC3V3_SD via (16.93, 60.08) to nearest other-net pad, no-via areas                  0.262                  >= 0.15 (target 0.20) C26.2 (GND)
+PASS trial     VCC3V3_SD via (21.78, 60.53) to nearest other-net pad, no-via areas                  > 3                    >= 0.15 (target 0.20) no other-net pad within 3 mm
+PASS trial     VCC3V3_SD via (22.88, 60.53) to nearest other-net pad, no-via areas                  > 3                    >= 0.15 (target 0.20) no other-net pad within 3 mm
+DEV  trial     ETH_RX P/N lengths gate->J3 (P 24.51, N 18.51 mm, + ~1.5 mm fan)                     skew 6.00              <= 1.27    D-108 (b): RX P/N skew of the untuned trial route; removed by a serpentine on RXN in L5 (RXP total stays <= 30 mm)
+DEV  trial     ETH_RX uncoupled length (P line > pitch + 0.3 mm from N; P/N swap at the links)      11.34                  <= 5.0     D-108 (b): RX pair split around R59/R58 and from R58 to J3 pins 6/3 (top/bottom rows 3.8 mm apart); layout.md allows the RX split around pins 4/5
+PASS trial     ETH_RX longest line incl. fan (layout.md §4.2 <= 30 mm)                              26.01                  <= 30.0    tuning the short line to the long one keeps it <= 30
+DEV  trial     ETH_TX P/N lengths gate->J3 (P 17.08, N 11.26 mm, + ~1.5 mm fan)                     skew 5.82              <= 1.27    D-108 (b): TX P/N skew of the untuned trial route; removed by a serpentine on the short line in L5
+DEV  trial     ETH_TX uncoupled length (P line > pitch + 0.3 mm from N; P/N swap at the links)      6.74                   <= 5.0     D-108 (b): TX pair split at the R57/R56 P/N swap and into J3 pins 2/1 (rows 2.54 mm apart)
+PASS trial     ETH_TX longest line incl. fan (layout.md §4.2 <= 30 mm)                              18.58                  <= 30.0    tuning the short line to the long one keeps it <= 30
+PASS trial     VCC3V3_SD: J2.4, C23.1, C26.1 on L1, no via between C23 and J2                       ok                     joined     vias (14.62, 56.78) (16.93, 60.08) (21.78, 60.53) (22.88, 60.53)
+PASS trial     SD supply pocket between the other-net L1 tracks around J2.4/C23/C26 (y 58.48-64.23) 2.20                   >= 0.90    track edges x 16.75 / 18.95
+PASS drc       courtyards_overlap                                                                   0                      0          
+PASS drc       malformed_courtyard                                                                  0                      0          
+PASS drc       missing_courtyard                                                                    0                      0          
+PASS drc       missing_footprint                                                                    0                      0          
+PASS drc       extra_footprint                                                                      0                      0          
+PASS drc       duplicate_footprints                                                                 0                      0          
+PASS drc       footprint                                                                            0                      0          
+PASS drc       shorting_items                                                                       0                      0          
+PASS drc       copper_edge_clearance (pads too close to / off the board edge)                       0                      0          
+PASS drc       unconnected items (expected before routing)                                          499                    info       
+PASS drc       other DRC items (info; routing-phase or library-table messages)                      {"silk_edge_clearance": 2, "lib_footprint_mismatch": 3, "silk_overlap": ">= 199 (capped)", "silk_over_copper": ">= 199 (capped)"} info       
+
+SUMMARY: 339 checks: 277 PASS, 62 DEV (recorded deviations), 0 FAIL

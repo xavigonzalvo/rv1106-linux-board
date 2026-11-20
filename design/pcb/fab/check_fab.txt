@@ -1,0 +1,54 @@
+check_fab (TP-L6): 53 PASS, 0 FAIL
+PASS L6-origin  aux (drill / place) origin = panel lower-left corner of Edge.Cuts: aux page (45.000, 130.000) mm, Edge.Cuts lower-left (45.000, 130.000) mm = board (-5.0, 80.0)
+PASS L6-files   every Gerber / drill / job / map / BOM / CPL / PDF / render / netlist / zip file present: 30 files checked, missing none
+PASS L6-layer   F.Cu (rv1106-reva-F_Cu.gtl): X2 FileFunction Copper,L1,Top, mm, 4.6: FileFunction 'Copper,L1,Top', unit MM, 1363 flashes, 2589 draws, 51 regions, extents x 3.350..86.650 y 0.401..79.600
+PASS L6-layer   In1.Cu (rv1106-reva-In1_Cu.g1): X2 FileFunction Copper,L2,Inr, mm, 4.6: FileFunction 'Copper,L2,Inr', unit MM, 737 flashes, 0 draws, 1 regions, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-layer   In2.Cu (rv1106-reva-In2_Cu.g2): X2 FileFunction Copper,L3,Inr, mm, 4.6: FileFunction 'Copper,L3,Inr', unit MM, 737 flashes, 0 draws, 243 regions, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-layer   B.Cu (rv1106-reva-B_Cu.gbl): X2 FileFunction Copper,L4,Bot, mm, 4.6: FileFunction 'Copper,L4,Bot', unit MM, 737 flashes, 489 draws, 33 regions, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-layer   F.Mask (rv1106-reva-F_Mask.gts): X2 FileFunction Soldermask,Top, mm, 4.6: FileFunction 'Soldermask,Top', unit MM, 705 flashes, 0 draws, 1 regions, extents x 1.500..88.500 y 1.800..78.100
+PASS L6-layer   B.Mask (rv1106-reva-B_Mask.gbs): X2 FileFunction Soldermask,Bot, mm, 4.6: FileFunction 'Soldermask,Bot', unit MM, 81 flashes, 0 draws, 0 regions, extents x 1.500..88.500 y 1.800..78.100
+PASS L6-layer   F.Paste (rv1106-reva-F_Paste.gtp): X2 FileFunction Paste,Top, mm, 4.6: FileFunction 'Paste,Top', unit MM, 597 flashes, 0 draws, 0 regions, extents x 14.280..81.320 y 3.570..77.475
+PASS L6-layer   B.Paste (rv1106-reva-B_Paste.gbp): X2 FileFunction Paste,Bot, mm, 4.6: FileFunction 'Paste,Bot', unit MM, 0 flashes, 0 draws, 0 regions, extents empty
+PASS L6-layer   F.SilkS (rv1106-reva-F_Silkscreen.gto): X2 FileFunction Legend,Top, mm, 4.6: FileFunction 'Legend,Top', unit MM, 705 flashes, 5438 draws, 12 regions, extents x 6.233..84.030 y 0.155..79.420
+PASS L6-layer   B.SilkS (rv1106-reva-B_Silkscreen.gbo): X2 FileFunction Legend,Bot, mm, 4.6: FileFunction 'Legend,Bot', unit MM, 81 flashes, 0 draws, 0 regions, extents empty
+PASS L6-layer   Edge.Cuts (rv1106-reva-Edge_Cuts.gm1): X2 FileFunction Profile,NP, mm, 4.6: FileFunction 'Profile,NP', unit MM, 0 flashes, 32 draws, 0 regions, extents x -0.050..90.050 y -0.050..80.050
+PASS L6-layer   V-CUT (rv1106-reva-V-CUT.gbr): X2 FileFunction Other,User, mm, 4.6: FileFunction 'Other,User', unit MM, 0 flashes, 2 draws, 0 regions, extents x 4.925..85.075 y -0.075..80.075
+PASS L6-job     job file lists the 12 Gerbers, 4 layers, 1.6 mm, ENIG: 12 files, LayerNumber 4, thickness 1.6, finish ENIG, impedance True
+PASS L6-outline Edge.Cuts: one closed loop, 90 x 80 mm, lower-left at (0, 0): 1 loop(s) from 320 pieces (arcs as 5 deg chords), 0 open ends; x 0.000..90.000 y 0.000..80.000 = 90.000 x 80.000 mm
+PASS L6-vcut    V-CUT file = exactly two vertical full-height lines at Gerber x = 5 / 85 (board x = 0 / 80): 2 draws, 0 flashes, 0 regions: [(5.0, 0.0, 5.0, 80.0), (85.0, 0.0, 85.0, 80.0)]
+PASS L6-inside  F.Cu: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 3151180 px drawn, extents x 3.350..86.650 y 0.401..79.600
+PASS L6-vcutcu  F.Cu: board copper >= 0.8 mm from the V-cut lines (D-H6), raster: board side 0.80 mm (west copper from x 5.82, east to x 84.18); rail copper (fiducials) 0.64 mm
+PASS L6-inside  In1.Cu: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 3677839 px drawn, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-vcutcu  In1.Cu: board copper >= 0.8 mm from the V-cut lines (D-H6), raster: board side 0.80 mm (west copper from x 5.82, east to x 84.18); rail copper (fiducials) nan mm
+PASS L6-inside  In2.Cu: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 3424763 px drawn, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-vcutcu  In2.Cu: board copper >= 0.8 mm from the V-cut lines (D-H6), raster: board side 0.80 mm (west copper from x 5.82, east to x 84.18); rail copper (fiducials) nan mm
+PASS L6-inside  B.Cu: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 3411195 px drawn, extents x 5.800..84.200 y 0.401..79.600
+PASS L6-vcutcu  B.Cu: board copper >= 0.8 mm from the V-cut lines (D-H6), raster: board side 0.80 mm (west copper from x 5.82, east to x 84.18); rail copper (fiducials) nan mm
+PASS L6-inside  F.Mask: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 452444 px drawn, extents x 1.500..88.500 y 1.800..78.100
+PASS L6-inside  B.Mask: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 144771 px drawn, extents x 1.500..88.500 y 1.800..78.100
+PASS L6-inside  F.Paste: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 241406 px drawn, extents x 14.280..81.320 y 3.570..77.475
+PASS L6-inside  B.Paste: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 0 px drawn, extents empty
+PASS L6-inside  F.SilkS: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 237136 px drawn, extents x 6.233..84.030 y 0.155..79.420
+PASS L6-inside  B.SilkS: nothing outside the board outline (extents inside 0..90 x 0..80; raster 0.04 mm px, outline grown 0.08 mm): 0 px outside, 0 px drawn, extents empty
+PASS L6-drillfmt rv1106-reva-PTH.drl: X2 FileFunction Plated,1,4,PTH, METRIC, every tool has a TA.AperFunction: FileFunction 'Plated,1,4,PTH', metric True, tools T1 0.300 ViaDrill: 670 holes; T2 0.600 ComponentDrill: 0 holes + 4 slots; T3 0.890 ComponentDrill: 8 holes; T4 1.000 ComponentDrill: 47 holes; T5 1.020 ComponentDrill: 4 holes; T6 1.630 ComponentDrill: 2 holes; T7 2.300 ComponentDrill: 2 holes
+PASS L6-drillfmt rv1106-reva-NPTH.drl: X2 FileFunction NonPlated,1,4,NPTH, METRIC, every tool has a TA.AperFunction: FileFunction 'NonPlated,1,4,NPTH', metric True, tools T1 0.650 ComponentDrill: 2 holes; T2 1.000 ComponentDrill: 2 holes; T3 2.000 ComponentDrill: 4 holes; T4 3.200 ComponentDrill: 4 holes; T5 3.250 ComponentDrill: 2 holes
+PASS L6-vias    ViaDrill hits = board vias, all 0.3 mm; no 0.3 mm ComponentDrill tool: ViaDrill 670 hits (tools [1]), board vias 670 (drills [0.3]); 0.3 ComponentDrill tools: 0
+PASS L6-viapos  every ViaDrill hit sits on a board via (<= 0.006 mm, aux origin): 0 of 670 hits without a board via
+PASS L6-holes   PTH round component holes per size: Excellon = board pads: file {0.89: 8, 1.0: 47, 1.02: 4, 1.63: 2, 2.3: 2} / board {0.89: 8, 1.0: 47, 1.02: 4, 1.63: 2, 2.3: 2} (total 63 / 63)
+PASS L6-slots   PTH slots per width: Excellon (G85) = board oval pads: file {0.6: 4} / board {0.6: 4}
+PASS L6-holes   NPTH round component holes per size: Excellon = board pads: file {0.65: 2, 1.0: 2, 2.0: 4, 3.2: 4, 3.25: 2} / board {0.65: 2, 1.0: 2, 2.0: 4, 3.2: 4, 3.25: 2} (total 14 / 14)
+PASS L6-slots   NPTH slots per width: Excellon (G85) = board oval pads: file {} / board {}
+PASS L6-tooling 4 tooling holes 2.0 mm NPTH in the NPTH file at the board positions: TH1 (2.50, 70.00) 2.00 mm; TH2 (2.50, 10.00) 2.00 mm; TH3 (87.50, 70.00) 2.00 mm; TH4 (87.50, 10.00) 2.00 mm
+PASS L6-fid     5 fiducials: 1.0 mm copper + 2.0 mm mask opening flashed, no paste: FID1 (56.00, 60.00); FID2 (24.50, 28.80); GFID1 (3.85, 76.15); GFID2 (3.85, 3.85); GFID3 (86.15, 76.15)
+PASS L6-bpaste  B.Paste empty (no bottom parts): 0 items
+PASS L6-cols    CPL / BOM column names as JLC's templates: CPL ['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation']; BOM ['Comment', 'Designator', 'Footprint', 'LCSC Part #']
+PASS L6-flags   board attributes: bom.csv parts not DNP / excluded; every other footprint excluded from BOM and position files: 193 assembled, 46 not assembled (of 239 footprints)
+PASS L6-cplrefs CPL holds every assembled ref exactly once and no not-assembled ref: 193 rows, 193 unique, duplicates none, missing none, extra none, not-assembled refs in CPL none
+PASS L6-cplxy   CPL Mid X / Mid Y = board pad-bbox centre in the aux origin (<= 0.01 mm): max deviation 0.00007 mm (C1); all rows Layer Top: True
+PASS L6-cplrot  CPL rotation = KiCad rotation + one correction per footprint, equal to the cpl-rotations.md family table: 29 footprints: CP_Elec_6.3x5.9 +180, RV1106_QFN-128-1EP_12.3x12.3mm_P0.35mm_EPboardvias +270, SOT-23 +180, SOT-23-5 +180, SOT-23-6 +180, TI_RSE0010A_UQFN-10_1.5x2mm_P0.5mm +270, TSOT-23-8 +180, WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm +270; mismatches none
+PASS L6-cplpol  every orientation-sensitive part (ICs, diodes, LEDs, C35, Q, crystals 4-pad, switches, connectors, U9) listed once in cpl-rotations.md: 31 listed (31 rows), expected 31; missing none
+PASS L6-bomrefs BOM designators = CPL designators, each once: 193 BOM refs, 193 CPL refs, symmetric difference none
+PASS L6-lcsc    every BOM row has one LCSC number, one row per unique part, rows = bom.csv rows: 63 rows (bom.csv 63), 63 unique LCSC numbers, empty 0
+PASS L6-bomsrc  every BOM ref has the bom.csv LCSC number: mismatches none
+PASS L6-dnp     not-assembled list = board footprints without a part, disjoint from the BOM: 46 listed: 31 TP, 5 fiducial, 8 holes, others ['JP1', 'NT1']
+PASS L6-zip     upload zip = 12 Gerbers + 2 Excellon + job file, byte-identical to gerbers/: 15 entries, identical True, extra none, missing none

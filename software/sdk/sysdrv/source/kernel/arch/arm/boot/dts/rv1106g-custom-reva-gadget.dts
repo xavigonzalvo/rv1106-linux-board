@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * RV1106G3 custom Linux board, Rev A -- alternative build: USB-C device/gadget (as the Luckfox
+ * Pro/Max, dr_mode = "peripheral"); USB-A off. See D-96.
+ */
+
+#define BOARD_USB_GADGET
+
+/dts-v1/;
+
+#include "rv1106.dtsi"
+#include "rv1106-evb.dtsi"
+#include "rv1106-custom-reva.dtsi"

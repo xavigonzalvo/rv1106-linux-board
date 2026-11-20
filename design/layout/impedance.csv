@@ -1,0 +1,8 @@
+item,w_mm,s_mm,z_ohm,ref_ohm,note
+validation w=0.2,0.2,,70.63,70.26,"FD (t=10 um, no mask) vs Hammerstad-Jensen + Wheeler thickness correction"
+validation w=0.35,0.35,,52.89,52.97,"FD (t=10 um, no mask) vs Hammerstad-Jensen + Wheeler thickness correction"
+ETH_DIFF chosen,0.235,0.2,99.66,100.0,"Zdiff; fine-grid (h/84) 98.47; Zcm 35.30; with L1 GND pour at 0.5 mm 99.44; etch corners (w +-20 %, s -+20 %, JLC track tolerance) 88.3..112.6"
+USB_DIFF chosen,0.255,0.15,90.33,90.0,"Zdiff; fine-grid (h/84) 89.18; Zcm 34.94; with L1 GND pour at 0.5 mm 90.15; etch corners (w +-20 %, s -+20 %, JLC track tolerance) 79.6..102.6"
+single-ended w=0.15,0.15,,73.16,,information: DEFAULT/SDMMC/FSPI trace on L1 over L2
+single-ended w=0.1,0.1,,83.85,,information: DEFAULT/SDMMC/FSPI trace on L1 over L2
+single-ended 50 ohm,,,,50,not needed on this board (no single-ended controlled-impedance net)

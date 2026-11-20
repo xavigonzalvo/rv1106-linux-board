@@ -1,0 +1,214 @@
+(footprint "TI_RSE0010A_UQFN-10_1.5x2mm_P0.5mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "TI RSE (R-PUQFN-N10) 1.5x2.0mm, pitch 0.5mm; TI land pattern 4208106-3/E (TS3USB221A SCDS277A p.24), package 4207268-3/D (p.23); pin 1 top-left, drawn rotated 90 deg CW from the TI top view")
+	(tags "UQFN-10 RSE TI TS3USB221A")
+	(property "Reference" "REF**"
+		(at 0 -2.4 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TI_RSE0010A_UQFN-10_1.5x2mm_P0.5mm"
+		(at 0 2.4 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "TI RSE (R-PUQFN-N10) 1.5x2.0mm, pitch 0.5mm; TI land pattern 4208106-3/E (TS3USB221A SCDS277A p.24), package 4207268-3/D (p.23); pin 1 top-left, drawn rotated 90 deg CW from the TI top view"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts (xy -0.45 -1) (xy 0.75 -1) (xy 0.75 1) (xy -0.75 1) (xy -0.75 -0.7))
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -1.15 -1.4)
+		(end -0.222697 -1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 0.222697 -1.4)
+		(end 1.15 -1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 1.15 -1.4)
+		(end 1.15 -0.947697)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 1.15 0.947697)
+		(end 1.15 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -1.15 1.4)
+		(end -0.222697 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start 0.222697 1.4)
+		(end 1.15 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -1.15 -1.4)
+		(end -1.15 -0.947697)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -1.15 0.947697)
+		(end -1.15 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_circle
+		(center -1.42 -1.2)
+		(end -1.32 -1.2)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+	)
+	(fp_rect
+		(start -1.65 -1.53)
+		(end 1.28 1.53)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.35 0.35)
+				(thickness 0.0525)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -0.6375 -0.75)
+		(size 0.575 0.3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "6" smd rect
+		(at 0.6375 0.75)
+		(size 0.575 0.3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "2" smd rect
+		(at -0.6375 -0.25)
+		(size 0.575 0.25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "7" smd rect
+		(at 0.6375 0.25)
+		(size 0.575 0.25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "3" smd rect
+		(at -0.6375 0.25)
+		(size 0.575 0.25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "8" smd rect
+		(at 0.6375 -0.25)
+		(size 0.575 0.25)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "4" smd rect
+		(at -0.6375 0.75)
+		(size 0.575 0.3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "9" smd rect
+		(at 0.6375 -0.75)
+		(size 0.575 0.3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "5" smd rect
+		(at 0 0.86)
+		(size 0.35 0.63)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(pad "10" smd rect
+		(at 0 -0.86)
+		(size 0.35 0.63)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+	)
+	(embedded_fonts no)
+)

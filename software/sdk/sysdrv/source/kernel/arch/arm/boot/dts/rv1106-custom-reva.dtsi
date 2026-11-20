@@ -1,0 +1,335 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * RV1106G3 custom Linux board, Rev A -- board body (shared by both .dts variants).
+ *
+ * Derived from the Luckfox Pico Pro/Max device tree [SDK]:
+ *   https://github.com/LuckfoxTECH/luckfox-pico/tree/main/sysdrv/source/kernel/arch/arm/boot/dts
+ *   rv1106g-luckfox-pico-pro-max.dts      (local copy design/refs/luckfox-sdk-dts/)
+ *   rv1106-luckfox-pico-pro-max-ipc.dtsi  (NOT included: it claims header/SD pins, research.md 7.1, D-28)
+ *   rv1106-evb.dtsi                       (included by the .dts, as the Pro/Max does)
+ * Pin numbers and nets: design/pinmap.csv. Decisions: design/decisions.md D-92 .. D-98.
+ * Checked by software/tools/check_software.py (gate TP-D8).
+ *
+ * Do not add: an io-domain node (VCCIO3-6 are hard-wired to 3.3 V, research.md 3), pmic_sleep
+ * pinctrl on GPIO0_A3/A4 (D-20), the Luckfox acodec pa-ctl / dht11 / fbtft nodes (D-28).
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/pinctrl/rockchip.h>
+
+/ {
+	model = "RV1106G3 Custom Board Rev A";
+	/* Board string first, then the Pro/Max strings unchanged so SDK code that matches them still does. */
+	compatible = "custom,rv1106g3-reva", "rockchip,rv1103g-38x38-ipc-v10", "rockchip,rv1106g3";
+
+	chosen {
+		/* Copied from [SDK] rv1106-luckfox-pico-pro-max-ipc.dtsi L9 (console on ttyFIQ0 = UART2_M1, 115200). */
+		bootargs = "earlycon=uart8250,mmio32,0xff4c0000 console=ttyFIQ0 root=/dev/mmcblk1p7 rootwait snd_soc_core.prealloc_buffer_size_kbytes=16 coherent_pool=0";
+	};
+
+	/*
+	 * rv1106-evb.dtsi adds "restart-poweroff" (evb L29-31), which would make poweroff a reboot
+	 * and would also take pm_power_off before gpio-poweroff (gpio-poweroff.c L54-60). R4 needs a
+	 * real power-off, so it is removed (D-93).
+	 */
+	/delete-node/ restart-poweroff;
+
+	/* Fixed rails, copied from [SDK] ipc.dtsi L25-51 (same regulators as [LF]: VCC_1V8 U5, VCC_3V3 U6, VDD_0V9 U4). */
+	vcc_1v8: vcc-1v8 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc_1v8";
+		regulator-always-on;
+		regulator-boot-on;
+		regulator-min-microvolt = <1800000>;
+		regulator-max-microvolt = <1800000>;
+	};
+
+	vcc_3v3: vcc-3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc_3v3";
+		regulator-always-on;
+		regulator-boot-on;
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+
+	/* VDD_ARM = VDD_0V9 through copper NT_ARM (D-06, D-68): fixed 0.90 V, no DVFS. */
+	vdd_arm: vdd-arm {
+		compatible = "regulator-fixed";
+		regulator-name = "vdd_arm";
+		regulator-min-microvolt = <800000>;
+		regulator-max-microvolt = <1000000>;
+		regulator-init-microvolt = <900000>;
+		regulator-always-on;
+		regulator-boot-on;
+	};
+
+	/*
+	 * R4 software path (D-93, power.md 6.2):
+	 * LTC2954 INT -> PB_INT_N (pin 60, GPIO0_A2, 4.7k pull-up, low while the button is pressed)
+	 * -> KEY_POWER -> acpid / board-powerkeyd -> poweroff -> kernel_power_off() -> gpio-poweroff.
+	 */
+	gpio-keys {
+		compatible = "gpio-keys";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pb_int_n_pin>;
+
+		power-key {
+			label = "power";
+			gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_POWER>;
+			debounce-interval = <20>;
+			wakeup-source;
+		};
+	};
+
+	/*
+	 * Last step of a clean shutdown: PWR_KILL (pin 63, GPIO0_A4, active high, reset pull-down +
+	 * 100k pull-down) -> Q_KILL -> LTC2954 KILL low -> EN released -> Q_PWR off (power.md 6.1/6.2).
+	 * The driver holds the line low (inactive) from probe (GPIOD_OUT_LOW, gpio-poweroff.c L66).
+	 */
+	gpio_poweroff: gpio-poweroff {
+		compatible = "gpio-poweroff";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pwr_kill_pin>;
+		gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
+		timeout-ms = <3000>;
+		/* Ignored by the stock driver; used only if software/patches/0001 is applied (D-93). */
+		custom,override-pm-power-off;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		pinctrl-0 = <&led_status_pin &led_eth_pin>;
+
+		/* LED_STATUS: pin 62 GPIO0_A3_u, VCC_3V3 -> R -> LED -> pin, active low (D-20, D-69). */
+		led_status: led-status {
+			label = "status";
+			gpios = <&gpio0 RK_PA3 GPIO_ACTIVE_LOW>;
+			linux,default-trigger = "heartbeat";
+			default-state = "off";
+		};
+
+		/* LED_ETH: pin 74 GPIO1_A2_d, pin -> R -> LED -> GND, active high; netdev trigger set by S15board (D-21). */
+		led_eth: led-eth {
+			label = "eth";
+			gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "netdev";
+			default-state = "off";
+		};
+	};
+};
+
+/********** CPU: fixed 0.90 V rail, keep only OPPs whose target voltage the rail meets (D-94) **********/
+&cpu0 {
+	cpu-supply = <&vdd_arm>;
+};
+
+&cpu0_opp_table {
+	/delete-node/ opp-1296000000;
+	/delete-node/ opp-1416000000;
+	/delete-node/ opp-1512000000;
+	/delete-node/ opp-1608000000;
+};
+
+/********** Audio is not fitted (D-12): evb.dtsi enables i2s0_8ch, turn it off **********/
+&i2s0_8ch {
+	status = "disabled";
+};
+
+/********** ADC: RECOVERY/MASKROM key on SARADC_IN0 (adc-keys from evb.dtsi), copied from ipc.dtsi L93-96 **********/
+&saradc {
+	status = "okay";
+	vref-supply = <&vcc_1v8>;
+};
+
+/********** SPI NAND (W25N01KV, 128 MB), copied from [SDK] pro-max.dts L40-49 **********/
+&sfc {
+	status = "okay";
+
+	flash@0 {
+		compatible = "spi-nand";
+		reg = <0>;
+		spi-max-frequency = <75000000>;
+		spi-rx-bus-width = <4>;
+		spi-tx-bus-width = <1>;
+	};
+};
+
+/********** microSD on SDMMC0, 4-bit, fixed 3.3 V (D-13); removable with card detect (D-95) **********/
+&sdmmc {
+	max-frequency = <50000000>;
+	no-sdio;
+	no-mmc;
+	bus-width = <4>;
+	cap-mmc-highspeed;
+	cap-sd-highspeed;
+	disable-wp;
+	no-1-8-v;
+	pinctrl-names = "default";
+	pinctrl-0 = <&sdmmc0_clk &sdmmc0_cmd &sdmmc0_det &sdmmc0_bus4>;
+	status = "okay";
+};
+
+/********** Ethernet: embedded 10/100 PHY (evb.dtsi enables gmac and sets rmii_phy) **********/
+&gmac {
+	status = "okay";
+};
+
+/********** USB 2.0 OTG port behind the 2:1 mux (D-05). Controller role set by the .dts (D-96). **********/
+&u2phy {
+	status = "okay";
+};
+
+&u2phy_otg {
+	rockchip,dis-u2-susphy;
+	status = "okay";
+};
+
+&usbdrd {
+	status = "okay";
+};
+
+&usbdrd_dwc3 {
+	status = "okay";
+#ifdef BOARD_USB_GADGET
+	dr_mode = "peripheral";
+#else
+	dr_mode = "host";
+#endif
+};
+
+/********** 2x20 header peripherals (D-22): only the M1/M0 groups listed in pinmap.csv **********/
+&i2c3 {
+	status = "okay";
+	clock-frequency = <100000>;
+	pinctrl-0 = <&i2c3m1_xfer>;
+};
+
+&i2c1 {
+	status = "okay";
+	clock-frequency = <100000>;
+	pinctrl-0 = <&i2c1m1_xfer>;
+};
+
+&uart3 {
+	status = "okay";
+	pinctrl-0 = <&uart3m1_xfer>;
+};
+
+&spi0 {
+	status = "okay";
+	/* spi0m0 without cs1: SPI0_CS1_M0 is pin 86 = I2C3_SDA on this board. */
+	pinctrl-0 = <&spi0m0_pins &spi0m0_cs0>;
+
+	spidev@0 {
+		compatible = "rockchip,spidev";
+		reg = <0>;
+		spi-max-frequency = <50000000>;
+	};
+};
+
+&pwm8 {
+	status = "okay";
+	pinctrl-0 = <&pwm8m1_pins>;
+};
+
+&pwm9 {
+	status = "okay";
+	pinctrl-0 = <&pwm9m1_pins>;
+};
+
+&pwm10 {
+	status = "okay";
+	pinctrl-0 = <&pwm10m1_pins>;
+};
+
+&pwm11 {
+	status = "okay";
+	pinctrl-0 = <&pwm11m1_pins>;
+};
+
+/********** RTC (32.768 kHz crystal, copied from pro-max.dts L132-135) **********/
+&rtc {
+	status = "okay";
+};
+
+/********** Board GPIOs **********/
+&pinctrl {
+	board-gpio {
+		/* External 4.7k pull-up to VCC_3V3 (D-19): internal bias off. */
+		pb_int_n_pin: pb-int-n-pin {
+			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		/* Keeps the reset pull-down direction (D-20). Never mux to pmic_sleep_m0 (func 1). */
+		pwr_kill_pin: pwr-kill-pin {
+			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_down>;
+		};
+
+		/* Never mux to pmic_sleep_m1 (func 1). */
+		led_status_pin: led-status-pin {
+			rockchip,pins = <0 RK_PA3 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		led_eth_pin: led-eth-pin {
+			rockchip,pins = <1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+};
+
+/*
+ * gpio-line-names = pinmap.csv net names, so `gpioinfo` shows the schematic names.
+ * USB_SEL (GPIO0_A6) and USBA_VBUS_EN (GPIO0_A5) are left free: /usr/sbin/board-usb drives them
+ * (D-96), so the bring-up can switch VBUS and the mux by hand (bringup.md step 11). Until then they
+ * sit at their reset pull-downs + external 10k pull-downs: mux on USB-C, USB-A VBUS off (D-20).
+ */
+&gpio0 {
+	gpio-line-names =
+		/* A0-A7 */ "", "SDMMC_PWREN", "PB_INT_N", "LED_STATUS", "PWR_KILL", "USBA_VBUS_EN", "USB_SEL", "",
+		/* B0-B7 */ "", "", "", "", "", "", "", "",
+		/* C0-C7 */ "", "", "", "", "", "", "", "",
+		/* D0-D7 */ "", "", "", "", "", "", "", "";
+
+	/* SDMMC_PWREN low = card powered (D-13, D-20): hogged so user space cannot cut the root card. */
+	sdmmc-pwren-hog {
+		gpio-hog;
+		gpios = <RK_PA1 GPIO_ACTIVE_HIGH>;
+		output-low;
+		line-name = "SDMMC_PWREN";
+	};
+};
+
+&gpio1 {
+	gpio-line-names =
+		/* A0-A7 */ "HDR_GPIO1_A0", "HDR_GPIO1_A1", "LED_ETH", "HDR_GPIO1_A3", "HDR_GPIO1_A4", "", "", "",
+		/* B0-B7 */ "HDR_GPIO1_B0", "HDR_GPIO1_B1", "UART2_TX", "UART2_RX", "", "", "", "",
+		/* C0-C7 */ "HDR_SPI0_CS0", "HDR_SPI0_SCLK", "HDR_SPI0_MOSI", "HDR_SPI0_MISO", "HDR_PWM8", "HDR_PWM9", "HDR_PWM10", "HDR_PWM11",
+		/* D0-D7 */ "HDR_UART3_TX", "HDR_UART3_RX", "HDR_I2C3_SDA", "HDR_I2C3_SCL", "", "", "", "";
+};
+
+&gpio2 {
+	gpio-line-names =
+		/* A0-A7 */ "HDR_GPIO2_A0", "HDR_GPIO2_A1", "HDR_GPIO2_A2", "HDR_GPIO2_A3", "HDR_GPIO2_A4", "HDR_GPIO2_A5", "HDR_GPIO2_A6", "HDR_GPIO2_A7",
+		/* B0-B7 */ "HDR_I2C1_SCL", "HDR_I2C1_SDA", "", "", "", "", "", "",
+		/* C0-C7 */ "", "", "", "", "", "", "", "",
+		/* D0-D7 */ "", "", "", "", "", "", "", "";
+};
+
+&gpio3 {
+	gpio-line-names =
+		/* A0-A7 */ "", "SDMMC_DET", "SDMMC_D1", "SDMMC_D0", "SDMMC_CLK", "SDMMC_CMD", "SDMMC_D3", "SDMMC_D2",
+		/* B0-B7 */ "", "", "", "", "", "", "", "",
+		/* C0-C7 */ "", "", "", "", "", "", "", "",
+		/* D0-D7 */ "", "", "", "", "", "", "", "";
+};
+
+&gpio4 {
+	gpio-line-names =
+		/* A0-A7 */ "", "", "FSPI_D2", "FSPI_D1", "FSPI_D0", "", "FSPI_D3", "",
+		/* B0-B7 */ "FSPI_CS0N", "FSPI_CLK", "", "", "", "", "", "",
+		/* C0-C7 */ "RECOVERY", "SARADC_IN1", "", "", "", "", "", "",
+		/* D0-D7 */ "", "", "", "", "", "", "", "";
+};

@@ -1,0 +1,8 @@
+#!/bin/sh
+# R4: short press of the POWER button while on -> clean Linux shutdown (D-93, power.md 6.2).
+# Spawned by BusyBox acpid for KEY_POWER ("button/power PWRF 00000080" -> action PWRF/00000080,
+# busybox util-linux/acpid.c f_evt_tab/f_act_tab). poweroff makes init run its ::shutdown
+# actions (rcK, umount -a -r) and then reboot(RB_POWER_OFF); the kernel's gpio-poweroff driver
+# then drives PWR_KILL high and the LTC2954 removes power.
+logger -t powerkey "POWER button pressed: clean shutdown" 2>/dev/null
+exec /sbin/poweroff

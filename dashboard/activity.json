@@ -1,0 +1,1397 @@
+[
+  {
+    "at": "2026-10-28T23:53:51Z",
+    "phase": 1,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt",
+    "seq": 1
+  },
+  {
+    "at": "2026-10-29T00:03:09Z",
+    "phase": 1,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 1 (Architecture & block diagram) is done, with all three outputs PLAN.md asks for, plus the shared log entry. I checked them against gate TP-D1 myself; the Verifier has not reviewed them yet.",
+    "seq": 2
+  },
+  {
+    "at": "2026-10-29T00:03:46Z",
+    "phase": 1,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Checking gate TP-D1 against primary sources",
+    "seq": 3
+  },
+  {
+    "at": "2026-10-29T00:10:17Z",
+    "phase": 1,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 blocker/major, 7 minor. Phase 1 fails gate TP-D1 on one major item; the gate's own two checks are met. Every requirement R1–R8 maps to a block, and the 29 named interfaces carry signal",
+    "seq": 4
+  },
+  {
+    "at": "2026-10-29T00:10:45Z",
+    "phase": 1,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing verifier findings",
+    "seq": 5
+  },
+  {
+    "at": "2026-10-29T00:14:18Z",
+    "phase": 1,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2 of Phase 1 is done. All 8 findings from verifier round 1 are fixed (1 major, 7 minor). No minor finding was skipped, and nothing from round 1 was removed.",
+    "seq": 6
+  },
+  {
+    "at": "2026-10-29T00:14:47Z",
+    "phase": 1,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Checking gate TP-D1 against primary sources",
+    "seq": 7
+  },
+  {
+    "at": "2026-10-29T00:20:00Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Building the RV1106G3 pin map from the datasheet and Luckfox reference",
+    "seq": 8
+  },
+  {
+    "at": "2026-10-29T00:21:55Z",
+    "phase": 1,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 6 minor. Phase 1 passes gate TP-D1 in round 2, with no blockers and no majors. I read every output file myself. All 8 round-1 fixes are present: PWR_KILL is active-high ",
+    "seq": 9
+  },
+  {
+    "at": "2026-10-29T00:40:00Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Coordinator",
+    "event": "Paused",
+    "detail": "Workflow paused to add this activity view; Phase 2 restarts from the files already on disk",
+    "seq": 10
+  },
+  {
+    "seq": 11,
+    "at": "2026-10-29T00:37:13Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at reference research & pin map; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 12,
+    "at": "2026-10-29T00:43:38Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 2 (reference research and pin map) finished; self-check passes 11 of 11 gate TP-D2 items. Files: research.md, pinmap.csv, decisions.md, LOG.md, tools/check_pinmap.py, tools/ds_pins.py"
+  },
+  {
+    "seq": 13,
+    "at": "2026-10-29T00:43:38Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D2"
+  },
+  {
+    "seq": 14,
+    "at": "2026-10-29T00:50:31Z",
+    "phase": 2,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "Phase 2 does not pass gate TP-D2 yet: 0 blockers, 1 major, 4 minor findings. Main issue: USB VBUS-detect can back-power the switched-off SoC."
+  },
+  {
+    "seq": 15,
+    "at": "2026-10-29T00:51:18Z",
+    "phase": 2,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 5 findings: USB VBUS-detect divider source (pin 25), overstated Luckfox SDK interface claims (D-22), missing header I2C pull-ups, debug UART back-powering, weak pin-map checks"
+  },
+  {
+    "seq": 16,
+    "at": "2026-10-29T00:59:00Z",
+    "phase": 2,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Fixed all 5 round-1 verifier findings. Pin-map self-check now 17 pass, 0 fail. Updated pinmap, research, decisions, architecture, checker and log."
+  },
+  {
+    "seq": 17,
+    "at": "2026-10-29T00:59:00Z",
+    "phase": 2,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D2."
+  },
+  {
+    "seq": 18,
+    "at": "2026-10-29T01:04:54Z",
+    "phase": 2,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 4 minor. Phase 2 passes gate TP-D2 in round 2, with no blocker or major findings and 4 minor ones."
+  },
+  {
+    "seq": 19,
+    "at": "2026-10-29T01:05:37Z",
+    "phase": 3,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at power architecture; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 20,
+    "at": "2026-10-29T01:24:53Z",
+    "phase": 3,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Finished Phase 3 (Power architecture). Self-check script passes 29/29 checks for gate TP-D3. Files: power.md, power_rails.csv, check_power.py, decisions.md."
+  },
+  {
+    "seq": 21,
+    "at": "2026-10-29T01:24:53Z",
+    "phase": 3,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D3."
+  },
+  {
+    "seq": 22,
+    "at": "2026-10-29T01:33:37Z",
+    "phase": 3,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "3 blocker/major, 5 minor. Phase 3 (power architecture) does not pass gate TP-D3 yet: three major issues remain."
+  },
+  {
+    "seq": 23,
+    "at": "2026-10-29T01:34:07Z",
+    "phase": 3,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 8 findings, incl. U4/U7 output filters not TI-proven, Q_PWR P-MOSFET briefly turning on at cable plug-in, and gaps in the power sequencing proof (power.md §3, check_power.py P7)"
+  },
+  {
+    "seq": 24,
+    "at": "2026-10-29T01:49:17Z",
+    "phase": 3,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2: all 3 major and 5 minor verifier findings fixed, no regressions. Updated power.md, power_rails.csv, check_power.py, decisions.md, architecture.md, LOG.md."
+  },
+  {
+    "seq": 25,
+    "at": "2026-10-29T01:49:17Z",
+    "phase": 3,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D3."
+  },
+  {
+    "seq": 26,
+    "at": "2026-10-29T02:00:11Z",
+    "phase": 3,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "Round 2 failed: 1 major, 8 minor. Main issue: total output capacitance on the core rail (with SoC decoupling) is outside what TI tested for the regulator."
+  },
+  {
+    "seq": 27,
+    "at": "2026-10-29T02:00:43Z",
+    "phase": 3,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 9 verifier findings: regulator capacitor counting (TLV62569 Table 4), a stale bold note in architecture.md §3, and the Luckfox R32 (VDD_0V9 to VDD_ARM) 0R value, among others"
+  },
+  {
+    "seq": 28,
+    "at": "2026-10-29T02:11:17Z",
+    "phase": 3,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Fixed all 9 round-2 findings (1 major, 8 minor). Self-check: 70 pass, 0 fail, 4 left for Phase 4 purchasing. Updated power.md, power_rails.csv, check_power.py, decisions.md, architecture.md."
+  },
+  {
+    "seq": 29,
+    "at": "2026-10-29T02:11:17Z",
+    "phase": 3,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D3"
+  },
+  {
+    "seq": 30,
+    "at": "2026-10-29T02:18:44Z",
+    "phase": 3,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 3 minor. Phase 3 passes gate TP-D3 in round 3, with no blocker or major findings and 3 minor ones."
+  },
+  {
+    "seq": 31,
+    "at": "2026-10-29T02:19:18Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at part selection & bom; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 32,
+    "at": "2026-10-29T08:23:43Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 4 done but gate TP-D4 does not pass: two items fail, both need your decision, neither is a design error. Files: bom.csv, cost.md, BOM tools, decisions.md"
+  },
+  {
+    "seq": 33,
+    "at": "2026-10-29T08:23:43Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D4"
+  },
+  {
+    "seq": 34,
+    "at": "2026-10-29T08:33:22Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "2 blockers, 8 minor. Gate TP-D4 not met: SoC stock (23) is below the 100-unit rule and 5 boards cost about $414 vs $200. Both are human decisions, not design errors."
+  },
+  {
+    "seq": 35,
+    "at": "2026-10-29T08:33:55Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 10 findings: RV1106G3 stock too low (gate B2), 5-board cost $413.80 over budget (gate B6), fuse F1 hold-current derating, and others"
+  },
+  {
+    "seq": 36,
+    "at": "2026-10-29T08:49:43Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2: fixed all 8 minor findings. The 2 blockers (SoC stock, cost) need the human, so gate TP-D4 still fails. Files: bom.csv, cost.md, decisions.md, power.md, power_rails.csv, LOG.md"
+  },
+  {
+    "seq": 37,
+    "at": "2026-10-29T08:49:43Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D4"
+  },
+  {
+    "seq": 38,
+    "at": "2026-10-29T08:57:01Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "3 blocker/major, 3 minor. Gate TP-D4 fails. Besides the 2 human-decision blockers, 1 new fixable blocker: costs assume Economic PCBA, which cannot assemble the 0.35 mm-pitch SoC."
+  },
+  {
+    "seq": 39,
+    "at": "2026-10-29T08:57:33Z",
+    "phase": 4,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 6 findings: Economic PCBA cannot assemble the RV1106G3 (cost model invalid); Gate B2 RV1106G3 (C5328706) low stock at JLCPCB; Gate B6 cost for 5 assembled boards is $417.51 over target; plus 3 more"
+  },
+  {
+    "seq": 40,
+    "at": "2026-10-29T09:08:36Z",
+    "phase": 4,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 3 fixes all six verifier findings. Gate TP-D4 still fails on the same 2 items only the human can clear (SoC stock below 100). Files: check_bom.py, make_refmap.py, refmap.csv, cost.md, decisions.md, power.md"
+  },
+  {
+    "seq": 41,
+    "at": "2026-10-29T09:08:36Z",
+    "phase": 4,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D4"
+  },
+  {
+    "seq": 42,
+    "at": "2026-10-29T09:12:49Z",
+    "phase": 4,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "2 blocker/major, 3 minor. Gate TP-D4 still fails, on the same two items. Only the human can clear them. This is round 3 of 3, so it escalates to the human."
+  },
+  {
+    "seq": 43,
+    "at": "2026-10-29T09:19:52Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Restarted with the owner's decision: 2 assembled + 3 bare boards, 70 × 70 mm, Rev A cost cap $380, SoC stock ≥ boards + 2"
+  },
+  {
+    "seq": 44,
+    "at": "2026-10-29T09:30:24Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 4 reworked per owner decision D-H2; amended gate TP-D4 passes (check_bom.py: 475 pass, 0 fail). Files: bom.csv, cost.md, refmap.csv, decisions.md, architecture.md, LOG.md"
+  },
+  {
+    "seq": 45,
+    "at": "2026-10-29T09:30:24Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D4"
+  },
+  {
+    "seq": 46,
+    "at": "2026-10-29T09:39:26Z",
+    "phase": 4,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 major, 4 minor. Gate TP-D4 (amended by D-H2) does not pass yet; the rest of the gate holds up when re-run. Main issue: 0R links in the core supply path."
+  },
+  {
+    "seq": 47,
+    "at": "2026-10-29T09:39:58Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 5 findings: 0R links in series with CPU core supply, refmap names for buck measurement links, lcsc_fetch.py library-type parsing, LED net naming, and others"
+  },
+  {
+    "seq": 48,
+    "at": "2026-10-29T09:47:32Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2 done; gate TP-D4 (amended by D-H2) passes: check_bom.py gives 477 pass, 0 fail. Rev A total $360.35. Updated BOM, refmap and power-check tools."
+  },
+  {
+    "seq": 49,
+    "at": "2026-10-29T09:47:32Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D4"
+  },
+  {
+    "seq": 50,
+    "at": "2026-10-29T09:53:01Z",
+    "phase": 4,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 2 minor. Gate TP-D4, as amended by D-H2, is met."
+  },
+  {
+    "seq": 51,
+    "at": "2026-10-29T09:53:46Z",
+    "phase": 5,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at schematic; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 52,
+    "at": "2026-10-29T10:18:30Z",
+    "phase": 5,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 5 (Schematic) done; gate TP-D5 passes on clean rebuild: 1622 pass, 0 fail. Files: design/schematic/ lib, power, button, soc, clocks, storage .py"
+  },
+  {
+    "seq": 53,
+    "at": "2026-10-29T10:18:30Z",
+    "phase": 5,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D5"
+  },
+  {
+    "seq": 54,
+    "at": "2026-10-29T10:30:16Z",
+    "phase": 5,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 7 minor. Gate TP-D5 passes: no blocker or major findings, 7 minor ones. I re-ran everything myself; results below."
+  },
+  {
+    "seq": 55,
+    "at": "2026-10-29T10:31:08Z",
+    "phase": 6,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at test points & bring-up plan; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 56,
+    "at": "2026-10-29T10:49:28Z",
+    "phase": 6,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 6 finished. Self-check of gate TP-D6 passes: check_schematic 1691 pass, 0 fail; check_bom 477/0. Updated testpoints.md, bringup.md, decisions.md, power_rails.csv, power.md."
+  },
+  {
+    "seq": 57,
+    "at": "2026-10-29T10:49:28Z",
+    "phase": 6,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D6"
+  },
+  {
+    "seq": 58,
+    "at": "2026-10-29T10:59:38Z",
+    "phase": 6,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 major, 4 minor. Gate TP-D6 not met yet: one major ordering gap and four minor findings remain. The test-point clause is fully met."
+  },
+  {
+    "seq": 59,
+    "at": "2026-10-29T11:00:12Z",
+    "phase": 6,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 5 findings: first power-up step runs with JP1 bridged and R29-R31 fitted; unpowered resistance checks ignore body diodes; Step 3 current limit is below turn-on inrush"
+  },
+  {
+    "seq": 60,
+    "at": "2026-10-29T11:08:55Z",
+    "phase": 6,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2 fixes all 5 verifier findings (1 major, 4 minor). Gate TP-D6 self-check passes: check_schematic 1694/0, check_power 84/0. Updated bringup.md, testpoints.md, power_rails.csv, decisions.md."
+  },
+  {
+    "seq": 61,
+    "at": "2026-10-29T11:08:55Z",
+    "phase": 6,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D6"
+  },
+  {
+    "seq": 62,
+    "at": "2026-10-29T11:17:37Z",
+    "phase": 6,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 4 minor (carried). Gate TP-D6 met; nothing blocks the first board. Round-1 major closed: steps 1.B and 1.Q isolate buck outputs and diode-check Q_PWR first."
+  },
+  {
+    "seq": 63,
+    "at": "2026-10-29T11:18:05Z",
+    "phase": 7,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at layout constraints; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 64,
+    "at": "2026-10-29T11:45:14Z",
+    "phase": 7,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 7 (layout constraints) done. Self-check check_layout.py: 828 pass, 0 fail; earlier checks unchanged. Files: layout.md plus netclasses, placement, zones, impedance and trace-width tables."
+  },
+  {
+    "seq": 65,
+    "at": "2026-10-29T11:45:14Z",
+    "phase": 7,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D7"
+  },
+  {
+    "seq": 66,
+    "at": "2026-10-29T11:55:17Z",
+    "phase": 7,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 major, 3 minor. Phase 7 fails gate TP-D7: placement zones (SoC, power input, NAND, USB-A power) are too small for their parts. Also J1 rotation, DRC rules, stencil thickness."
+  },
+  {
+    "seq": 67,
+    "at": "2026-10-29T11:55:49Z",
+    "phase": 7,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 4 findings: placement zones over capacity, inconsistent USB-C J1 origin, and design rules that would produce unclearable DRC errors"
+  },
+  {
+    "seq": 68,
+    "at": "2026-10-29T12:16:03Z",
+    "phase": 7,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Redid Phase 7 round 2 and fixed all four verifier findings. Gate TP-D7 self-check passes: check_layout 1010 pass, 0 fail. Files: layout.md, zones/placement/lengths CSVs, board.kicad_dru."
+  },
+  {
+    "seq": 69,
+    "at": "2026-10-29T12:16:03Z",
+    "phase": 7,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D7"
+  },
+  {
+    "seq": 70,
+    "at": "2026-10-29T12:26:38Z",
+    "phase": 7,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "Round 2 fails gate TP-D7: 1 major (inner power-plane plan out of date), 5 minor. All 4 round-1 findings fixed."
+  },
+  {
+    "seq": 71,
+    "at": "2026-10-29T12:27:12Z",
+    "phase": 7,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 6 findings: stale round-1 inner power-plane plan in layout.md 2.3; net-class clearances wider than the 0.16 mm gap; contradictory crystal rules; and others"
+  },
+  {
+    "seq": 72,
+    "at": "2026-10-29T12:41:29Z",
+    "phase": 7,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 3: fixed the major and all 5 minor round-2 findings. Self-check passes (check_layout 1259 pass, 0 fail). Updated layout tools, layout.md, planes, power paths and placement."
+  },
+  {
+    "seq": 73,
+    "at": "2026-10-29T12:41:29Z",
+    "phase": 7,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D7"
+  },
+  {
+    "seq": 74,
+    "at": "2026-10-29T12:51:37Z",
+    "phase": 7,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blockers, 0 majors, 4 minors. Gate TP-D7 met: every high-speed or sensitive net has a rule and trace widths are computed for the stackup."
+  },
+  {
+    "seq": 75,
+    "at": "2026-10-29T12:52:05Z",
+    "phase": 8,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at software; producing the outputs listed in PLAN.md"
+  },
+  {
+    "seq": 76,
+    "at": "2026-10-29T13:18:41Z",
+    "phase": 8,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase 8 (Software) finished; self-check passes gate TP-D8 with 51 pass, 0 fail. Outputs: README, SDK notes, custom device tree files and kernel config."
+  },
+  {
+    "seq": 77,
+    "at": "2026-10-29T13:18:41Z",
+    "phase": 8,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-reading outputs and re-checking pins, voltages and parts against the datasheets for gate TP-D8"
+  },
+  {
+    "seq": 78,
+    "at": "2026-10-29T13:31:01Z",
+    "phase": 8,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 5 minor. Phase 8 meets gate TP-D8."
+  },
+  {
+    "seq": 79,
+    "at": "2026-10-29T20:20:13Z",
+    "phase": 9,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Layout started (owner decision D-H4): drawing the 6 custom footprints in KiCad 10, starting with the 128-pin SoC"
+  },
+  {
+    "seq": 80,
+    "at": "2026-10-29T20:23:49Z",
+    "phase": 9,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Layout started (owner decision D-H4): drawing the 6 custom footprints in KiCad 10, starting with the 128-pin SoC"
+  },
+  {
+    "seq": 81,
+    "at": "2026-10-29T20:40:37Z",
+    "phase": 9,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Drew the six custom footprints for L1 in design/pcb/board.pretty/ (SoC QFN-128, USB switch, inductor, button, microSD, USB-A); all gate checks pass."
+  },
+  {
+    "seq": 82,
+    "at": "2026-10-29T20:40:37Z",
+    "phase": 9,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the footprints in KiCad against the drawings and layout.md for gate TP-L1"
+  },
+  {
+    "seq": 83,
+    "at": "2026-10-29T20:49:42Z",
+    "phase": 9,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 6 minor. Gate TP-L1 passes; only minor findings remain."
+  },
+  {
+    "seq": 84,
+    "at": "2026-10-29T20:50:27Z",
+    "phase": 10,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L2 Board build & placement"
+  },
+  {
+    "seq": 85,
+    "at": "2026-10-29T21:42:10Z",
+    "phase": 10,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Built the board from the netlist and placed every part. Checker: 197 checks, 175 pass, 22 recorded deviations, 0 fail. Scripts in design/pcb/scripts/, board design/pcb/rv1106-reva.kicad_pcb."
+  },
+  {
+    "seq": 86,
+    "at": "2026-10-29T21:42:10Z",
+    "phase": 10,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L2"
+  },
+  {
+    "seq": 87,
+    "at": "2026-10-29T21:55:28Z",
+    "phase": 10,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "2 blockers, 5 minor. TP-L2 not met: SoC ring-1 fan-out and FSPI east-side fan-out cannot be routed as placed; C1, C22 and 10 distance rules off; checker gaps."
+  },
+  {
+    "seq": 88,
+    "at": "2026-10-29T21:56:43Z",
+    "phase": 10,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 7 findings: U9 fan-out not routable as placed; FSPI fan-out on U9 east side needs an L1 crossing; C22 too far from Q4 drain; plus distance-rule fixes."
+  },
+  {
+    "seq": 89,
+    "at": "2026-10-29T23:12:49Z",
+    "phase": 10,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Redid the U9 ring-1 placement and fixed every verifier finding; board ready for checkpoint 1. Changed escape, place, check_placement, build_board, boardlib scripts and the board file."
+  },
+  {
+    "seq": 90,
+    "at": "2026-10-29T23:12:49Z",
+    "phase": 10,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L2"
+  },
+  {
+    "seq": 91,
+    "at": "2026-10-29T23:40:08Z",
+    "phase": 10,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "4 major, 3 minor. Gate TP-L2 not met: placement checks are clean, but SD, FSPI, USB and ETH cannot be routed under layout.md's own layer rules as placed."
+  },
+  {
+    "seq": 92,
+    "at": "2026-10-29T23:41:27Z",
+    "phase": 10,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 7 findings: SD card escape boxed in by Y2, FSPI needs two crossings, USB pairs need crossovers on top layer, Ethernet pair order, buck cap grounding, checker gaps"
+  },
+  {
+    "seq": 93,
+    "at": "2026-10-30T00:54:02Z",
+    "phase": 10,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 3 of L2 done. All seven verifier findings fixed or recorded. Placement checker: 304 checks, 251 pass, 53 recorded deviations. Updated build, place, escape, check and trial-route scripts."
+  },
+  {
+    "seq": 94,
+    "at": "2026-10-30T00:54:02Z",
+    "phase": 10,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L2"
+  },
+  {
+    "seq": 95,
+    "at": "2026-10-30T01:15:12Z",
+    "phase": 10,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 blocker/major, 4 minor. TP-L2 fails on one major Ethernet finding. Everything the placement gate itself asks for checks out and reproduces."
+  },
+  {
+    "seq": 96,
+    "at": "2026-10-30T02:11:24Z",
+    "phase": 10,
+    "round": 4,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 5 findings: unproven Ethernet route for owner approval, USB hop vias failing clearance, SD trial route missing VCC3V3_SD, and two more"
+  },
+  {
+    "seq": 97,
+    "at": "2026-10-30T02:47:51Z",
+    "phase": 10,
+    "round": 4,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 4 of L2: all five verifier findings fixed or recorded; gate TP-L2 passes. Placement unchanged. Routing trial scripts and board updated."
+  },
+  {
+    "seq": 98,
+    "at": "2026-10-30T02:47:51Z",
+    "phase": 10,
+    "round": 4,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L2"
+  },
+  {
+    "seq": 99,
+    "at": "2026-10-30T03:05:22Z",
+    "phase": 10,
+    "round": 4,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 6 minor. TP-L2 is met and the round-3 Ethernet major is fixed. Rebuilt from scratch in a scratch copy (build_board.py, place.py, checker) and it matched."
+  },
+  {
+    "seq": 100,
+    "at": "2026-10-31T21:29:57Z",
+    "phase": 11,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L3 Planes & SoC escape"
+  },
+  {
+    "seq": 101,
+    "at": "2026-10-31T23:09:53Z",
+    "phase": 11,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L3 Planes & SoC escape is built; TP-L3 gate passes on a board rebuilt from scratch by rebuild_all.sh. Main files: rv1106-reva.kicad_pcb, .kicad_dru, planes.csv, planevias.csv."
+  },
+  {
+    "seq": 102,
+    "at": "2026-10-31T23:09:53Z",
+    "phase": 11,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L3."
+  },
+  {
+    "seq": 103,
+    "at": "2026-10-31T23:28:43Z",
+    "phase": 11,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "3 blocker/major, 5 minor. TP-L3 fails: L3 decoupler vias trap 17 escape lanes, the VDD_0V9 neck is about 0.8 mm wide, and the checker does not FAIL via shortfalls."
+  },
+  {
+    "seq": 104,
+    "at": "2026-10-31T23:29:33Z",
+    "phase": 11,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 8 findings: ring-1 decoupler vias in reserved lane channels; narrow VDD_0V9 L3 neck from JP1; check_planevias over-reporting in check_routing.py; and others"
+  },
+  {
+    "seq": 105,
+    "at": "2026-11-01T03:57:26Z",
+    "phase": 11,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 2 not delivered: no board, script, decisions.md or LOG.md changes. This pass only investigated the verifier's findings, so gate TP-L3 stays open."
+  },
+  {
+    "seq": 106,
+    "at": "2026-11-01T03:57:26Z",
+    "phase": 11,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L3"
+  },
+  {
+    "seq": 107,
+    "at": "2026-11-01T09:01:41Z",
+    "phase": 11,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "TP-L3 round 2 FAIL: 5 blocker/major, 5 minor. No new executor output; ring-1 plane vias still block 16 lanes, VDD_0V9 neck still choked, checks still cannot fail."
+  },
+  {
+    "seq": 108,
+    "at": "2026-11-01T09:19:16Z",
+    "phase": 11,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 10 findings: decoupler vias in D-104 lanes, NAND boot bus (FSPI_CS0N/D2) and SDMMC_DET/D1 trapped by VCC_3V3 vias, VDD_0V9 neck, crystal clearance, USB ESD GND vias"
+  },
+  {
+    "seq": 109,
+    "at": "2026-11-01T14:10:08Z",
+    "phase": 11,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 3 of L3 done: every verifier finding fixed and gate TP-L3 passes on a board rebuilt from scratch. Changed board file and routing/placement scripts."
+  },
+  {
+    "seq": 110,
+    "at": "2026-11-01T14:10:08Z",
+    "phase": 11,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L3"
+  },
+  {
+    "seq": 111,
+    "at": "2026-11-01T14:34:09Z",
+    "phase": 11,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "TP-L3 passes: board rebuilt from scratch in a scratch copy. 0 blocker/major, 5 minor findings carried (core-pin vias, lane neck-down, ring-1 cap vias, plane width metric, L3 void)."
+  },
+  {
+    "seq": 112,
+    "at": "2026-11-01T14:35:00Z",
+    "phase": 12,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L4 Critical routing"
+  },
+  {
+    "seq": 113,
+    "at": "2026-11-01T17:50:46Z",
+    "phase": 12,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "TP-L4 not yet passing: DRC shows 0 errors, but 5 power pads are unconnected, so VCC_1V8 and VCC_DDR (2 of 58 critical nets) are still open."
+  },
+  {
+    "seq": 114,
+    "at": "2026-11-01T17:50:46Z",
+    "phase": 12,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L4"
+  },
+  {
+    "seq": 115,
+    "at": "2026-11-01T18:07:55Z",
+    "phase": 12,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "4 blocker/major, 8 minor. TP-L4 is not met."
+  },
+  {
+    "seq": 116,
+    "at": "2026-11-01T18:09:01Z",
+    "phase": 12,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 12 findings: unconnected VCC_DDR/VCC_1V8 pads, USB-C skew measured on net totals, uncoupled USB pairs after U11, and others"
+  },
+  {
+    "seq": 117,
+    "at": "2026-11-01T21:25:13Z",
+    "phase": 12,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L4 round 2 finished. All verifier findings fixed or recorded as deviations in decisions.md D-112; results from a full rebuild. Scripts: l4_route, l4lib, l4check, pathlen, l4_rules, l4_report."
+  },
+  {
+    "seq": 118,
+    "at": "2026-11-01T21:25:13Z",
+    "phase": 12,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L4"
+  },
+  {
+    "seq": 119,
+    "at": "2026-11-01T21:53:34Z",
+    "phase": 12,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 6 minor. L4 round 2 passes gate TP-L4. My checks found no blocker and no major issue, only minor items and owner decisions."
+  },
+  {
+    "seq": 120,
+    "at": "2026-11-01T21:54:00Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L5 Remaining routing"
+  },
+  {
+    "seq": 121,
+    "at": "2026-11-02T00:33:41Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "First L5 attempt. Gate TP-L5 not met yet: 42 unconnected items on 27 nets remain (106 after L4). Files: rv1106-reva.kicad_pcb, routing-review.md, routing-report.md, DRC json."
+  },
+  {
+    "seq": 122,
+    "at": "2026-11-02T00:33:41Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board in KiCad against layout.md for gate TP-L5."
+  },
+  {
+    "seq": 123,
+    "at": "2026-11-02T00:57:55Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "3 blocker/major, 7 minor. **TP-L5 is NOT met.** I confirmed it independently. This is not CHECKPOINT 2."
+  },
+  {
+    "seq": 124,
+    "at": "2026-11-02T00:59:00Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 10 findings: open SoC supply nets (VCC3V3_RTC, AVDD1V8_USB), open boot/power control nets (NPOR), 13 open north GPIO lanes, mislabeled silkscreen and others"
+  },
+  {
+    "seq": 125,
+    "at": "2026-11-02T04:58:46Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L5 round 2 done. Gate TP-L5 not met: 30 unconnected items on 24 nets remain (round 1: 42 on 27). Remaining items need owner decisions."
+  },
+  {
+    "seq": 126,
+    "at": "2026-11-02T04:58:46Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board in KiCad against the drawings and layout.md for gate TP-L5."
+  },
+  {
+    "seq": 127,
+    "at": "2026-11-02T05:26:59Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "6 blocker/major, 5 minor. TP-L5 is NOT met. I confirmed this independently."
+  },
+  {
+    "seq": 128,
+    "at": "2026-11-02T05:27:28Z",
+    "phase": 13,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 11 findings: TP-L5 gate not met (30 unconnected items on 24 nets), UART2_RX_HDR open so debug console has no input, USBA_VBUS_EN split into 3 islands, and more"
+  },
+  {
+    "seq": 129,
+    "at": "2026-11-02T10:50:37Z",
+    "phase": 13,
+    "round": 3,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Round 3 not passed: gate TP-L5 fails with 10 unconnected items on 9 nets (round 2: 30 on 24). Six need an owner decision. Scripts: l5_north, l5_prune, l5_inner_probe and others."
+  },
+  {
+    "seq": 130,
+    "at": "2026-11-02T10:50:37Z",
+    "phase": 13,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board and footprints in KiCad against the drawings and layout.md for gate TP-L5"
+  },
+  {
+    "seq": 131,
+    "at": "2026-11-02T11:14:54Z",
+    "phase": 13,
+    "round": 3,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "4 blocker/major, 5 minor. TP-L5 is not passed, so the board is not ready for CHECKPOINT 2."
+  },
+  {
+    "seq": 132,
+    "at": "2026-11-02T11:15:22Z",
+    "phase": 13,
+    "round": 4,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 9 verifier findings: DRC gate TP-L5 not met, net handoffs (USB_SEL, PB_INT_N, SDMMC_PWREN), ring-2 decoupling distance, D-115 moves, CC1 via, LED silk"
+  },
+  {
+    "seq": 133,
+    "at": "2026-11-02T13:13:23Z",
+    "phase": 13,
+    "round": 4,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Routed board meets gate TP-L5: clean rebuild_all.sh (13.5 min) ends with KiCad DRC at 0 errors and 0 unconnected. Scripts: l5_finish.py, l5_tidy.py, l5_run.sh, rebuild_all.sh, l4_export.py."
+  },
+  {
+    "seq": 134,
+    "at": "2026-11-02T13:13:23Z",
+    "phase": 13,
+    "round": 4,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L5"
+  },
+  {
+    "seq": 135,
+    "at": "2026-11-02T13:30:41Z",
+    "phase": 13,
+    "round": 4,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 blocker/major, 4 minor. Gate TP-L5 is not met yet: one major finding remains, and everything else checks out."
+  },
+  {
+    "seq": 136,
+    "at": "2026-11-07T04:44:08Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L5F Review fixes (D-H6)"
+  },
+  {
+    "seq": 137,
+    "at": "2026-11-07T10:27:37Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Did phase L5F (D-H6 \"Yes, fix all (POFV)\", D-117). Rebuilt board: 0 DRC errors, 0 unconnected, 0 dangling. Files: rv1106-reva.kicad_pcb, via_in_pad.csv, fix-review.md, routing reports."
+  },
+  {
+    "seq": 138,
+    "at": "2026-11-07T10:27:37Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L5F"
+  },
+  {
+    "seq": 139,
+    "at": "2026-11-07T11:00:28Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 blocker/major, 5 minor. L5F does not pass: one gate requirement is unmet, so this needs your decision."
+  },
+  {
+    "seq": 140,
+    "at": "2026-11-07T11:00:54Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 6 findings, including: copper too close to the V-cuts on three header lanes, five USB/ETH pair-hop vias without nearby GND stitching, and six test-point labels hidden on silk"
+  },
+  {
+    "seq": 141,
+    "at": "2026-11-07T12:10:43Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L5F round 2 done: all six verifier findings addressed; the major and four minors fixed, one minor (pair-via stitching) skipped with a written reason. Board and l5f/l5 scripts updated."
+  },
+  {
+    "seq": 142,
+    "at": "2026-11-07T12:10:43Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L5F"
+  },
+  {
+    "seq": 143,
+    "at": "2026-11-07T12:44:58Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 3 minor. L5F round 2 meets gate TP-L5F. There is no blocker or major finding, only three minors."
+  },
+  {
+    "seq": 144,
+    "at": "2026-11-07T17:12:37Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L5G Re-review fixes (D-H7)"
+  },
+  {
+    "seq": 145,
+    "at": "2026-11-07T18:34:12Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "Phase L5G done (D-H7 \"Yes, fix and accept\"). Every change is scripted (l5g_run.sh and l5g_*.py), wired into rebuild_all.sh after l5f_run.sh; board updated."
+  },
+  {
+    "seq": 146,
+    "at": "2026-11-07T18:34:12Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L5G"
+  },
+  {
+    "seq": 147,
+    "at": "2026-11-07T19:01:00Z",
+    "phase": 13,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Rejected",
+    "detail": "1 major, 4 minor. Nine of ten gate items met and confirmed. Fails on RTC crystal spacing: RTC_XOUT is 0.321 mm from SDMMC_D2 (gate asks 0.5); needs an owner decision on D-122."
+  },
+  {
+    "seq": 148,
+    "at": "2026-11-07T19:01:15Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "Fixing 5 findings: RTC_XOUT to SDMMC_D2 spacing below 0.5 mm; side-by-side run lengths from l5glib.side_runs; test-pad label '3' (TP3) placement; U9 footprint mismatch; and one more"
+  },
+  {
+    "seq": 149,
+    "at": "2026-11-07T21:08:28Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L5G round 2 done; gate checks pass. Verifier's major finding fixed with one placement change (C58 moved) the owner still has to confirm. Scripts: l5g_fix.py, l5glib.py, l5gcheck.py, l5g_silk*.py."
+  },
+  {
+    "seq": 150,
+    "at": "2026-11-07T21:08:28Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L5G"
+  },
+  {
+    "seq": 151,
+    "at": "2026-11-07T21:33:27Z",
+    "phase": 13,
+    "round": 2,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 4 minor. L5G round 2 passes the TP-L5G gate; the verifier re-ran and re-measured everything independently."
+  },
+  {
+    "seq": 152,
+    "at": "2026-11-07T21:33:40Z",
+    "phase": 14,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Started",
+    "detail": "First attempt at L6 Fabrication outputs"
+  },
+  {
+    "seq": 153,
+    "at": "2026-11-07T23:25:40Z",
+    "phase": 14,
+    "round": 1,
+    "actor": "Executor",
+    "event": "Handed to verifier",
+    "detail": "L6 fabrication outputs finished; gate TP-L6 met with one limit: JLC rotation corrections are recalled community values (UNVERIFIED). Files: l6_fab.py, l6_run.sh, check_fab.py, mutate_fab.py, rebuild_all.sh, board"
+  },
+  {
+    "seq": 154,
+    "at": "2026-11-07T23:25:40Z",
+    "phase": 14,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Started review",
+    "detail": "Re-measuring the board/footprints in KiCad against the drawings and layout.md for gate TP-L6"
+  },
+  {
+    "seq": 155,
+    "at": "2026-11-07T23:49:24Z",
+    "phase": 14,
+    "round": 1,
+    "actor": "Verifier",
+    "event": "Passed",
+    "detail": "0 blocker/major, 6 minor. L6 (fabrication outputs) passes its gate TP-L6. I found no blocker and no major problem, only 6 minor ones."
+  }
+]

@@ -1,0 +1,37 @@
+#!/bin/sh
+# ai-detect: YOLOv5 object detection web UI on port 8080.
+# Binaries live in /root/ai-detect (the FAT32 microSD is mounted without exec);
+# the model and the uploads folder live on the microSD, /mnt/sdcard/ai-detect.
+
+DIR=/root/ai-detect
+SD=/mnt/sdcard/ai-detect
+PIDFILE=/var/run/ai-detect.pid
+LOG=/tmp/ai-detect.log
+
+start() {
+	# udev mounts the card asynchronously; wait up to 15 s for the model
+	i=0
+	while [ ! -f "$SD/model/yolov5.rknn" ] && [ $i -lt 15 ]; do sleep 1; i=$((i + 1)); done
+	if [ ! -f "$SD/model/yolov5.rknn" ]; then
+		echo "ai-detect: $SD/model/yolov5.rknn not found (microSD missing?), not starting"
+		return 1
+	fi
+	mkdir -p "$SD/uploads"
+	echo "Starting ai-detect on :8080"
+	start-stop-daemon -S -b -m -p "$PIDFILE" -x /bin/sh -- -c \
+		"exec $DIR/server -detector $DIR/detector -model $SD/model/yolov5.rknn \
+		 -labels $SD/model/labels.txt -uploads $SD/uploads >> $LOG 2>&1"
+}
+
+stop() {
+	echo "Stopping ai-detect"
+	start-stop-daemon -K -p "$PIDFILE" -s TERM 2>/dev/null
+	rm -f "$PIDFILE"
+}
+
+case "$1" in
+	start) start ;;
+	stop) stop ;;
+	restart|reload) stop; sleep 1; start ;;
+	*) echo "Usage: $0 {start|stop|restart}"; exit 1 ;;
+esac

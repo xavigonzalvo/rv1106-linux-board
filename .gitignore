@@ -1,0 +1,28 @@
+# --- downloads that can be fetched again (see software/README.md, BOARD-QUICKSTART.md) ---
+thirdparty/
+software/tools/rkdeveloptool/
+
+# --- environments / caches ---
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+
+# --- intermediate PCB routing trials (kept locally, not in the repo) ---
+design/pcb/trial/
+design/pcb/l5/
+design/pcb/l5f/
+*.log
+!design/**/LOG.md
+
+# --- build outputs ---
+software/examples/ai-detect/server/server
+software/examples/ai-detect/detector/build/
+software/examples/ai-detect/detector/build-host/
+software/examples/hello-http/hello-http
+software/examples/hello-c/hello-c
+
+# --- stray files ---
+skidl_REPL.*
+log/

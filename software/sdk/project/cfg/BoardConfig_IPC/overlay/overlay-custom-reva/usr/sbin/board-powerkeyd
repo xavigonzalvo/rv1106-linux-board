@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+"""board-powerkeyd -- fallback power-key daemon for the RV1106G3 custom board, Rev A (D-93).
+
+Used only when BusyBox has no `acpid` applet (S50powerkey picks it). It waits for KEY_POWER
+(code 116) press events from the gpio-keys input device (PB_INT_N, GPIO0_A2) and runs the
+action, by default `/sbin/poweroff`. Standard library only (python3 is in the Luckfox
+Buildroot defconfig: BR2_PACKAGE_PYTHON3=y).
+
+    board-powerkeyd [--device PATH] [--action CMD] [--once] [--name NAME]
+
+--device: an evdev node (or a file of input_event records, for tests); default: the
+          /dev/input/eventN whose /sys/class/input/eventN/device/name is NAME.
+--once:   exit after the first KEY_POWER press (used by the host-side test).
+"""
+import argparse
+import glob
+import os
+import struct
+import subprocess
+import sys
+import time
+
+EV_KEY = 0x01
+KEY_POWER = 116
+
+# struct input_event = struct timeval (two C longs) + __u16 type + __u16 code + __s32 value.
+# On 32-bit ARM a long is 4 bytes (16-byte record); on a 64-bit host it is 8 (24 bytes).
+_LONG = struct.calcsize("l")
+EVENT_FMT = "=llHHi" if _LONG == 8 else "=iiHHi"
+EVENT_SIZE = struct.calcsize(EVENT_FMT)
+
+
+def find_device(name):
+    for path in sorted(glob.glob("/sys/class/input/event*/device/name")):
+        try:
+            with open(path) as f:
+                if f.read().strip() == name:
+                    return "/dev/input/" + path.split("/")[4]
+        except OSError:
+            continue
+    return None
+
+
+def log(msg):
+    sys.stderr.write("board-powerkeyd: %s\n" % msg)
+    sys.stderr.flush()
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--device")
+    ap.add_argument("--name", default="gpio-keys")
+    ap.add_argument("--action", default="/sbin/poweroff")
+    ap.add_argument("--once", action="store_true")
+    ap.add_argument("--event-format", choices=["native", "arm32", "le64"], default="native",
+                    help="record layout of --device (tests only)")
+    a = ap.parse_args(argv)
+
+    fmt = {"native": EVENT_FMT, "arm32": "<iiHHi", "le64": "<qqHHi"}[a.event_format]
+    size = struct.calcsize(fmt)
+
+    dev = a.device
+    while dev is None:
+        dev = find_device(a.name)
+        if dev is None:
+            log("no input device named %r yet, retrying in 2 s" % a.name)
+            time.sleep(2)
+
+    log("listening on %s for KEY_POWER" % dev)
+    fired = False
+    with open(dev, "rb", buffering=0) as f:
+        while True:
+            rec = f.read(size)
+            if len(rec) < size:
+                # A real evdev read blocks and returns whole records; a short read means the
+                # end of a test file (--once) or a vanished device.
+                if a.once:
+                    break
+                time.sleep(0.1)
+                continue
+            _s, _us, etype, code, value = struct.unpack(fmt, rec)
+            if etype == EV_KEY and code == KEY_POWER and value == 1:
+                log("KEY_POWER pressed -> %s" % a.action)
+                subprocess.call(a.action, shell=True)
+                fired = True
+                if a.once:
+                    break
+    return 0 if (fired or not a.once) else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

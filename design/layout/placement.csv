@@ -1,0 +1,227 @@
+ref,functional,block,footprint,zone,target,rule
+C1,C_USBDET,usbc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,,inside its zone; short connections to its block (layout.md §5)
+C2,C_VBUS,prot,Capacitor_SMD:C_0603_1608Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+C3,C_ONOFF_VIN,prot,Capacitor_SMD:C_0402_1005Metric,Z-PWRIN,,"next to U_ONOFF pin 1: <= 2 mm pad-to-pad, GND via at the pad"
+C4,C_GS,onoff,Capacitor_SMD:C_0603_1608Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+C5,C_GD,onoff,Capacitor_SMD:C_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+C6,C_PDT,onoff,Capacitor_SMD:C_0603_1608Metric,Z-PWRIN,,ONOFF_PDT cap <= 3 mm from U3 pin 7 (high-impedance timing node)
+C7,C_IN_U4,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,"next to U4 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C8,C_IN_U5,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,"next to U5 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C9,C_IN_U6,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,"next to U6 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C10,C_IN_U7,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,"next to U7 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C11,C_USBA_IN,pmu,Capacitor_SMD:C_0603_1608Metric,Z-USB,,"next to U_USBA pin 5 (<= 2 mm, D-57): <= 2 mm pad-to-pad, GND via at the pad"
+C12,C_IN100_U4,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,"next to U4 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C13,C_IN100_U5,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,"next to U5 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C14,C_IN100_U6,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,"next to U6 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C15,C_IN100_U7,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,"next to U7 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C16,C_OUT100_U4,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C17,C_OUT100_U5,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C18,C_OUT100_U6,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C19,C_OUT100_U7,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C20,C77,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C21,C69,pmu,Capacitor_SMD:C_0402_1005Metric,Z-SDPWR,,"next to Q_SD source: <= 2 mm pad-to-pad, GND via at the pad"
+C22,C70,pmu,Capacitor_SMD:C_0402_1005Metric,Z-SDPWR,,"next to Q_SD drain: <= 2 mm pad-to-pad, GND via at the pad"
+C23,C72,pmu,Capacitor_SMD:C_0402_1005Metric,Z-SDPWR,,"next to J_SD pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C24,C_OUT_U4,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C25,C_OUT_U6,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C26,C71,pmu,Capacitor_SMD:C_0603_1608Metric,Z-SDPWR,,"next to J_SD pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C27,C_OUT_U5,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C28,C_OUT_U7,pmu,Capacitor_SMD:C_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C29,C_FF_U4,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C30,C_FF_U5,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C31,C_FF_U6,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C32,C_FF_U7,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C33,C65,pmu,Capacitor_SMD:C_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+C34,C_USBA_OUT,pmu,Capacitor_SMD:C_0805_2012Metric,Z-USB,,"C_USBA_OUT 22 uF: <= 2 mm pad-to-pad from U8 pin 1, west of U8 in the Z-USB south-east corner, GND via at the pad"
+C35,C_USBA_BULK,usb,Capacitor_SMD:CP_Elec_6.3x5.9,Z-USB,,"120 uF polymer at J4 pin 1 (VBUS): <= 5 mm pad-to-pad, south end of Z-USB"
+C36,DEC_0V9_10U_1,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 54 pad at (40.58, 34.57) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 54; GND pad -> own via to L2 within 0.5 mm
+C37,DEC_0V9_10U_2,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 116 pad at (28.43, 37.73) W side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 116; GND pad -> own via to L2 within 0.5 mm
+C38,DEC_ARM_10U,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 115 pad at (28.43, 37.38) W side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 115; GND pad -> own via to L2 within 0.5 mm
+C39,DEC_DDR_10U_1,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 49 pad at (40.58, 36.32) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 49; GND pad -> own via to L2 within 0.5 mm
+C40,DEC_DDR_10U_2,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 50 pad at (40.58, 35.97) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 50; GND pad -> own via to L2 within 0.5 mm
+C41,DEC_CODEC_10U,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 31 pad at (39.58, 42.58) S side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 31; GND pad -> own via to L2 within 0.5 mm
+C42,DEC_0V9_1U_1,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 51 pad at (40.58, 35.62) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 51; GND pad -> own via to L2 within 0.5 mm
+C43,DEC_0V9_1U_2,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 82 pad at (33.97, 30.43) N side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 82; GND pad -> own via to L2 within 0.5 mm
+C44,DEC_ARM_1U,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 115 pad at (28.43, 37.38) W side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 115; GND pad -> own via to L2 within 0.5 mm
+C45,DEC_DDR_1U,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 50 pad at (40.58, 35.97) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 50; GND pad -> own via to L2 within 0.5 mm
+C46,DEC_DDR_FB4_1U,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 56 pad at (40.58, 33.88) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 56; GND pad -> own via to L2 within 0.5 mm
+C47,DEC_1V8_P53_1U,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 53 pad at (40.58, 34.92) E side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 53; GND pad -> own via to L2 within 0.5 mm
+C48,DEC_0V9_100N_1,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 10 pad at (32.23, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 10 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C49,DEC_0V9_100N_2,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 55 pad at (40.58, 34.22) E side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 55 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C50,DEC_0V9_100N_3,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 103 pad at (28.43, 33.17) W side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 103 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C51,DEC_0V9_P67_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 67 pad at (39.22, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 67 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C52,DEC_ARM_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 115 pad at (28.43, 37.38) W side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 115 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C53,DEC_DDR_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 49 pad at (40.58, 36.32) E side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 49 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C54,DEC_1V8_P53_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 53 pad at (40.58, 34.92) E side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 53 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C55,DEC_1V8_P70_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 70 pad at (38.17, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 70 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C56,DEC_1V8_P96_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 96 pad at (29.07, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 96 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C57,DEC_CODEC_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 31 pad at (39.58, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 31 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C58,DEC_1V8_P24_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 24 pad at (37.12, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 24 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C59,DEC_1V8_P1_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 1 pad at (29.07, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 1 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C60,DEC_1V8_FB4_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 70 pad at (38.17, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 70 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C61,DEC_3V3_P61_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 61 pad at (40.58, 32.12) E side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 61 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C62,DEC_3V3_P81_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 81 pad at (34.32, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 81 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C63,DEC_3V3_P43_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 43 pad at (40.58, 38.42) E side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 43 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C64,DEC_3V3_P13_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 13 pad at (33.27, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 13 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C65,DEC_3V3_P28_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 28 pad at (38.52, 42.58) S side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 28 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C66,DEC_3V3_P101_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 101 pad at (28.43, 32.48) W side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 101 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C67,DEC_3V3_P88_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 88 pad at (31.88, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 88 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C68,DEC_3V3_P108_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 108 pad at (28.43, 34.92) W side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 108 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C69,DEC_1V8_FB4_4U7,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 70 pad at (38.17, 30.43) N side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 70; GND pad -> own via to L2 within 0.5 mm
+C70,C_CODEC_VCM,soc,Capacitor_SMD:C_0603_1608Metric,Z-SOC,"SoC pin 30 pad at (39.22, 42.58) S side","CODEC_VCM 4.7u <= 3 mm from SoC pin 30 (reference node, ring 1)"
+C71,C38,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 66 pad at (39.57, 30.43) N side",ring 1: <= 3 mm from SoC pin 66
+C72,C_RECOV,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 23 pad at (36.77, 42.58) S side",ring 1: <= 3 mm from SoC pin 23
+C73,C_ADC1,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 22 pad at (36.42, 42.58) S side",ring 1: <= 3 mm from SoC pin 22
+C74,DEC_0V9_P71_100N,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 71 pad at (37.82, 30.43) N side","ring 1 decoupler: supply pad of this 100 nF cap <= 3.0 mm trace from SoC pin 71 (just outside the escape vias), GND pad -> own via to L2 within 0.5 mm"
+C75,DEC_RTC_1U,soc,Capacitor_SMD:C_0402_1005Metric,Z-SOC,"SoC pin 19 pad at (35.38, 42.58) S side",ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 19; GND pad -> own via to L2 within 0.5 mm
+C76,C_Y1_XOUT,xtal,Capacitor_SMD:C_0402_1005Metric,Z-SOC,,"next to Y1 pin 3: <= 2 mm pad-to-pad, GND via at the pad"
+C77,C_Y1_XIN,xtal,Capacitor_SMD:C_0402_1005Metric,Z-SOC,,"next to Y1 pin 1: <= 2 mm pad-to-pad, GND via at the pad"
+C78,C_Y2_XOUT,xtal,Capacitor_SMD:C_0402_1005Metric,Z-SOC,,"next to Y2: <= 2 mm pad-to-pad, GND via at the pad"
+C79,C_Y2_XIN,xtal,Capacitor_SMD:C_0402_1005Metric,Z-SOC,,"next to Y2: <= 2 mm pad-to-pad, GND via at the pad"
+C80,C42,nand,Capacitor_SMD:C_0603_1608Metric,Z-NAND,,"next to U_NAND pin 8: <= 2 mm pad-to-pad, GND via at the pad"
+C81,C43,nand,Capacitor_SMD:C_0402_1005Metric,Z-NAND,,"next to U_NAND pin 8: <= 2 mm pad-to-pad, GND via at the pad"
+C82,C_CT_TX,eth,Capacitor_SMD:C_0402_1005Metric,Z-ETH,,"next to J_RJ45 pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+C83,C_CT_RX,eth,Capacitor_SMD:C_0402_1005Metric,Z-ETH,,"next to J_RJ45 pin 5: <= 2 mm pad-to-pad, GND via at the pad"
+C84,C_MUX,usb,Capacitor_SMD:C_0402_1005Metric,Z-USB,,"next to U_MUX pin 10: <= 2 mm pad-to-pad, GND via at the pad"
+D1,D_TVS,prot,Diode_SMD:D_SMA,Z-PWRIN,,"TVS right after F1, GND via at the pad"
+D2,D_RTC,pmu,Diode_SMD:D_SOD-123,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 19 (sub-rail part of pin 19, layout.md §5.3)"
+F1,F1,prot,Fuse:Fuse_1812_4532Metric,Z-PWRIN,,"first part after J1 VBUS pins (west edge of Z-PWRIN, next to J1); VBUS_IN copper >= 1.0 mm"
+FB1,FB1,pmu,Inductor_SMD:L_0603_1608Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 101 (sub-rail part of pin 101, layout.md §5.3)"
+FB2,FB2,pmu,Inductor_SMD:L_0603_1608Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 31 (sub-rail part of pin 31, layout.md §5.3)"
+FB3,FB3,pmu,Inductor_SMD:L_0603_1608Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 96 (sub-rail part of pin 96, layout.md §5.3)"
+J1,J_USBC,usbc,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,J1-USBC,,inside its zone; short connections to its block (layout.md §5)
+J2,J_SD,sd,board:microSD_TF-01A,J2-SD,,inside its zone; short connections to its block (layout.md §5)
+J3,J_RJ45,eth,Connector_RJ:RJ45_Hanrun_HR911105A_Horizontal,J3-RJ45,,inside its zone; short connections to its block (layout.md §5)
+J4,J_USBA,usb,board:USB_A_AF90_WJDG_RightAngle_THT,J4-USBA,,inside its zone; short connections to its block (layout.md §5)
+J5,J_HDR,gpio,Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical,J5-HDR,,inside its zone; short connections to its block (layout.md §5)
+J6,J_UART,uart,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,J6-UART,,inside its zone; short connections to its block (layout.md §5)
+JP1,JP_MEAS_0V9,,Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,Z-PMU,,"solder jumper U4 output -> VDD_0V9 L3 neck: centre (63.7, 35.0), rotation 180 deg (pad 2 = VDD_0V9 west), >= 6 vias west of pad 2 (x 61.6-62.9) into the neck (layout.md §2.3, §3)"
+L1,L_U4,pmu,board:L_FHD4020S_4.0x4.0mm,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+L2,L_U5,pmu,board:L_FHD4020S_4.0x4.0mm,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+L3,L_U6,pmu,board:L_FHD4020S_4.0x4.0mm,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+L4,L_U7,pmu,board:L_FHD4020S_4.0x4.0mm,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+LED1,LED_PWR,ui,LED_SMD:LED_0603_1608Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+LED2,LED_STAT,ui,LED_SMD:LED_0603_1608Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+LED3,LED_ETH,ui,LED_SMD:LED_0603_1608Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+NT1,NT_ARM,,NetTie:NetTie-2_SMD_Pad2.0mm,Z-SOC,,"net-tie VDD_0V9 -> VDD_ARM at SoC pin 115, <= 8 mm, >= 0.6 mm copper (D-68)"
+Q1,Q_PWR,onoff,Package_TO_SOT_SMD:SOT-23,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+Q2,Q_EN,onoff,Package_TO_SOT_SMD:SOT-23,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+Q3,Q_KILL,onoff,Package_TO_SOT_SMD:SOT-23,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+Q4,Q_SD,pmu,Package_TO_SOT_SMD:SOT-23,Z-SDPWR,,inside its zone; short connections to its block (layout.md §5)
+R1,R_CC1,usbc,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R2,R_CC2,usbc,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R3,R_DET_TOP,usbc,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R4,R_DET_BOT,usbc,Resistor_SMD:R_0603_1608Metric,Z-SOC,,inside its zone; short connections to its block (layout.md §5)
+R5,R_GS,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R6,R_KU,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R7,R_KILLPD,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R8,R_ENPU,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R9,R_G,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R10,R_INTPU,onoff,Resistor_SMD:R_0402_1005Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R11,R_PB,onoff,Resistor_SMD:R_0603_1608Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R12,R_BL5,onoff,Resistor_SMD:R_0805_2012Metric,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+R13,R_FBB_U4,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R14,R_FBB_U5,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R15,R_FBB_U6,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R16,R_FBB_U7,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R17,R_FBT_U4,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R18,R_FBT_U7,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R19,R_FBT_U5,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R20,R14,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R21,R43,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R22,R_FBT_U6,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R23,R35,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R24,R41,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R25,R_BL09,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R26,R_BL135,pmu,Resistor_SMD:R_0402_1005Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R27,R_BL18,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R28,R_BL33,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R29,R_MEAS_1V8,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R30,R_MEAS_3V3,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,"R_MEAS_3V3 at (63.5, 16.5) in the U6 cell west strip; pad 2 (VCC_3V3) -> >= 2 vias into the L3 VCC_3V3 band (layout.md §2.3)"
+R31,R_MEAS_DDR,pmu,Resistor_SMD:R_0603_1608Metric,Z-PMU,,inside its zone; short connections to its block (layout.md §5)
+R32,R31,pmu,Resistor_SMD:R_0603_1608Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 1 (sub-rail part of pin 1, layout.md §5.3)"
+R33,R8,pmu,Resistor_SMD:R_0603_1608Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 24 (sub-rail part of pin 24, layout.md §5.3)"
+R34,R11,pmu,Resistor_SMD:R_0402_1005Metric,Z-SOC,,"ring 2 (outside the 100 nF ring): <= 8 mm of trace from SoC pin 19 (sub-rail part of pin 19, layout.md §5.3)"
+R35,R22,pmu,Resistor_SMD:R_0402_1005Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+R36,R_RECOV,pmu,Resistor_SMD:R_0402_1005Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+R37,R_SET,pmu,Resistor_SMD:R_0603_1608Metric,Z-USB,,inside its zone; short connections to its block (layout.md §5)
+R38,R55,pmu,Resistor_SMD:R_0402_1005Metric,Z-SDPWR,,inside its zone; short connections to its block (layout.md §5)
+R39,R51,pmu,Resistor_SMD:R_0402_1005Metric,Z-SDPWR,,inside its zone; short connections to its block (layout.md §5)
+R40,R_SD_BL,pmu,Resistor_SMD:R_0402_1005Metric,Z-SDPWR,,inside its zone; short connections to its block (layout.md §5)
+R41,R1,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 52 pad at (40.58, 35.27) E side","DRAM_ZQ 240R <= 3 mm from SoC pin 52, GND via at the pad"
+R42,R7,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 102 pad at (28.43, 32.83) W side","ETH_EXTR 6.04k <= 3 mm from SoC pin 102, GND via at the pad"
+R43,R12,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 66 pad at (39.57, 30.43) N side",ring 1: <= 3 mm from SoC pin 66
+R44,R_RECOV_PU,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 23 pad at (36.77, 42.58) S side",ring 1: <= 3 mm from SoC pin 23
+R45,R_ADC1_PU,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 22 pad at (36.42, 42.58) S side",ring 1: <= 3 mm from SoC pin 22
+R46,R_PD58,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 58 pad at (40.58, 33.17) E side",ring 1: <= 3 mm from SoC pin 58
+R47,R_FSPI_CLK,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 48 pad at (40.58, 36.67) E side",22R within 2 mm of SoC pin 48 (source series termination)
+R48,R_SD_CLK,soc,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 15 pad at (33.98, 42.58) S side",22R within 2 mm of SoC pin 15 (source series termination)
+R49,R_SD_DET,soc,Resistor_SMD:R_0402_1005Metric,Z-SDPWR,,inside its zone; short connections to its block (layout.md §5)
+R50,R_Y1_SER,xtal,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 69 pad at (38.52, 30.43) N side",22R within 2 mm of SoC pin 69
+R51,R_Y1_FB,xtal,Resistor_SMD:R_0402_1005Metric,Z-SOC,"SoC pin 68 pad at (38.88, 30.43) N side","1M across pins 68/69, within 2 mm of them"
+R52,R18,nand,Resistor_SMD:R_0402_1005Metric,Z-NAND,,inside its zone; short connections to its block (layout.md §5)
+R53,R19,nand,Resistor_SMD:R_0402_1005Metric,Z-NAND,,inside its zone; short connections to its block (layout.md §5)
+R54,R_CSPU,nand,Resistor_SMD:R_0402_1005Metric,Z-NAND,,inside its zone; short connections to its block (layout.md §5)
+R55,R_NANDDIS,nand,Resistor_SMD:R_0603_1608Metric,Z-NAND,,"next to U_NAND pin 1: <= 2 mm pad-to-pad, GND via at the pad"
+R56,R_ETH_TXP,eth,Resistor_SMD:R_0603_1608Metric,Z-ETH,,inside its zone; short connections to its block (layout.md §5)
+R57,R_ETH_TXN,eth,Resistor_SMD:R_0603_1608Metric,Z-ETH,,inside its zone; short connections to its block (layout.md §5)
+R58,R_ETH_RXP,eth,Resistor_SMD:R_0603_1608Metric,Z-ETH,,inside its zone; short connections to its block (layout.md §5)
+R59,R_ETH_RXN,eth,Resistor_SMD:R_0603_1608Metric,Z-ETH,,inside its zone; short connections to its block (layout.md §5)
+R60,R_USBSEL,usb,Resistor_SMD:R_0402_1005Metric,Z-USB,,inside its zone; short connections to its block (layout.md §5)
+R61,R_USBAEN,usb,Resistor_SMD:R_0402_1005Metric,Z-USB,,"next to U_USBA pin 4: <= 2 mm pad-to-pad, GND via at the pad"
+R62,R_I2C3_SCL,gpio,Resistor_SMD:R_0402_1005Metric,BOARD,"D-116 h: final position (30.60, 12.60) turned 180 deg, unzoned strip between J3 and Z-UART beside the I2C3 lanes (moved in L5, l5_finish.py)",I2C3 pull-up (DC): anywhere in Z-HDR on its line
+R63,R_I2C3_SDA,gpio,Resistor_SMD:R_0402_1005Metric,BOARD,"D-116 h: final position (29.60, 12.60) turned 180 deg, unzoned strip between J3 and Z-UART beside the I2C3 lanes (moved in L5, l5_finish.py)",I2C3 pull-up (DC): anywhere in Z-HDR on its line
+R64,R_I2C1_SDA,gpio,Resistor_SMD:R_0402_1005Metric,Z-HDR,,I2C1 pull-up (DC): anywhere in Z-HDR on its line
+R65,R_I2C1_SCL,gpio,Resistor_SMD:R_0402_1005Metric,Z-HDR,,I2C1 pull-up (DC): anywhere in Z-HDR on its line
+R66,R_UART_TX,uart,Resistor_SMD:R_0402_1005Metric,Z-UART,"D-115 a: beside J6 / TP9 (16.9 mm move, owner approval item)",inside its zone; short connections to its block (layout.md §5)
+R67,R_UART_RX,uart,Resistor_SMD:R_0402_1005Metric,Z-UART,"D-115 a: beside J6 / TP10 (19 mm move, owner approval item)",inside its zone; short connections to its block (layout.md §5)
+R68,R_LED_PWR,ui,Resistor_SMD:R_0402_1005Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+R69,R_LED_STAT,ui,Resistor_SMD:R_0402_1005Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+R70,R_LED_ETH,ui,Resistor_SMD:R_0402_1005Metric,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+SW1,SW_PWR,onoff,board:SW_TS-1187A_5.1x5.1mm,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+SW2,SW_RESET,ui,board:SW_TS-1187A_5.1x5.1mm,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+SW3,SW_RECOV,ui,board:SW_TS-1187A_5.1x5.1mm,Z-UI,,inside its zone; short connections to its block (layout.md §5)
+TP1,TP_VBUS_5V,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP2,TP_VCC_3V3,,TestPoint:TestPoint_Pad_D1.5mm,Z-PMU,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP3,TP_VCC_1V8,,TestPoint:TestPoint_Pad_D1.5mm,Z-PMU,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP4,TP_VDD_0V9,,TestPoint:TestPoint_Pad_D1.5mm,Z-PMU,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP5,TP_VCC_DDR,,TestPoint:TestPoint_Pad_D1.5mm,Z-PMU,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP6,TP_OSC_XOUT,,TestPoint:TestPoint_Pad_D1.5mm,Z-SOC,,"test pad on OSC_XOUT (SoC pin 69 side of R50): <= 5 mm from SoC pin 69, stub <= 3 mm (testpoints.md §2 rule 3)"
+TP7,TP_NPOR,,TestPoint:TestPoint_Pad_D1.5mm,Z-UI,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP8,TP_ONOFF_EN,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP9,TP_UART2_TX,,TestPoint:TestPoint_Pad_D1.5mm,Z-UART,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP10,TP_UART2_RX,,TestPoint:TestPoint_Pad_D1.5mm,Z-UART,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP11,TP_LED_ETH,,TestPoint:TestPoint_Pad_D1.5mm,Z-UI,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP12,TP_EN_N,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP13,TP_VCC5V0_SYS,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP14,TP_PWR_EN,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP15,TP_VDD_ARM,,TestPoint:TestPoint_Pad_D1.5mm,Z-HDR,"D-115 a: 3.4 mm from C44.1, out of the power test row (48 mm move, owner approval item)","test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP16,TP_VCC3V3_SD,,TestPoint:TestPoint_Pad_D1.5mm,Z-SDPWR,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP17,TP_VBUS_USBA,,TestPoint:TestPoint_Pad_D1.5mm,Z-USBA-PWR,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP18,TP_VCC3V3_RTC,,TestPoint:TestPoint_Pad_D1.5mm,Z-USBA-PWR,"D-115 a / D-116 d: ring-2 test pad placed just outside Z-SOC, in Z-USBA-PWR at (46.60, 52.30), south of its rail, joined by a via beside the pad","sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP19,TP_GND1,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP20,TP_GND2,,TestPoint:TestPoint_Pad_D1.5mm,Z-UART,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP21,TP_VBUS_IN,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP22,TP_MIPI_CSI_AVDD_1V8,,TestPoint:TestPoint_Pad_D1.5mm,Z-SOC,,"sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP23,TP_AVDD1V8_USB,,TestPoint:TestPoint_Pad_D1.5mm,Z-USB,"D-115 a: ring-2 test pad placed just outside Z-SOC, in Z-USB at (41.30, 51.30) next to its rail","sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP24,TP_VCC1V8_CODEC,,TestPoint:TestPoint_Pad_D1.5mm,Z-USB,"D-116 d: final position (43.85, 52.30) in Z-USB on the codec loop (moved in L5, l5_finish.py)","sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP25,TP_ETH_AVDD1V8,,TestPoint:TestPoint_Pad_D1.5mm,Z-SOC,,"sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP26,TP_FEPHY_AVDD3V3,,TestPoint:TestPoint_Pad_D1.5mm,Z-SOC,,"sub-rail test pad, ring 2: <= 8 mm of trace from its SoC pin / ferrite (testpoints.md §2)"
+TP27,TP_PB_INT_N,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP28,TP_PWR_KILL,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP29,TP_PWR_KILL_N,,TestPoint:TestPoint_Pad_D1.5mm,Z-PWRIN,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP30,TP_SDMMC_DET,,TestPoint:TestPoint_Pad_D1.5mm,Z-SDPWR,,"test pad per testpoints.md §2 (top side, >= 1 mm from bodies)"
+TP31,TP_GND3,,TestPoint:TestPoint_Pad_D1.5mm,Z-SOC,,"GND test pad within 3 mm of TP6 (scope ground for TP6, testpoints.md §2 rule 3)"
+U1,U_ESD_C,prot,Package_TO_SOT_SMD:SOT-23-6,Z-USBA-PWR,,"south end of Z-USBA-PWR, within 3 mm of J1 A6/A7/B6/B7, flow-through"
+U2,U_ESD_A,prot,Package_TO_SOT_SMD:SOT-23-6,Z-USB,,"south end of Z-USB, within 3 mm of J4 pins 2/3, flow-through"
+U3,U_ONOFF,onoff,Package_TO_SOT_SMD:TSOT-23-8,Z-PWRIN,,inside its zone; short connections to its block (layout.md §5)
+U4,U4,pmu,Package_TO_SOT_SMD:SOT-23-5,Z-PMU,,"cell y 30-39 of Z-PMU, level with the L3 VDD_0V9 neck (y 33.0-37.0); VIN/C_IN east, inductor/output west to JP1"
+U5,U5,pmu,Package_TO_SOT_SMD:SOT-23-5,Z-PMU,,cell y 39-48 of Z-PMU (south); output west to R29
+U6,U6,pmu,Package_TO_SOT_SMD:SOT-23-5,Z-PMU,,"cell y 12-21 of Z-PMU (north); VIN/C_IN east, output west to R30"
+U7,U7,pmu,Package_TO_SOT_SMD:SOT-23-5,Z-PMU,,cell y 21-30 of Z-PMU; output west to R31
+U8,U_USBA,pmu,Package_TO_SOT_SMD:SOT-23-5,Z-USB,,"south-east corner of Z-USB, centre (43.4, 62.6), rotation 0 (pin 1 OUT north-west, pin 5 IN north-east); VBUS_USBA path U8 pin 1 -> J4 pin 1 <= 15 mm (layout.md §3, power_paths.csv)"
+U9,U_SOC,soc,board:RV1106_QFN-128-1EP_12.3x12.3mm_P0.35mm,Z-SOC,,"centre (34.5, 36.5), rotation +90 deg: pin 1 at the SW corner, pins 1-32 on the south side W->E, 33-64 east S->N, 65-96 north E->W, 97-128 west N->S; 2 local fiducials diagonal (layout.md §6)"
+U10,U_NAND,nand,Package_SON:WSON-8-1EP_8x6mm_P1.27mm_EP3.4x4.3mm,Z-NAND,,rotate so pins 1-4 face the SoC; FSPI <= 25 mm
+U11,U_MUX,usb,board:TI_RSE0010A_UQFN-10_1.5x2mm_P0.5mm,Z-USB,,"NE part of Z-USB, between SoC pins 26/27 and the USB connectors; flow-through: SoC side pins 7/8 toward the SoC"
+Y1,Y1,xtal,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm,Z-SOC,"SoC pin 68 pad at (38.88, 30.43) N side","ring 1: crystal body <= 3 mm from SoC pins 68/69; OSC_XIN, OSC_XOUT_X <= 5 mm each; OSC_XOUT <= 8 mm total incl. the TP6 stub; GND guard (layout.md §4.3)"
+Y2,Y2,xtal,Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm,Z-SOC,"SoC pin 20 pad at (35.73, 42.58) S side","ring 1/2: crystal body <= 4 mm from SoC pins 20/21; RTC_XIN, RTC_XOUT <= 6 mm each; GND guard"

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "usbc",
+    "name": "USB-C power in",
+    "req": "R1",
+    "status": "verified",
+    "phase": "L6",
+    "note": "No copper change. J1 CPL point is its pad centre (1.497 mm from origin), pin A1 north-west. U1 +180 (UNVERIFIED). JLC solders shell pegs."
+  },
+  {
+    "id": "prot",
+    "name": "Input protection",
+    "req": "R1",
+    "status": "verified",
+    "phase": "L6",
+    "note": "No copper change. D1 cathode band west, no correction. F1 not polarised. The via in F1.1 is in the POFV list."
+  },
+  {
+    "id": "onoff",
+    "name": "On/off controller",
+    "req": "R4",
+    "status": "verified",
+    "phase": "L6",
+    "note": "No copper change. U3 gets SOT-23 +180 by analogy (UNVERIFIED). SW1-SW3 no correction (90 deg would be wrong). Q2/Q3 +180."
+  },
+  {
+    "id": "pmu",
+    "name": "Regulators",
+    "req": "R1",
+    "status": "verified",
+    "phase": "L6",
+    "note": "Assembly PDF: TP names and net texts overlap; TH1-TH4 printed over holes. Readability only, TPs/THs are not assembled."
+  },
+  {
+    "id": "soc",
+    "name": "RV1106G3 SoC",
+    "req": "R5",
+    "status": "verified",
+    "phase": "L6",
+    "note": "U9 QFN-128 +270 (JLC 0), pin 1 SW corner (UNVERIFIED). 16 EP vias named in POFV remark. Drill/place origin moved to panel lower-left."
+  },
+  {
+    "id": "xtal",
+    "name": "24 MHz clock",
+    "req": "R5",
+    "status": "verified",
+    "phase": "L6",
+    "note": "Y1 no correction (90 deg would be wrong, 180 does not matter). Y2 not polarised. The via in C58 is in the POFV list."
+  },
+  {
+    "id": "nand",
+    "name": "SPI NAND",
+    "req": "R6",
+    "status": "verified",
+    "phase": "L6",
+    "note": "U10 (WSON-8) gets +270 (UNVERIFIED). Pin 1 must be at its north-west."
+  },
+  {
+    "id": "sd",
+    "name": "microSD",
+    "req": "R6",
+    "status": "verified",
+    "phase": "L6",
+    "note": "J2 no correction; CPL point is pad centre (2.195 mm from origin). Q4 +180. Vias in R40 and TP16 are in the POFV list."
+  },
+  {
+    "id": "eth",
+    "name": "Ethernet RJ45",
+    "req": "R2",
+    "status": "verified",
+    "phase": "L6",
+    "note": "The RJ45 J3 is through-hole, placed and soldered by JLC, no correction; its CPL point is the pad centre."
+  },
+  {
+    "id": "usb",
+    "name": "USB-A host",
+    "req": "R3",
+    "status": "verified",
+    "phase": "L6",
+    "note": "U2/U8 +180, U11 +270, C35 +180 with + to the south (all UNVERIFIED). The USB-A J4 is through-hole, placed by JLC."
+  },
+  {
+    "id": "gpio",
+    "name": "Expansion header",
+    "req": "R3",
+    "status": "verified",
+    "phase": "L6",
+    "note": "order-notes.md lacks the answer to JLC's 'mark on PCB' option, and a warning that J5/J6 preview models may show 90 deg off."
+  },
+  {
+    "id": "uart",
+    "name": "Debug UART",
+    "req": "R7",
+    "status": "verified",
+    "phase": "L6",
+    "note": "The 1x3 header J6 is through-hole, placed by JLC; its CPL point is the pad centre."
+  },
+  {
+    "id": "ui",
+    "name": "Buttons & LEDs",
+    "req": "R7",
+    "status": "verified",
+    "phase": "L6",
+    "note": "LED1-3: cathode to the west, no correction (UNVERIFIED). The 19 F.Fab-only references appear in assembly-top-refs.pdf."
+  }
+]

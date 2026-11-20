@@ -1,0 +1,2 @@
+# ALTERNATIVE (systemd rootfs only): make sure logind watches the gpio-keys device for KEY_POWER.
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{name}=="gpio-keys", TAG+="power-switch"

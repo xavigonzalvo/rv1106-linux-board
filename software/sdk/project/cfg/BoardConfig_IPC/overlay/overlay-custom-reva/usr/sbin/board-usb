@@ -1,0 +1,70 @@
+#!/bin/sh
+# board-usb -- USB port control for the RV1106G3 custom board, Rev A (D-96).
+#
+#   board-usb host     mux -> USB-A (USB_SEL high), then USB-A VBUS on (USBA_VBUS_EN high)
+#   board-usb gadget   USB-A VBUS off, then mux -> USB-C (USB_SEL low)
+#   board-usb off      USB-A VBUS off, mux -> USB-C (the reset/safe state, D-20)
+#   board-usb auto     host if the DT USB controller is dr_mode "host", else gadget (used at boot)
+#   board-usb vbus on|off      USBA_VBUS_EN only (bring-up step 11.1)
+#   board-usb sel usba|usbc    USB_SEL only (bring-up step 11.3)
+#   board-usb status
+#
+# GPIOs (pinmap.csv): USBA_VBUS_EN = pin 64 GPIO0_A5, USB_SEL = pin 65 GPIO0_A6 (TS3USB221A SEL:
+# low = USB-C port, high = USB-A port). The gpio0 controller is found by its device name
+# (ff380000.gpio, rv1106.dtsi gpio0: gpio@ff380000), so no GPIO number is hard-coded.
+# BOARD_SYSFS / BOARD_DT override /sys and /proc/device-tree (host-side test only).
+
+SYS=${BOARD_SYSFS:-/sys}
+DT=${BOARD_DT:-/proc/device-tree}
+GPIO0_DEV=ff380000.gpio
+OFF_VBUS=5
+OFF_SEL=6
+
+die() { echo "board-usb: $*" >&2; exit 1; }
+
+gpio0_base() {
+	for c in "$SYS"/class/gpio/gpiochip*; do
+		[ -e "$c/device" ] || continue
+		d=$(readlink "$c/device")
+		case "$d" in
+			*/"$GPIO0_DEV"|"$GPIO0_DEV") cat "$c/base"; return 0 ;;
+		esac
+	done
+	return 1
+}
+
+gpio_set() { # offset 0|1
+	base=$(gpio0_base) || die "gpio0 ($GPIO0_DEV) not found under $SYS/class/gpio"
+	n=$((base + $1))
+	g="$SYS/class/gpio/gpio$n"
+	[ -d "$g" ] || echo "$n" > "$SYS/class/gpio/export" || die "cannot export gpio $n"
+	if [ "$2" = 1 ]; then echo high > "$g/direction"; else echo low > "$g/direction"; fi
+}
+
+gpio_get() {
+	base=$(gpio0_base) || { echo "?"; return; }
+	g="$SYS/class/gpio/gpio$((base + $1))"
+	[ -f "$g/value" ] && cat "$g/value" || echo "reset-default(0)"
+}
+
+dr_mode() {
+	for f in "$DT"/usbdrd/usb@ffb00000/dr_mode "$DT"/usbdrd/usb*/dr_mode; do
+		[ -f "$f" ] && { tr -d '\000' < "$f"; return; }
+	done
+	echo unknown
+}
+
+case "$1" in
+	host)   gpio_set $OFF_SEL 1; sleep 0.1 2>/dev/null || sleep 1; gpio_set $OFF_VBUS 1 ;;
+	gadget|off) gpio_set $OFF_VBUS 0; gpio_set $OFF_SEL 0 ;;
+	auto)
+		if [ "$(dr_mode)" = host ]; then "$0" host; else "$0" gadget; fi ;;
+	vbus)
+		case "$2" in on) gpio_set $OFF_VBUS 1 ;; off) gpio_set $OFF_VBUS 0 ;; *) die "vbus on|off" ;; esac ;;
+	sel)
+		case "$2" in usba) gpio_set $OFF_SEL 1 ;; usbc) gpio_set $OFF_SEL 0 ;; *) die "sel usba|usbc" ;; esac ;;
+	status)
+		echo "dr_mode=$(dr_mode) USB_SEL=$(gpio_get $OFF_SEL) USBA_VBUS_EN=$(gpio_get $OFF_VBUS)" ;;
+	*) sed -n '2,13p' "$0"; exit 1 ;;
+esac
+exit 0

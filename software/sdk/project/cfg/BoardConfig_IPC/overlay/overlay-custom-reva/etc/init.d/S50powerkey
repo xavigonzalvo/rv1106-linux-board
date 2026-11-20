@@ -1,0 +1,42 @@
+#!/bin/sh
+# R4 power-key service (D-93): KEY_POWER from gpio-keys (PB_INT_N) -> /sbin/poweroff.
+# Uses BusyBox acpid when the applet is built in (CONFIG_ACPID=y, see software/README.md),
+# otherwise the python3 fallback /usr/sbin/board-powerkeyd.
+
+PIDFILE=/var/run/board-powerkey.pid
+
+have_acpid() {
+	busybox --list 2>/dev/null | grep -qx acpid
+}
+
+start() {
+	chmod 0755 /etc/acpi/PWRF/00000080 2>/dev/null
+	if have_acpid; then
+		printf "Starting powerkey (busybox acpid): "
+		# No -p: the Luckfox busybox.config has FEATURE_PIDFILE off, so acpid has no -p option.
+		busybox acpid -c /etc/acpi -a /etc/acpid.conf -l /var/log/acpid.log && echo OK || echo FAIL
+	elif command -v python3 >/dev/null 2>&1; then
+		printf "Starting powerkey (board-powerkeyd): "
+		start-stop-daemon -S -b -m -p "$PIDFILE" -x /usr/bin/env -- python3 /usr/sbin/board-powerkeyd \
+			&& echo OK || echo FAIL
+	else
+		echo "powerkey: neither busybox acpid nor python3 found; the POWER button only does the hard-off (hold >= 8 s)" >&2
+		return 1
+	fi
+}
+
+stop() {
+	printf "Stopping powerkey: "
+	killall acpid 2>/dev/null
+	[ -f "$PIDFILE" ] && kill "$(cat "$PIDFILE")" 2>/dev/null
+	rm -f "$PIDFILE"
+	echo OK
+}
+
+case "$1" in
+	start) start ;;
+	stop) stop ;;
+	restart|reload) stop; start ;;
+	*) echo "Usage: $0 {start|stop|restart}"; exit 1 ;;
+esac
+exit 0

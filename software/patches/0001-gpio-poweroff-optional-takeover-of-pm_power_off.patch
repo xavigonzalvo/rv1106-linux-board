@@ -1,0 +1,37 @@
+From: RV1106G3 custom board Rev A (design/decisions.md D-93)
+Subject: [PATCH] power: reset: gpio-poweroff: optional takeover of pm_power_off
+
+OPTIONAL. Apply only if the board log shows
+  "gpio-poweroff: gpio_poweroff_probe: pm_power_off function already registered"
+(another driver, e.g. PSCI with CONFIG_ARM_PSCI=y, took pm_power_off first).
+The board DTS already carries the property "custom,override-pm-power-off";
+an unpatched kernel ignores it.
+
+Base: LuckfoxTECH/luckfox-pico sysdrv/source/kernel (Linux 5.10.160)
+drivers/power/reset/gpio-poweroff.c (local copy design/refs/luckfox-sdk-boardcfg-2026-10-29/).
+---
+--- a/drivers/power/reset/gpio-poweroff.c	2026-10-29 09:08:28
++++ b/drivers/power/reset/gpio-poweroff.c	2026-10-29 09:08:28
+@@ -51,13 +51,20 @@
+ 	bool input = false;
+ 	enum gpiod_flags flags;
+ 
+-	/* If a pm_power_off function has already been added, leave it alone */
+-	if (pm_power_off != NULL) {
++	/*
++	 * If a pm_power_off function has already been added, leave it alone,
++	 * unless the board asks for the GPIO to be the power-off method
++	 * (RV1106G3 custom board Rev A: PWR_KILL to the LTC2954 KILL input).
++	 */
++	if (pm_power_off != NULL &&
++	    !device_property_read_bool(&pdev->dev, "custom,override-pm-power-off")) {
+ 		dev_err(&pdev->dev,
+ 			"%s: pm_power_off function already registered\n",
+ 		       __func__);
+ 		return -EBUSY;
+ 	}
++	if (pm_power_off != NULL)
++		dev_warn(&pdev->dev, "replacing the registered pm_power_off handler\n");
+ 
+ 	input = device_property_read_bool(&pdev->dev, "input");
+ 	if (input)

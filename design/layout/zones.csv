@@ -1,0 +1,34 @@
+zone,x0,y0,x1,y1,kind,footprint,origin_x,origin_y,rot_deg,edge,courtyard_mm2,fill_pct,description
+BOARD,0.0,0.0,80.0,80.0,outline,,,,,,2727.6,42.6,"80 x 80 mm routed board (D-H2, D-84 r2); panel with rails 90 x 80 mm; courtyard total of all 226 parts"
+J3-RJ45,7.52,0.0,26.52,21.8,connector,Connector_RJ:RJ45_Hanrun_HR911105A_Horizontal,21.46,17.26,180,N,423.7,,J3: pad 1 at the origin; at 180 deg the fab front (mouth) lies on the north edge y = 0
+J5-HDR,1.23,7.78,7.32,59.59,connector,Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical,3.0,9.56,0,,315.5,,"J5: pin 1 at the origin, odd row x = 3.00, even row x = 5.54"
+J6-UART,29.0,1.0,37.62,4.54,connector,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,30.77,2.77,90,,30.5,,"J6: rotated 90 deg: row along +x, pin 1 (GND) at the origin"
+J2-SD,11.5,65.0,27.5,80.0,connector,board:microSD_TF-01A,19.5,72.5,0,S,240.0,,"J2: body 14.50 x 15.35 mm (refs/tf-01a-datasheet p.1), card slot opening on the south edge"
+J4-USBA,28.0,65.0,43.5,80.0,connector,board:USB_A_AF90_WJDG_RightAngle_THT,35.75,72.5,0,S,232.5,,"J4: legs 15.30 wide, 14.20 deep (refs/usb-a-af90-wjdg-datasheet p.1), opening on the south edge"
+J1-USBC,44.18,71.08,54.82,80.0,connector,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,49.5,76.35,0,S,100.2,,"J1: rotation 0 deg: in the cached footprint the body (F.Fab) spans y -3.65..+3.65 with the SMD pads at y = -4.045, so the mouth faces +y (south); fab front at y = 80.0 = the south edge, signal pads at y = 72.3"
+RAIL-W,-5.0,0.0,0.0,80.0,rail,,,,,,,,"west edge rail (V-cut at x = 0), 2 global fiducials + 2 tooling holes"
+RAIL-E,80.0,0.0,85.0,80.0,rail,,,,,,,,"east edge rail (V-cut at x = 80), 1 global fiducial + 2 tooling holes"
+Z-SOC,20.5,22.0,49.5,50.0,zone,,,,,,406.1,50.0,"U9 at (34.5, 36.5) + ring 1 (100 nF, ZQ/EXTR/VCM/nPOR/ADC parts, R47/R48/R50/R51, Y1, Y2) + ring 2 (1-10 uF, FB1-FB3, sub-rail parts and TPs, NT1, D2)"
+Z-ETH,8.0,22.0,20.5,34.0,zone,,,,,,20.6,13.8,ETH 0R links R56-R59 and centre-tap caps C82/C83 between J3 and SoC pins 97-102
+Z-HDR,8.0,34.0,20.5,50.0,zone,,,,,,9.7,4.9,I2C pull-ups R62-R65 for header J5 (DC; position not critical)
+Z-UART,27.0,5.0,39.0,11.0,zone,,,,,,22.2,30.9,UART test pads TP9/TP10/TP20 next to J6
+Z-UI,39.0,1.0,72.0,11.0,zone,,,,,,118.2,35.8,"SW2 RESET, SW3 MASKROM, LED1-3 + resistors, TP7, TP11"
+Z-PMU,62.0,12.0,77.0,48.0,zone,,,,,,280.3,51.9,"four TLV62569 cells (9 mm each), north to south: U6 3V3 y 12-21, U7 DDR 21-30, U4 0V9 30-39, U5 1V8 39-48; output links JP1/R29/R30/R31 in the west strip x 62-65, VIN side east; TP2-TP5, TP15; east edge 3 mm from the V-cut"
+Z-NAND,49.5,28.0,61.5,44.0,zone,,,,,,71.9,37.4,U10 SPI NAND + C80/C81 + R52-R55
+Z-USB,27.0,50.0,45.5,64.5,zone,,,,,,136.0,50.7,U11 USB mux + C84 + R60; U2 USB-A ESD and C35 at the south end next to J4; U8 SY6280 + C11/C34/R37/R61 in the south-east corner (VBUS_USBA to J4 pin 1 <= 15 mm)
+Z-USBA-PWR,45.5,50.0,55.0,71.0,zone,,,,,,26.4,13.3,"U1 USB-C ESD at the south end, <= 3 mm from J1 A6/A7/B6/B7; TP17; L3 below carries the VCC5V0_SYS feed to U8"
+Z-PWRIN,55.0,48.0,77.0,72.5,zone,,,,,,248.1,46.0,"F1, D1, R1-R3, C2 + on/off U3, Q1-Q3, C3-C6, R5-R12, SW1, power test-pad row; east edge 3 mm from the V-cut"
+Z-SDPWR,9.0,52.5,27.0,64.5,zone,,,,,,42.0,19.4,"Q4 SD switch + C21-C23, C26, R38-R40, R49, TP16, TP30 between the SoC and J2"
+H1,0.0,0.0,7.0,7.0,hole,,3.5,3.5,,,,,"M3 NPTH 3.2 mm at (3.5, 3.5), keep-out 7.0 mm"
+H2,73.0,0.0,80.0,7.0,hole,,76.5,3.5,,,,,"M3 NPTH 3.2 mm at (76.5, 3.5), keep-out 7.0 mm"
+H3,0.0,73.0,7.0,80.0,hole,,3.5,76.5,,,,,"M3 NPTH 3.2 mm at (3.5, 76.5), keep-out 7.0 mm"
+H4,73.0,73.0,80.0,80.0,hole,,76.5,76.5,,,,,"M3 NPTH 3.2 mm at (76.5, 76.5), keep-out 7.0 mm"
+FID1,50.0,19.0,52.0,21.0,fiducial,,51.0,20.0,,,,,local fiducial 1 mm copper / 2 mm mask opening (rectangle = mask opening)
+FID2,18.5,50.2,20.5,52.2,fiducial,,19.5,51.2,,,,,local fiducial 1 mm copper / 2 mm mask opening (rectangle = mask opening)
+GFID1,-2.15,2.85,-0.1499999999999999,4.85,rail-fiducial,,-1.15,3.85,,,,,"global fiducial on the rail, 3.85 mm from the panel edges"
+GFID2,-2.15,75.15,-0.1499999999999999,77.15,rail-fiducial,,-1.15,76.15,,,,,"global fiducial on the rail, 3.85 mm from the panel edges"
+GFID3,80.15,2.85,82.15,4.85,rail-fiducial,,81.15,3.85,,,,,"global fiducial on the rail, 3.85 mm from the panel edges"
+TH1,-3.5,9.0,-1.5,11.0,rail-hole,,-2.5,10.0,,,,,tooling hole 2.0 mm NPTH in the rail
+TH2,-3.5,69.0,-1.5,71.0,rail-hole,,-2.5,70.0,,,,,tooling hole 2.0 mm NPTH in the rail
+TH3,81.5,9.0,83.5,11.0,rail-hole,,82.5,10.0,,,,,tooling hole 2.0 mm NPTH in the rail
+TH4,81.5,69.0,83.5,71.0,rail-hole,,82.5,70.0,,,,,tooling hole 2.0 mm NPTH in the rail

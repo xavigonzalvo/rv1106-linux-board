@@ -1,0 +1,7 @@
+# BusyBox options for the RV1106G3 custom board, Rev A (D-93).
+# Set these in sysdrv/tools/board/buildroot/busybox.config BEFORE the first Buildroot build
+# (sysdrv/Makefile L608-619 copies that file into Buildroot only when Buildroot is first unpacked),
+# or later in <buildroot>/package/busybox/busybox.config followed by "make busybox-dirclean".
+# The Luckfox busybox.config has "# CONFIG_ACPID is not set" (L604).
+CONFIG_ACPID=y
+CONFIG_FEATURE_ACPID_COMPAT=y

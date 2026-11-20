@@ -1,0 +1,122 @@
+[
+ {
+  "tp": "TP1",
+  "net": "VBUS_5V",
+  "expected": "5.0 V \u00b15%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP2",
+  "net": "VCC_3V3",
+  "expected": "3.3 V \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP3",
+  "net": "VCC_1V8",
+  "expected": "1.8 V \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP4",
+  "net": "VDD_CORE",
+  "expected": "per datasheet \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP5",
+  "net": "VCC_DDR",
+  "expected": "per datasheet \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP6",
+  "net": "XIN_24M",
+  "expected": "24.000 MHz",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP7",
+  "net": "RESET_N",
+  "expected": "High after power-good",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP8",
+  "net": "EN_N",
+  "expected": "LOW when on (inverted; see TP12)",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP9",
+  "net": "UART_TX",
+  "expected": "Boot log",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP10",
+  "net": "UART_RX",
+  "expected": "Console input",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP11",
+  "net": "ETH_LED",
+  "expected": "Link/activity",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP12",
+  "net": "ONOFF_EN",
+  "expected": "High when on",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP13",
+  "net": "VCC5V0_SYS",
+  "expected": "5.0 V when on",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP14",
+  "net": "PWR_EN",
+  "expected": "High when on",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP15",
+  "net": "VDD_ARM",
+  "expected": "per datasheet \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP16",
+  "net": "VCC3V3_SD",
+  "expected": "3.3 V \u00b13%",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP17",
+  "net": "VBUS_USBA",
+  "expected": "5.0 V \u00b15% when enabled",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP18",
+  "net": "VCC3V3_RTC",
+  "expected": "~3 V",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP19",
+  "net": "GND",
+  "expected": "Probe ground",
+  "status": "in_schematic"
+ },
+ {
+  "tp": "TP20",
+  "net": "GND",
+  "expected": "Probe ground",
+  "status": "in_schematic"
+ }
+]

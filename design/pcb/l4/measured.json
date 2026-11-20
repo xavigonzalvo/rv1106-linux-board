@@ -1,0 +1,498 @@
+{
+ "buck": {
+  "U4": {
+   "fb_len": 4.7,
+   "fb_to_sw": 3.12,
+   "sw_len": 0.85,
+   "sw_w": 1.2
+  },
+  "U5": {
+   "fb_len": 4.0,
+   "fb_to_sw": 3.21,
+   "sw_len": 0.85,
+   "sw_w": 1.2
+  },
+  "U6": {
+   "fb_len": 4.0,
+   "fb_to_sw": 3.21,
+   "sw_len": 0.85,
+   "sw_w": 1.2
+  },
+  "U7": {
+   "fb_len": 4.0,
+   "fb_to_sw": 3.21,
+   "sw_len": 0.85,
+   "sw_w": 1.2
+  }
+ },
+ "connectivity": {
+  "ETH_RCT": 0,
+  "ETH_RXN": 0,
+  "ETH_RXN_J": 0,
+  "ETH_RXP": 0,
+  "ETH_RXP_J": 0,
+  "ETH_TCT": 0,
+  "ETH_TXN": 0,
+  "ETH_TXN_J": 0,
+  "ETH_TXP": 0,
+  "ETH_TXP_J": 0,
+  "FSPI_CLK": 0,
+  "FSPI_CLK_NAND": 0,
+  "FSPI_CS0N": 0,
+  "FSPI_CS0N_NAND": 0,
+  "FSPI_D0": 0,
+  "FSPI_D1": 0,
+  "FSPI_D2": 0,
+  "FSPI_D3": 0,
+  "OSC_XIN": 0,
+  "OSC_XOUT": 0,
+  "OSC_XOUT_X": 0,
+  "RTC_XIN": 0,
+  "RTC_XOUT": 0,
+  "SDMMC_CLK": 0,
+  "SDMMC_CLK_SD": 0,
+  "SDMMC_CMD": 0,
+  "SDMMC_D0": 0,
+  "SDMMC_D1": 0,
+  "SDMMC_D2": 0,
+  "SDMMC_D3": 0,
+  "SDMMC_DET": 0,
+  "U4_FB": 0,
+  "U4_SW": 0,
+  "U5_FB": 0,
+  "U5_SW": 0,
+  "U6_FB": 0,
+  "U6_SW": 0,
+  "U7_FB": 0,
+  "U7_SW": 0,
+  "USBA_DM": 0,
+  "USBA_DP": 0,
+  "USBC_DM": 0,
+  "USBC_DP": 0,
+  "USB_DM": 0,
+  "USB_DP": 0,
+  "VBUS_5V": 0,
+  "VBUS_IN": 0,
+  "VBUS_USBA": 0,
+  "VCC3V3_SD": 0,
+  "VCC5V0_SYS": 0,
+  "VCC_1V8": 0,
+  "VCC_1V8_BUCK": 0,
+  "VCC_3V3": 0,
+  "VCC_3V3_BUCK": 0,
+  "VCC_DDR": 0,
+  "VCC_DDR_BUCK": 0,
+  "VDD_0V9": 0,
+  "VDD_0V9_BUCK": 0
+ },
+ "eth": {
+  "ETH_RX": {
+   "N": 19.02,
+   "N_J": 8.25,
+   "P": 18.43,
+   "P_J": 8.85,
+   "coupled": 8.23,
+   "gap_max": 0.207,
+   "gap_min": 0.2,
+   "skew_pair": -0.59,
+   "skew_total": 0.0,
+   "total_N": 27.27,
+   "total_P": 27.28,
+   "uncoupled": 7.9,
+   "vias_N": 0,
+   "vias_P": 0
+  },
+  "ETH_TX": {
+   "N": 16.3,
+   "N_J": 5.95,
+   "P": 16.01,
+   "P_J": 5.95,
+   "coupled": 2.32,
+   "gap_max": 0.2,
+   "gap_min": 0.2,
+   "skew_pair": -0.29,
+   "skew_total": -0.29,
+   "total_N": 22.25,
+   "total_P": 21.96,
+   "uncoupled": 11.79,
+   "vias_N": 2,
+   "vias_P": 2
+  }
+ },
+ "eth_clearance": [
+  [
+   0.396,
+   "ETH_RXP_J",
+   "pad J3.4 ETH_TCT",
+   [
+    18.92,
+    22.91
+   ]
+  ],
+  [
+   0.508,
+   "ETH_TXP",
+   "pad FB1.2 FEPHY_AVDD3V3",
+   [
+    23.07,
+    31.75
+   ]
+  ],
+  [
+   0.563,
+   "ETH_RXN_J",
+   "pad C83.1 ETH_RCT",
+   [
+    15.46,
+    22.76
+   ]
+  ],
+  [
+   0.695,
+   "ETH_TXP",
+   "via FEPHY_AVDD3V3",
+   [
+    23.86,
+    32.46
+   ]
+  ]
+ ],
+ "eth_other": [
+  0.765,
+  [
+   "ETH_RXN_J",
+   "ETH_RCT",
+   [
+    15.46,
+    22.76
+   ]
+  ]
+ ],
+ "eth_tx_rx_gap": 0.772,
+ "fspi": {
+  "CLK": 21.27,
+  "FSPI_CS0N+FSPI_CS0N_NAND": [
+   13.84,
+   -7.43
+  ],
+  "FSPI_D0": [
+   21.0,
+   -0.27
+  ],
+  "FSPI_D1": [
+   16.94,
+   -4.33
+  ],
+  "FSPI_D2": [
+   12.38,
+   -8.9
+  ],
+  "FSPI_D3": [
+   25.62,
+   4.34
+  ]
+ },
+ "hop_reference": {
+  "ETH_TXN over GND": 2.57,
+  "ETH_TXN over none": 0.93,
+  "ETH_TXP over GND": 2.91,
+  "ETH_TXP over none": 0.9,
+  "USBA_DM over GND": 0.46,
+  "USBA_DM over none": 0.92,
+  "USBC_DM over GND": 3.31,
+  "USBC_DM over none": 1.78,
+  "USBC_DP over GND": 3.96,
+  "USBC_DP over none": 1.81,
+  "USB_DM over GND": 1.42,
+  "USB_DM over none": 0.91
+ },
+ "power": {
+  "VBUS_5V": {
+   "class_w": 1.0,
+   "len_l4": 53.35,
+   "min_w_l4": 0.3,
+   "thin_len": 44.6,
+   "vias_l4": 0
+  },
+  "VBUS_IN": {
+   "class_w": 1.0,
+   "len_l4": 46.38,
+   "min_w_l4": 0.3,
+   "thin_len": 32.26,
+   "vias_l4": 0
+  },
+  "VCC3V3_SD": {
+   "class_w": 0.4,
+   "len_l4": 35.35,
+   "min_w_l4": 0.4,
+   "thin_len": 0,
+   "vias_l4": 8
+  },
+  "VCC_1V8": {
+   "class_w": 0.4,
+   "len_l4": 181.38,
+   "min_w_l4": 0.3,
+   "thin_len": 9.72,
+   "vias_l4": 22
+  },
+  "VCC_1V8_BUCK": {
+   "class_w": 0.4,
+   "len_l4": 13.63,
+   "min_w_l4": 0.4,
+   "thin_len": 0,
+   "vias_l4": 0
+  },
+  "VCC_3V3_BUCK": {
+   "class_w": 0.5,
+   "len_l4": 13.63,
+   "min_w_l4": 0.5,
+   "thin_len": 0,
+   "vias_l4": 0
+  },
+  "VCC_DDR": {
+   "class_w": 0.5,
+   "len_l4": 72.18,
+   "min_w_l4": 0.3,
+   "thin_len": 11.05,
+   "vias_l4": 8
+  },
+  "VCC_DDR_BUCK": {
+   "class_w": 0.5,
+   "len_l4": 13.63,
+   "min_w_l4": 0.5,
+   "thin_len": 0,
+   "vias_l4": 0
+  },
+  "VDD_0V9_BUCK": {
+   "class_w": 0.8,
+   "len_l4": 15.35,
+   "min_w_l4": 0.4,
+   "thin_len": 2.9,
+   "vias_l4": 0
+  }
+ },
+ "sd": {
+  "CLK": 32.52,
+  "SDMMC_CMD": [
+   32.93,
+   0.4
+  ],
+  "SDMMC_D0": [
+   34.05,
+   1.53
+  ],
+  "SDMMC_D1": [
+   33.61,
+   1.09
+  ],
+  "SDMMC_D2": [
+   32.61,
+   0.09
+  ],
+  "SDMMC_D3": [
+   32.8,
+   0.28
+  ]
+ },
+ "sharp_bends": [],
+ "tp6_stub": 3.49,
+ "usb": {
+  "USBA_DP": {
+   "N": 14.56,
+   "P": 13.76,
+   "coupled": 4.75,
+   "gap_max": 0.158,
+   "gap_min": 0.152,
+   "path": "U11 -> U2 -> J4",
+   "skew": -0.8,
+   "uncoupled": 9.01,
+   "vias_N": 2,
+   "vias_P": 0
+  },
+  "USBC_DP": {
+   "N": 32.2,
+   "P": 32.04,
+   "coupled": 14.62,
+   "gap_max": 0.152,
+   "gap_min": 0.152,
+   "path": "U11 -> U1 -> J1",
+   "skew": -0.15,
+   "uncoupled": 17.42,
+   "vias_N": 4,
+   "vias_P": 4
+  },
+  "USB_DP": {
+   "N": 12.65,
+   "P": 12.03,
+   "coupled": 7.22,
+   "gap_max": 0.163,
+   "gap_min": 0.152,
+   "path": "SoC -> U11",
+   "skew": -0.62,
+   "uncoupled": 2.93,
+   "vias_N": 2,
+   "vias_P": 0
+  }
+ },
+ "usb_clearance": [],
+ "usb_dangling": {
+  "USBA_DM": 0,
+  "USBA_DP": 0,
+  "USBC_DM": 0,
+  "USBC_DP": 0,
+  "USB_DM": 0,
+  "USB_DP": 0
+ },
+ "usb_other": [
+  0.854,
+  [
+   "USB_DP",
+   "VCC_3V3",
+   [
+    37.88,
+    45.47
+   ]
+  ]
+ ],
+ "usb_paths": [
+  {
+   "N": "USB_DM",
+   "P": "USB_DP",
+   "class_N": {
+    "breakout": 1.05,
+    "coupled": 6.73,
+    "hop": 2.67,
+    "other": 0.0,
+    "wide": 0.0
+   },
+   "class_P": {
+    "breakout": 1.05,
+    "coupled": 6.91,
+    "hop": 1.88,
+    "other": 0.0,
+    "wide": 0.0
+   },
+   "len_N": 12.69,
+   "len_P": 12.08,
+   "path": "SoC -> U11",
+   "skew": -0.61,
+   "vias_N": 2,
+   "vias_P": 0
+  },
+  {
+   "N": "USBA_DM",
+   "P": "USBA_DP",
+   "class_N": {
+    "breakout": 0.56,
+    "coupled": 3.72,
+    "hop": 1.85,
+    "other": 0.0,
+    "wide": 5.1
+   },
+   "class_P": {
+    "breakout": 0.58,
+    "coupled": 4.44,
+    "hop": 0.85,
+    "other": 0.0,
+    "wide": 4.03
+   },
+   "len_N": 15.07,
+   "len_P": 14.57,
+   "path": "U11 -> U2 -> J4",
+   "skew": -0.5,
+   "vias_N": 2,
+   "vias_P": 0
+  },
+  {
+   "N": "USBC_DM",
+   "P": "USBC_DP",
+   "class_N": {
+    "breakout": 1.31,
+    "coupled": 15.4,
+    "hop": 7.41,
+    "other": 0.0,
+    "wide": 2.52
+   },
+   "class_P": {
+    "breakout": 1.01,
+    "coupled": 14.62,
+    "hop": 8.68,
+    "other": 0.0,
+    "wide": 2.52
+   },
+   "len_N": 30.74,
+   "len_P": 30.74,
+   "path": "U11 -> U1 -> J1 (plug A side: A6/A7)",
+   "skew": -0.0,
+   "vias_N": 4,
+   "vias_P": 4
+  },
+  {
+   "N": "USBC_DM",
+   "P": "USBC_DP",
+   "class_N": {
+    "breakout": 1.31,
+    "coupled": 15.4,
+    "hop": 7.41,
+    "other": 0.0,
+    "wide": 2.52
+   },
+   "class_P": {
+    "breakout": 1.01,
+    "coupled": 14.62,
+    "hop": 8.68,
+    "other": 0.0,
+    "wide": 2.52
+   },
+   "len_N": 30.74,
+   "len_P": 30.74,
+   "path": "U11 -> U1 -> J1 (plug B side: B6/B7)",
+   "skew": -0.0,
+   "vias_N": 4,
+   "vias_P": 4
+  }
+ ],
+ "usb_vias": {
+  "USBA_DM": 2,
+  "USBA_DP": 0,
+  "USBC_DM": 4,
+  "USBC_DP": 4,
+  "USB_DM": 2,
+  "USB_DP": 0
+ },
+ "usba_usbc_sep": {
+  "crossing_min": 0.169,
+  "outside_crossing": 6.835
+ },
+ "usbc_stubs": {
+  "USBC_DM->J1.A7": 1.65,
+  "USBC_DM->J1.B7": 1.65,
+  "USBC_DP->J1.A6": 1.57,
+  "USBC_DP->J1.B6": 1.57
+ },
+ "vbus_in_vias": [
+  3,
+  3,
+  1,
+  1
+ ],
+ "xtal": {
+  "OSC_XIN": 10.89,
+  "OSC_XOUT": 8.08,
+  "OSC_XOUT_X": 3.14,
+  "RTC_XIN": 10.8,
+  "RTC_XOUT": 11.38
+ },
+ "xtal_guard_all": [
+  [
+   "via VCC_3V3",
+   "C77.1",
+   0.633
+  ],
+  [
+   "track VCC_3V3",
+   "C77.1",
+   0.683
+  ]
+ ]
+}

@@ -1,0 +1,6 @@
+# RV1106G3 custom board, Rev A -- boot-time settings read by /etc/init.d/S15board (D-96).
+# USB_MODE: auto  = follow the DTS (rv1106g-custom-reva.dts -> host, -gadget.dts -> gadget)
+#           host  = mux to USB-A and switch USB-A VBUS on (needs a >= 1.5 A USB-C supply, D-36/D-H1)
+#           gadget / off = USB-A VBUS off, mux to USB-C (safe state)
+# For board bring-up (bringup.md step 11) set USB_MODE=off and use `board-usb vbus on` / `board-usb sel usba` by hand.
+USB_MODE=auto

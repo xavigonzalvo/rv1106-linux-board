@@ -1,0 +1,12 @@
+net,region,x0,y0,x1,y1,purpose
+VDD_0V9,ISLAND,26.05,28.05,42.95,44.95,under U9: escape vias of SoC pins 10 51 54 55 67 71 82 103 115 116 + 1 mm; thermal and other-rail vias get 0.3 mm anti-pads
+VDD_0V9,NECK,42.95,33.0,65.0,37.0,"4 mm neck from JP1 (63.7, 35.0) (>= 6 vias) west under Z-NAND to the island; U4 cell level with it"
+VCC_3V3,N-BAND,1.0,8.0,65.0,21.5,"feed corridor from R30 (63.5, 16.5) (U6 cell) west along the free strip y 11-21.5 to the header/west region; header J5.1/J5.17, LED/UI pull-ups"
+VCC_3V3,W-COL,1.0,21.5,25.7,64.5,"west column: Z-ETH (FB1/FEPHY), Z-HDR, Z-SDPWR (Q4 input), header J5; SoC pin 108 transfer via"
+VCC_3V3,N-SOC,26.05,21.5,61.5,27.7,north of the island: SoC pins 81/88 transfer vias
+VCC_3V3,NAND,49.8,27.7,61.5,32.5,"tongue over the north of Z-NAND: U10 pin 8, C80/C81, R52-R54; SoC pin 61 transfer via"
+VCC_3V3,S-SOC,25.7,45.3,43.0,49.7,"south of the island: SoC pins 13/28/43 transfer vias, U11 pin 10"
+VCC5V0_SYS,PMU,65.3,12.0,77.0,48.0,VIN side of all four buck cells (Z-PMU east of the link strip)
+VCC5V0_SYS,PWRIN,55.0,48.0,77.0,72.5,"all of Z-PWRIN: Q1 drain (VCC5V0_SYS output), C5, R3, R12, TP13"
+VCC5V0_SYS,USBA,42.0,55.0,55.0,60.0,"5 mm strip from Z-PWRIN west to U8 pin 5 (via at 44.54, 59.5) and C11"
+VBUS_USBA,USBA,31.0,61.0,46.0,68.5,"3 mm+ pour U8 pin 1 -> C34 -> C35 -> J4 pin 1 (either outer pin) -> U2 pin 5, TP17 by L1 trace"

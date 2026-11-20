@@ -1,0 +1,33 @@
+#!/bin/sh
+# Board setup for the RV1106G3 custom board, Rev A (D-93, D-98).
+# - Ethernet LED (LED_ETH, GPIO1_A2): netdev trigger on eth0 (link + tx + rx).
+# - Reports whether the kernel gpio-poweroff driver bound (needed for R4 software power-off).
+# - Applies USB_MODE from /etc/default/board with /usr/sbin/board-usb (D-96).
+
+start() {
+	USB_MODE=auto
+	[ -f /etc/default/board ] && . /etc/default/board
+	/usr/sbin/board-usb "$USB_MODE" && echo "board: USB mode $USB_MODE ($(/usr/sbin/board-usb status))"
+
+	led=/sys/class/leds/eth
+	if [ -d "$led" ]; then
+		echo netdev > "$led/trigger" 2>/dev/null
+		echo eth0 > "$led/device_name" 2>/dev/null
+		for f in link tx rx; do echo 1 > "$led/$f" 2>/dev/null; done
+	fi
+
+	if ls /sys/bus/platform/drivers/poweroff-gpio/ 2>/dev/null | grep -q gpio-poweroff; then
+		echo "board: gpio-poweroff bound (PWR_KILL on GPIO0_A4): software power-off ready"
+	else
+		echo "board: WARNING gpio-poweroff NOT bound: 'poweroff' will halt but leave power on." >&2
+		echo "board: check dmesg for 'pm_power_off function already registered' and see software/README.md (patch 0001)." >&2
+	fi
+}
+
+case "$1" in
+	start) start ;;
+	stop) ;;
+	restart|reload) start ;;
+	*) echo "Usage: $0 {start|stop|restart}"; exit 1 ;;
+esac
+exit 0

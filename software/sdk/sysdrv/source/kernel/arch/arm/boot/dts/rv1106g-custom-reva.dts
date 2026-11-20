@@ -1,0 +1,12 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * RV1106G3 custom Linux board, Rev A -- default build: USB-A host (R3).
+ * Same include chain as [SDK] rv1106g-luckfox-pico-pro-max.dts L8-10, with the Luckfox ipc.dtsi
+ * replaced by this board's own body (rv1106-custom-reva.dtsi, D-92).
+ */
+
+/dts-v1/;
+
+#include "rv1106.dtsi"
+#include "rv1106-evb.dtsi"
+#include "rv1106-custom-reva.dtsi"

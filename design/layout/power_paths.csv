@@ -1,0 +1,4 @@
+item,path,length_mm,limit_mm,r_mohm,current_a,value,unit,note
+VDD_0V9 L3 drop,JP1 vias x 62.3 -> neck 19.35 x 4 mm -> island edge x 42.95 -> SoC centre x 34.5,27.8,,6.57,1.001,6.6,mV,"neck 5.47 + island half-width 0.57 + vias (6 at JP1, >= 4 carrying at the SoC; 1.33 mm barrels, 18 um plating) 0.53 mOhm; 0.5 oz L3, rho 1.72e-8; worst-case current power_rails.csv"
+VBUS_USBA U8 -> J4 pin 1,"U8 pin 1 (42.26, 61.65) -> J4 pin 1 candidate (32.25, 66.5)",14.4,15.0,,,14.4,mm,octilinear x 1.2 detour (as lengths.csv); D-81 limit
+VBUS_USBA U8 -> J4 pin 1,"U8 pin 1 (42.26, 61.65) -> J4 pin 1 candidate (39.25, 66.5)",7.3,15.0,,,7.3,mm,octilinear x 1.2 detour (as lengths.csv); D-81 limit

@@ -1,0 +1,510 @@
+check_routing.py: 509 checks, 432 PASS, 44 DEV, 33 INFO, 0 FAIL
+INFO board      tracks / vias / zones | 2332 / 335 / 8 | 
+PASS netlist    pad nets = schematic/out/board.net | 0 of 704 pads wrong | 0
+PASS netlist    netlist nodes present as pads | 0 missing | 0
+PASS escape     U9.1 MIPI_CSI_AVDD_1V8 (PART) | to C59 | gate/part/via/EP
+PASS escape     U9.10 VDD_0V9 (PART) | to C48; via (32.23, 41.70) | gate/part/via/EP
+PASS escape     U9.11 SDMMC_DET (LANE) | gate point t 31.715 r 8.00 | gate/part/via/EP
+PASS escape     U9.12 SDMMC_D1 (LANE) | gate point t 32.065 r 8.00 | gate/part/via/EP
+PASS escape     U9.13 VCC_3V3 (PART) | to C64; via (33.27, 41.70) | gate/part/via/EP
+PASS escape     U9.14 SDMMC_D0 (LANE) | gate point t 33.235 r 8.00 | gate/part/via/EP
+PASS escape     U9.15 SDMMC_CLK (PART) | to R48 | gate/part/via/EP
+PASS escape     U9.16 SDMMC_CMD (LANE) | gate point t 34.425 r 8.00 | gate/part/via/EP
+PASS escape     U9.17 SDMMC_D3 (LANE) | gate point t 34.775 r 8.00 | gate/part/via/EP
+PASS escape     U9.18 SDMMC_D2 (LANE) | gate point t 35.125 r 8.00 | gate/part/via/EP
+PASS escape     U9.19 VCC3V3_RTC (VIA) | via (34.59, 41.65), (35.38, 41.65) | gate/part/via/EP
+PASS escape     U9.19 VCC3V3_RTC layer change: vias | 2 | >= 2 (layout.md §3)
+PASS escape     U9.20 RTC_XOUT (LANE) | gate point t 35.575 r 8.00 | gate/part/via/EP
+PASS escape     U9.21 RTC_XIN (LANE) | gate point t 36.025 r 8.00 | gate/part/via/EP
+PASS escape     U9.22 SARADC_IN1 (VIA) | via (36.42, 41.65) | gate/part/via/EP
+PASS escape     U9.23 RECOVERY (VIA) | via (37.20, 41.65) | gate/part/via/EP
+PASS escape     U9.24 AVDD1V8_USB (PART) | to C58; via (36.71, 44.71) | gate/part/via/EP
+PASS escape     U9.25 USB_DET_IN (VIA) | via (38.35, 40.70) | gate/part/via/EP
+PASS escape     U9.26 USB_DM (LANE) | gate point t 37.447 r 8.00 | gate/part/via/EP
+PASS escape     U9.27 USB_DP (PAIR2) | gate point t 37.852 r 8.00 | gate/part/via/EP
+PASS escape     U9.28 VCC_3V3 (PART) | to C65; via (38.52, 41.70) | gate/part/via/EP
+PASS escape     U9.30 CODEC_VCM (PART) | to C70 | gate/part/via/EP
+PASS escape     U9.31 VCC1V8_CODEC (PART) | to C57 | gate/part/via/EP
+PASS escape     U9.37 GND (VIA) | EP tie (D-109 b) | gate/part/via/EP
+PASS escape     U9.39 FSPI_D3 (LANE) | gate point t 40.655 r 8.00 | gate/part/via/EP
+PASS escape     U9.41 FSPI_D0 (LANE) | gate point t 40.305 r 8.00 | gate/part/via/EP
+PASS escape     U9.42 FSPI_D1 (LANE) | gate point t 39.955 r 8.00 | gate/part/via/EP
+PASS escape     U9.43 VCC_3V3 (PART) | to C63; via (39.70, 38.42) | gate/part/via/EP
+PASS escape     U9.44 FSPI_D2 (LANE) | gate point t 38.785 r 8.00 | gate/part/via/EP
+PASS escape     U9.47 FSPI_CS0N (LANE) | gate point t 38.435 r 8.00 | gate/part/via/EP
+PASS escape     U9.48 FSPI_CLK (PART) | to R47 | gate/part/via/EP
+PASS escape     U9.49 VCC_DDR (PART) | to C53; via (41.58, 36.27), (42.15, 36.84) | gate/part/via/EP
+PASS escape     U9.50 VCC_DDR (PART) | to C53; via (41.58, 36.27), (42.15, 36.84) | gate/part/via/EP
+PASS escape     U9.51 VDD_0V9 (VIA) | via (39.70, 35.62) | gate/part/via/EP
+PASS escape     U9.52 DRAM_ZQ (PART) | to R41 | gate/part/via/EP
+PASS escape     U9.53 VCC_1V8 (PART) | to C60; via (42.16, 34.16), (42.16, 34.96) | gate/part/via/EP
+PASS escape     U9.54 VDD_0V9 (PART) | to C49; via (39.70, 35.62) | gate/part/via/EP
+PASS escape     U9.55 VDD_0V9 (PART) | to C49; via (39.70, 35.62) | gate/part/via/EP
+PASS escape     U9.56 VCC_DDR (VIA) | via (39.50, 34.78), (39.70, 34.02) | gate/part/via/EP
+PASS escape     U9.56 VCC_DDR layer change: vias | 2 | >= 2 (layout.md §3)
+PASS escape     U9.57 GND (VIA) | EP tie (D-109 b) | gate/part/via/EP
+PASS escape     U9.58 GPIO0_A0_PD (PART) | to R46 | gate/part/via/EP
+PASS escape     U9.59 SDMMC_PWREN (VIA) | via (39.70, 32.95) | gate/part/via/EP
+PASS escape     U9.60 PB_INT_N (VIA) | via (38.85, 32.45) | gate/part/via/EP
+PASS escape     U9.61 VCC_3V3 (PART) | to C61; via (39.70, 31.90) | gate/part/via/EP
+PASS escape     U9.62 LED_STATUS (LANE) | gate point t 30.745 r 8.00 | gate/part/via/EP
+PASS escape     U9.63 PWR_KILL (LANE) | gate point t 30.445 r 8.00 | gate/part/via/EP
+PASS escape     U9.64 USBA_VBUS_EN (LANE) | gate point t 30.145 r 8.00 | gate/part/via/EP
+PASS escape     U9.65 USB_SEL (VIA) | via (39.15, 31.35) | gate/part/via/EP
+PASS escape     U9.66 NPOR (LANE) | gate point t 41.025 r 8.00 | gate/part/via/EP
+PASS escape     U9.67 VDD_0V9 (PART) | to C51 | gate/part/via/EP
+PASS escape     U9.68 OSC_XIN (LANE) | gate point t 39.705 r 8.00 | gate/part/via/EP
+PASS escape     U9.69 OSC_XOUT (PART) | to R51 | gate/part/via/EP
+PASS escape     U9.70 VCC_1V8 (PART) | to C55; via (37.71, 28.86) | gate/part/via/EP
+PASS escape     U9.71 VDD_0V9 (PART) | to C74; via (37.83, 31.30) | gate/part/via/EP
+PASS escape     U9.72 HDR_GPIO1_A0 (LANE) | gate point t 36.165 r 8.00 | gate/part/via/EP
+PASS escape     U9.73 HDR_GPIO1_A1 (LANE) | gate point t 35.865 r 8.00 | gate/part/via/EP
+PASS escape     U9.74 LED_ETH (LANE) | gate point t 35.565 r 8.00 | gate/part/via/EP
+PASS escape     U9.75 HDR_GPIO1_A3 (LANE) | gate point t 35.265 r 8.00 | gate/part/via/EP
+PASS escape     U9.76 HDR_GPIO1_A4 (LANE) | gate point t 34.965 r 8.00 | gate/part/via/EP
+PASS escape     U9.77 HDR_GPIO1_B0 (LANE) | gate point t 34.665 r 8.00 | gate/part/via/EP
+PASS escape     U9.78 HDR_GPIO1_B1 (LANE) | gate point t 34.365 r 8.00 | gate/part/via/EP
+PASS escape     U9.79 UART2_TX (LANE) | gate point t 34.065 r 8.00 | gate/part/via/EP
+PASS escape     U9.80 UART2_RX (LANE) | gate point t 33.765 r 8.00 | gate/part/via/EP
+PASS escape     U9.81 VCC_3V3 (PART) | to C62; via (34.33, 31.30) | gate/part/via/EP
+PASS escape     U9.82 VDD_0V9 (VIA) | via (33.35, 31.30) | gate/part/via/EP
+PASS escape     U9.83 HDR_PWM10 (LANE) | gate point t 32.695 r 8.00 | gate/part/via/EP
+PASS escape     U9.84 HDR_PWM11 (LANE) | gate point t 32.395 r 8.00 | gate/part/via/EP
+PASS escape     U9.85 HDR_I2C3_SCL (LANE) | gate point t 32.095 r 8.00 | gate/part/via/EP
+PASS escape     U9.86 HDR_I2C3_SDA (LANE) | gate point t 31.795 r 8.00 | gate/part/via/EP
+PASS escape     U9.87 HDR_UART3_RX (LANE) | gate point t 31.495 r 8.00 | gate/part/via/EP
+PASS escape     U9.88 VCC_3V3 (PART) | to C67; via (31.88, 31.30) | gate/part/via/EP
+PASS escape     U9.89 HDR_UART3_TX (LANE) | gate point t 30.425 r 8.00 | gate/part/via/EP
+PASS escape     U9.90 HDR_PWM9 (LANE) | gate point t 30.125 r 8.00 | gate/part/via/EP
+PASS escape     U9.91 HDR_PWM8 (LANE) | gate point t 29.825 r 8.00 | gate/part/via/EP
+PASS escape     U9.92 HDR_SPI0_MISO (LANE) | gate point t 29.525 r 8.00 | gate/part/via/EP
+PASS escape     U9.93 HDR_SPI0_MOSI (LANE) | gate point t 29.225 r 8.00 | gate/part/via/EP
+PASS escape     U9.94 HDR_SPI0_SCLK (LANE) | gate point t 28.925 r 8.00 | gate/part/via/EP
+PASS escape     U9.95 HDR_SPI0_CS0 (LANE) | gate point t 28.625 r 8.00 | gate/part/via/EP
+PASS escape     U9.96 ETH_AVDD1V8 (PART) | to C56 | gate/part/via/EP
+PASS escape     U9.97 ETH_RXN (LANE) | gate point t 29.683 r 8.00 | gate/part/via/EP
+PASS escape     U9.98 ETH_RXP (PAIR2) | gate point t 30.118 r 8.00 | gate/part/via/EP
+PASS escape     U9.99 ETH_TXN (LANE) | gate point t 31.112 r 8.00 | gate/part/via/EP
+PASS escape     U9.100 ETH_TXP (PAIR2) | gate point t 31.547 r 8.00 | gate/part/via/EP
+PASS escape     U9.101 FEPHY_AVDD3V3 (PART) | to C66; via (26.29, 32.27) | gate/part/via/EP
+PASS escape     U9.102 ETH_EXTR (PART) | to R42 | gate/part/via/EP
+PASS escape     U9.103 VDD_0V9 (PART) | to C50; via (29.30, 33.17) | gate/part/via/EP
+PASS escape     U9.104 HDR_I2C1_SDA (LANE) | gate point t 34.690 r 8.00 | gate/part/via/EP
+PASS escape     U9.105 HDR_I2C1_SCL (LANE) | gate point t 34.990 r 8.00 | gate/part/via/EP
+PASS escape     U9.106 HDR_GPIO2_A7 (LANE) | gate point t 35.290 r 8.00 | gate/part/via/EP
+PASS escape     U9.107 HDR_GPIO2_A6 (LANE) | gate point t 35.590 r 8.00 | gate/part/via/EP
+PASS escape     U9.108 VCC_3V3 (PART) | to C68; via (29.30, 34.92) | gate/part/via/EP
+PASS escape     U9.109 HDR_GPIO2_A0 (LANE) | gate point t 36.660 r 8.00 | gate/part/via/EP
+PASS escape     U9.110 HDR_GPIO2_A1 (LANE) | gate point t 36.960 r 8.00 | gate/part/via/EP
+PASS escape     U9.111 HDR_GPIO2_A2 (LANE) | gate point t 37.260 r 8.00 | gate/part/via/EP
+PASS escape     U9.112 HDR_GPIO2_A3 (LANE) | gate point t 37.560 r 8.00 | gate/part/via/EP
+PASS escape     U9.113 HDR_GPIO2_A4 (LANE) | gate point t 37.860 r 8.00 | gate/part/via/EP
+PASS escape     U9.114 HDR_GPIO2_A5 (LANE) | gate point t 38.160 r 8.00 | gate/part/via/EP
+PASS escape     U9.115 VDD_ARM (PART) | to C52 | gate/part/via/EP
+PASS escape     U9.116 VDD_0V9 (VIA) | via (29.30, 37.73) | gate/part/via/EP
+PASS escape     U9 pads with a net escaped | 98 of 98 | all (TP-L3)
+PASS escape     narrowest track touching the U9 fan | 0.100 mm | >= 0.10 (DRU neck-down)
+INFO escape     pair U9.26/U9.27 fan length | 1.972 / 1.959 mm (diff 0.012) | added to the L4 skew budget
+INFO escape     pair U9.97/U9.98 fan length | 2.472 / 2.415 mm (diff 0.057) | added to the L4 skew budget
+INFO escape     pair U9.99/U9.100 fan length | 2.065 / 2.032 mm (diff 0.032) | added to the L4 skew budget
+PASS escape     EP 129: thermal vias (footprint pads + GND board vias in the EP), zone connection solid | 16 + 0 vias, solid | 16, solid (layout.md §6.2; board vias since L5G D-119)
+PASS planes     In2_VDD_0V9 outline = union of its 14 planes.csv rectangles minus higher-rank other nets + 0.30 | 459.2 mm2 (expected 459.2, xor 0.000 mm2), filled True | xor < 0.01 mm2
+PASS planes     In2_VCC_3V3 outline = union of its 14 planes.csv rectangles minus higher-rank other nets + 0.30 | 2740.4 mm2 (expected 2740.4, xor 0.000 mm2), filled True | xor < 0.01 mm2
+PASS planes     In2_VBUS_USBA outline = union of its 3 planes.csv rectangles minus higher-rank other nets + 0.30 | 110.8 mm2 (expected 110.8, xor 0.000 mm2), filled True | xor < 0.01 mm2
+PASS planes     In2_VCC5V0_SYS outline = union of its 4 planes.csv rectangles minus higher-rank other nets + 0.30 | 1058.9 mm2 (expected 1058.9, xor 0.000 mm2), filled True | xor < 0.01 mm2
+PASS planes     In2_GND_FILL | outline (0.4, 0.4, 79.6, 79.6), priority 0, filled True | board inset 0.40 mm
+PASS planes     In1_GND_PLANE | outline (0.4, 0.4, 79.6, 79.6), priority 0, filled True | board inset 0.40 mm
+PASS planes     F_GND_POUR | outline (0.4, 0.4, 79.6, 79.6), priority 0, filled True | board inset 0.40 mm
+PASS planes     B_GND_POUR | outline (0.4, 0.4, 79.6, 79.6), priority 0, filled True | board inset 0.40 mm
+PASS planes     zones = design/pcb/planes.csv | 8 zones, 0 bad, 0 extra | 0 bad, 0 extra
+INFO planes     L3 VDD_0V9 NECK-N new vs layout/planes.csv | 42.95-61.50 x 28.05-33.00 |  | D-109 (d)
+INFO planes     L3 VCC_3V3 N-BAND changed vs layout/planes.csv | (1.0, 8.0, 65.0, 21.5) -> (1.0, 4.0, 65.0, 21.5) |  | D-109 (d)
+INFO planes     L3 VCC_3V3 N-SOC changed vs layout/planes.csv | (26.05, 21.5, 61.5, 27.7) -> (26.05, 21.5, 61.5, 27.75) |  | D-109 (d)
+INFO planes     L3 VCC_3V3 NAND-S new vs layout/planes.csv | 43.30-61.80 x 37.35-47.60 |  | D-109 (d)
+INFO planes     L3 VCC_3V3 S-SOC changed vs layout/planes.csv | (25.7, 45.3, 43.0, 49.7) -> (25.7, 45.3, 54.6, 49.7) |  | D-109 (d)
+INFO planes     L3 VCC_3V3 S-USB new vs layout/planes.csv | 33.00-41.60 x 49.70-56.60 |  | D-109 (d)
+INFO planes     L3 VCC5V0_SYS USBA-U8 new vs layout/planes.csv | 43.75-55.00 x 55.00-63.00 |  | D-109 (d)
+INFO planes     L3 VBUS_USBA USBA changed vs layout/planes.csv | (31.0, 61.0, 46.0, 68.5) -> (29.8, 60.6, 43.4, 68.5) |  | D-109 (d)
+PASS planes     L3 outlines of different power nets, smallest gap | 0.300 mm (VDD_0V9 / VCC_3V3) | >= 0.30 (layout.md §2.3)
+PASS planes     L2 one GND zone, no tracks on L2/L3 | 1 zone(s) on L2, 0 inner tracks | 1 GND, 0
+PASS planes     L2 GND fill is one piece (no split) | 1 piece(s), 5762 mm2 of 6273 | 1
+INFO planes     L3 VDD_0V9 filled pieces | 1 |  | islands without a pad/via are removed by the filler; pieces joined only through L1/L4 copper are possible
+INFO planes     L3 VCC_3V3 filled pieces | 1 |  | islands without a pad/via are removed by the filler; pieces joined only through L1/L4 copper are possible
+INFO planes     L3 VBUS_USBA filled pieces | 1 |  | islands without a pad/via are removed by the filler; pieces joined only through L1/L4 copper are possible
+INFO planes     L3 VCC5V0_SYS filled pieces | 1 |  | islands without a pad/via are removed by the filler; pieces joined only through L1/L4 copper are possible
+PASS planevia   C1.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C10.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C10.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C11.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C11.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C12.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C12.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C13.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C13.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C14.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C14.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C15.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C15.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C16.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C17.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C18.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C19.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C2.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C20.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C21.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C21.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C22.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C23.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C24.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C25.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C26.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C27.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C28.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C3.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C33.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C34.1 VBUS_USBA vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C34.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C35.1 VBUS_USBA vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C35.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C36.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C36.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C37.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C37.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C38.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C39.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C40.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C41.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C42.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C42.2 GND | 1 via(s), farthest used 1.24 mm | whitelist: 1 via(s) <= 1.30 mm | D-110 (e): GND pad between C47/C45 and the ring-1 GND column; nearest legal via site
+PASS planevia   C43.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C43.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C44.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C45.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C46.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C47.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C48.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C48.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C49.1 VDD_0V9 | no own via: VDD_0V9 via U9.54 inner via (D-109 a) | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C49.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C5.2 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C50.1 VDD_0V9 | no own via: VDD_0V9 via U9.103 inner via (L1 link C50.1-U9.103) | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C50.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C51.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C51.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C52.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C53.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C54.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C55.2 GND | 1 via(s), farthest used 1.15 mm | whitelist: 1 via(s) <= 1.20 mm | D-110 (e): GND pad boxed in by C74/R51 and the OSC trial corridors; nearest legal via site
+PASS planevia   C56.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C57.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C58.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C59.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C6.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C60.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C61.1 VCC_3V3 | no own via: VCC_3V3 via U9.61 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+DEV  planevia   C61.2 GND | L1 track (1 segment(s) from the pad) | own via <= 0.5 mm | D-110 (e): GND pad: NECK_FREE strip north, lanes west: L1 track to R46.2 and its via
+DEV  planevia   C62.1 VCC_3V3 | no own via: VCC_3V3 via U9.81 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C62.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C63.1 VCC_3V3 | no own via: VCC_3V3 via U9.43 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C63.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C64.1 VCC_3V3 | no own via: VCC_3V3 via U9.13 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C64.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C65.1 VCC_3V3 | no own via: VCC_3V3 via U9.28 inner via + L3 finger (D-109 a) | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C65.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C66.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C67.1 VCC_3V3 | no own via: VCC_3V3 via U9.88 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C67.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C68.1 VCC_3V3 | no own via: VCC_3V3 via U9.108 inner via + L3 finger | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C68.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C69.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C7.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C7.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C70.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C71.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C72.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C73.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   C74.1 VDD_0V9 | no own via: VDD_0V9 via U9.71 inner via (L1 link C74.1-U9.71) | own via <= 0.5 mm | D-110 (e)
+PASS planevia   C74.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C75.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C76.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C77.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C78.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C79.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C8.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C8.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   C80.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C80.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C81.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C81.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C82.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C83.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C84.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C84.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C9.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   C9.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   D1.2 GND vias <= 0.5 mm | 2 | >= 2
+PASS planevia   D2.2 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   FB1.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   J1.A1 GND vias <= 0.5 mm | 2 | >= 1
+PASS planevia   J1.A12 GND vias <= 0.5 mm | 2 | >= 1
+PASS planevia   J1.B1 GND vias <= 0.5 mm | 2 | >= 1
+PASS planevia   J1.B12 GND vias <= 0.5 mm | 2 | >= 1
+PASS planevia   J2.6 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   J2.SH GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   J2.SH GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   J2.SH GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   J2.SH GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   JP1.2 VDD_0V9 vias <= 0.5 mm | 6 | >= 6
+PASS planevia   LED1.1 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   LED3.1 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   NT1.1 VDD_0V9 vias <= 0.5 mm | 2 | >= 2
+PASS planevia   Q1.3 VCC5V0_SYS vias <= 0.5 mm | 3 | >= 3
+PASS planevia   Q2.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   Q3.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   Q4.2 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R1.2 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   R10.1 VCC_3V3 | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VCC_3V3 pull-up far from any VCC_3V3 region (D-109 f)
+PASS planevia   R12.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R12.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R13.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R14.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R15.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R16.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R2.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R20.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R23.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R25.1 VDD_0V9 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R25.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R26.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R27.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R28.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R28.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R3.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R30.2 VCC_3V3 vias <= 0.5 mm | 2 | >= 2
+PASS planevia   R37.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R39.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R4.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R40.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R41.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R42.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R43.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   R46.2 GND | 1 via(s), farthest used 1.29 mm | whitelist: 1 via(s) <= 1.35 mm | D-110 (e): GND pad: the VDD_0V9 free strip (NECK_FREE) north and the column south leave no closer site
+PASS planevia   R52.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R53.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R54.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   R6.1 VCC_3V3 | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VCC_3V3 pull-up far from any VCC_3V3 region (D-109 f)
+PASS planevia   R60.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R61.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R62.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R63.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R64.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R65.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R68.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R69.1 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   R7.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW1.3 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW1.4 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW2.3 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW2.4 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW3.3 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   SW3.4 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   TP13.1 VCC5V0_SYS vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   TP17.1 VBUS_USBA | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VBUS_USBA test pad, layout.md §2.3 'TP17 by L1 trace' (D-109 f)
+PASS planevia   TP19.1 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   TP2.1 VCC_3V3 | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VCC_3V3 test pad in the test row (D-109 f)
+PASS planevia   TP20.1 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   TP31.1 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   TP4.1 VDD_0V9 | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VDD_0V9 test pad in the test row (D-109 f)
+PASS planevia   U1.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U10.4 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U10.8 VCC_3V3 vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U10.9 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U11.5 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U11.6 GND vias <= 0.5 mm | 1 | >= 1
+DEV  planevia   U11.10 VCC_3V3 | power link (route_powerlinks.py) | own via <= 0.5 mm | D-110 (e): VCC_3V3 of the mux: L1 to C84.1 and its via (D-109 f)
+PASS planevia   U2.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U2.5 VBUS_USBA vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U3.4 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U4.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U4.4 VCC5V0_SYS vias <= 0.5 mm | 2 | >= 2
+PASS planevia   U5.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U5.4 VCC5V0_SYS vias <= 0.5 mm | 2 | >= 2
+PASS planevia   U6.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U6.4 VCC5V0_SYS vias <= 0.5 mm | 2 | >= 2
+PASS planevia   U7.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U7.4 VCC5V0_SYS vias <= 0.5 mm | 2 | >= 2
+DEV  planevia   U8.1 VBUS_USBA | 2 via(s), farthest used 1.10 mm | whitelist: 2 via(s) <= 1.15 mm | D-110 (e): VBUS_USBA: 2 vias (0.10 and 1.10 mm); the USBC_DP trial corridor blocks the north side
+PASS planevia   U8.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   U8.5 VCC5V0_SYS vias <= 0.5 mm | 3 | >= 3
+PASS planevia   Y1.2 GND vias <= 0.5 mm | 1 | >= 1
+PASS planevia   Y1.4 GND vias <= 0.5 mm | 1 | >= 1
+INFO planevia   SMD pads of plane nets (U9 excluded) | 185 with all vias <= 0.5 mm, 4 whitelisted far, 10 whitelisted without own via, 7 by a power link, 0 FAIL | 
+PASS planevia   plane vias of L3 nets inside their own filled L3 copper (L1-L4 link vias excluded) | 87 of 87 | all
+PASS planevia   GND vias landing in the L2 GND fill | 160 of 160 | all
+PASS section    VDD_0V9 JP1 -> island (NECK-N strip, NECK): narrowest continuous L3 copper (sections every 0.05 mm, x 43.0-62.9) | 3.01 mm at x = 61.50 (total there 3.91) | >= 2.58 continuous (layout.md §3); target 3.00
+PASS section    VCC_3V3 N-BAND (R30 feed -> west to the header column): narrowest continuous L3 copper (sections every 0.05 mm, x 6.5-63.0) | 3.63 mm at x = 6.50 (total there 9.97); smallest total 9.97 | >= 2.00 total, >= 1.00 continuous (layout.md §3; D-110)
+PASS section    VCC_3V3 W-COL (north -> south): narrowest continuous L3 copper (sections every 0.05 mm, y 22.0-64.0) | 7.92 mm at y = 60.20 (total there 22.06); smallest total 14.70 | >= 2.00 total, >= 1.00 continuous (layout.md §3; D-110)
+PASS section    VBUS_USBA USBA (U8.1 -> J4.1): narrowest continuous L3 copper (sections every 0.05 mm, x 30.5-43.0) | 2.22 mm at x = 38.50 (total there 5.34); smallest total 4.63 | >= 3.00 total, >= 1.50 continuous (layout.md §3; D-110) | below target 3.00: D-110 (owner)
+PASS section    VCC5V0_SYS PMU (buck VIN column): narrowest continuous L3 copper (sections every 0.05 mm, y 12.5-47.5) | 3.40 mm at y = 16.70 (total there 9.53); smallest total 8.50 | >= 5.00 total, >= 2.50 continuous (layout.md §3; D-110) | below target 5.00: D-110 (owner)
+PASS section    VCC5V0_SYS PWRIN (Q1 drain -> PMU / USBA): narrowest continuous L3 copper (sections every 0.05 mm, y 48.5-72.0) | 8.52 mm at y = 66.00 (total there 18.65); smallest total 17.38 | >= 5.00 total, >= 2.50 continuous (layout.md §3; D-110)
+PASS section    VCC5V0_SYS USBA strip (-> U8.5, USB-A load 1.25 A: PWR_USBA width): narrowest continuous L3 copper (sections every 0.05 mm, x 43.5-54.5) | 4.35 mm at x = 50.05 (total there 6.90); smallest total 5.00 | >= 3.00 total, >= 1.50 continuous (layout.md §3; D-110)
+PASS neck       other-net vias in the VDD_0V9 neck box (44.9, 28.05, 63.5, 37.0) = D-110 inventory | 10 vias, 0 not in the inventory | 0 new
+PASS lanes      vias in the ring-1 row (8.0-10.3 mm from the U9 centre) = D-110 inventory | 33 vias, 0 not in the inventory | 0 new
+INFO lanes      strict model (class width/clearance from the gate end on, no neck-down in the ring-1 row) | 28 of 35 alone, 24 of 35 together |  | trapped alone: U9.62 U9.80 U9.83 U9.89 U9.95 U9.107 U9.109
+PASS lanes      U9.62 LED_STATUS (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.63 PWR_KILL (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.64 USBA_VBUS_EN (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.66 NPOR (SENSE) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.72 HDR_GPIO1_A0 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.73 HDR_GPIO1_A1 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.74 LED_ETH (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.75 HDR_GPIO1_A3 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.76 HDR_GPIO1_A4 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.77 HDR_GPIO1_B0 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.78 HDR_GPIO1_B1 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.79 UART2_TX (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.80 UART2_RX (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.83 HDR_PWM10 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.84 HDR_PWM11 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.85 HDR_I2C3_SCL (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.86 HDR_I2C3_SDA (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.87 HDR_UART3_RX (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.89 HDR_UART3_TX (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.90 HDR_PWM9 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.91 HDR_PWM8 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.92 HDR_SPI0_MISO (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.93 HDR_SPI0_MOSI (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.94 HDR_SPI0_SCLK (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.95 HDR_SPI0_CS0 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.104 HDR_I2C1_SDA (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.105 HDR_I2C1_SCL (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.106 HDR_GPIO2_A7 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.107 HDR_GPIO2_A6 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.109 HDR_GPIO2_A0 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.110 HDR_GPIO2_A1 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.111 HDR_GPIO2_A2 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.112 HDR_GPIO2_A3 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.113 HDR_GPIO2_A4 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9.114 HDR_GPIO2_A5 (DEFAULT) leaves the SoC on L1 | free | BFS at class width, max-of-classes clearance; capacity
+PASS lanes      U9 gate lanes that can leave on L1 (lanecheck.py) | 35 of 35 alone, 35 of 35 together | all
+INFO drc        lib_footprint_mismatch (warning) | 3 | 
+INFO drc        silk_edge_clearance (warning) | 2 | 
+INFO drc        silk_over_copper (warning) | >= 199 |  | (kicad-cli reports at most 199 per type: >= 199)
+INFO drc        silk_overlap (warning) | >= 199 |  | (kicad-cli reports at most 199 per type: >= 199)
+INFO drc        track_dangling (warning) | 50 | 
+INFO drc        via_dangling (warning) | 5 | 
+PASS drc        DRC errors on what exists (violations of severity error) | 0 | 0
+INFO drc        unconnected items (total) | 102 |  | per class: DEFAULT 83, PWR_0V9 4, PWR_SUB 11, SENSE 4
+PASS drc        unconnected items on plane nets (GND, VDD_0V9, VCC_3V3, VCC5V0_SYS, VBUS_USBA) | 0 | 0
+PASS carried    R51.1 (OSC_XOUT) to U9.68, copper edge | 1.48 mm | <= 2 mm (layout.md §4.3)
+DEV  carried    R51.2 (OSC_XIN) to U9.68, copper edge | 2.50 mm | <= 2 mm (layout.md §4.3) | D-109 (g)
+PASS L4-conn    TP-L4 net set fully connected (KiCad unconnected items = 0): the classes ETH_DIFF, USB_DIFF, XTAL, SDMMC, FSPI, SW_NODE, ETH_CT, the *_FB nets, SDMMC_DET and the power-path nets (D-112 k) | 58 nets, 0 open | 0
+INFO L4-conn    nets matching the gate's name patterns but outside the TP-L4 set (DEFAULT control / PWR_SUB supply nets, routed in L5; D-112 k) | ETH_AVDD1V8(2) ETH_EXTR(0) SDMMC_PWREN(1) USBA_ISET(0) USBA_VBUS_EN(2) USB_DET_IN(0) USB_SEL(2) | 
+PASS L4-layer   critical/SENSE nets on L4 only where recorded (D-104 e, D-106, D-108, D-111) | ETH_TXN ETH_TXP RECOVERY SARADC_IN1 USBA_DM USBC_DM USBC_DP USB_DET_IN USB_DM | 
+DEV  L4-xtal    OSC_XIN length (all tracks, KiCad sum) | 11.04 mm | <= 5.0 | D-111 (b): placement lower bounds of D-104 d / D-105 already exceed it
+DEV  L4-xtal    OSC_XOUT length (all tracks, KiCad sum) | 8.08 mm | <= 8.0 | D-111 (b): placement lower bounds of D-104 d / D-105 already exceed it
+PASS L4-xtal    OSC_XOUT_X length (all tracks, KiCad sum) | 3.14 mm | <= 5.0
+DEV  L4-xtal    RTC_XIN length (all tracks, KiCad sum) | 10.75 mm | <= 6.0 | D-111 (b): placement lower bounds of D-104 d / D-105 already exceed it
+DEV  L4-xtal    RTC_XOUT length (all tracks, KiCad sum) | 11.85 mm | <= 6.0 | D-111 (b): placement lower bounds of D-104 d / D-105 already exceed it
+PASS L4-xtal    no other net's L4-phase track on L1 within 1 mm of the crystal pads (Y1, Y2, C76-C79; layout.md §4.3) | 0 | 0 | []
+PASS L4-xtal    nothing on L4 under the crystals | 0 | 0 | []
+DEV  L4-xtal    TP6 stub (R50.1 -> TP6.1 track length) | 3.49 mm | <= 3.0 | D-104 d: TP6 7.18 mm placement
+PASS L4-eth     ETH_RXP/ETH_RXN P/N skew (KiCad pair, U9 -> link) | -0.59 mm | <= 1.27
+PASS L4-eth     ETH_RX P/N skew U9 -> J3 across the 0R links | -0.00 mm | <= 1.27
+PASS L4-eth     ETH_RX longest line U9 -> J3 | 27.44 mm | <= 30
+PASS L4-eth     ETH_RX vias per line | 0 / 0 | <= 0 (D-106 b, D-H5)
+PASS L4-eth     ETH_RX gap on the coupled L1/L4 runs outside the fan | 0.200-0.207 mm over 8.28 mm | 0.19-0.21
+DEV  L4-eth     ETH_RX uncoupled length (P line, outside the fan) | 7.98 mm | <= 5 at J3 | D-108 b / D-H5: link P/N swap + TX hop + skew meander; DRU limit set in l4_rules.py
+PASS L4-eth     ETH_TXP/ETH_TXN P/N skew (KiCad pair, U9 -> link) | -0.29 mm | <= 1.27
+PASS L4-eth     ETH_TX P/N skew U9 -> J3 across the 0R links | -0.29 mm | <= 1.27
+PASS L4-eth     ETH_TX longest line U9 -> J3 | 22.39 mm | <= 30
+PASS L4-eth     ETH_TX vias per line | 2 / 2 | <= 2 (D-106 b, D-H5)
+PASS L4-eth     ETH_TX gap on the coupled L1/L4 runs outside the fan | 0.200-0.200 mm over 2.32 mm | 0.19-0.21
+DEV  L4-eth     ETH_TX uncoupled length (P line, outside the fan) | 11.89 mm | <= 5 at J3 | D-108 b / D-H5: link P/N swap + TX hop + skew meander; DRU limit set in l4_rules.py
+PASS L4-eth     TX vs RX separation (tracks + vias, beyond the U9 fan, same layer; D-108 b) | 0.772 mm | >= 0.76 | ('ETH_TXN', 'ETH_RXN', (22.900000000000006, 28.0), (24.152248, 28.172262000000003))
+INFO L4-usb     USB_DP/USB_DM net-total length difference (all copper of the nets incl. the J1 join legs; the skew rule is checked on the pad-to-pad paths below) | -0.62 mm | 
+PASS L4-usb     USB_DP/USB_DM vias per line | 0 / 2 | <= 4
+PASS L4-usb     USB_DP/USB_DM length | 12.16 / 12.78 mm | <= 50
+INFO L4-usb     USB_DP/USB_DM coupled / uncoupled length, gap range on coupled runs | 7.22 / 3.04 mm, gap 0.152-0.163 | 0.15 gap
+INFO L4-usb     USBA_DP/USBA_DM net-total length difference (all copper of the nets incl. the J1 join legs; the skew rule is checked on the pad-to-pad paths below) | -0.80 mm | 
+PASS L4-usb     USBA_DP/USBA_DM vias per line | 0 / 2 | <= 4
+PASS L4-usb     USBA_DP/USBA_DM length | 13.76 / 14.56 mm | <= 50
+INFO L4-usb     USBA_DP/USBA_DM coupled / uncoupled length, gap range on coupled runs | 4.75 / 9.01 mm, gap 0.152-0.158 | 0.15 gap
+INFO L4-usb     USBC_DP/USBC_DM net-total length difference (all copper of the nets incl. the J1 join legs; the skew rule is checked on the pad-to-pad paths below) | -0.15 mm | 
+PASS L4-usb     USBC_DP/USBC_DM vias per line | 4 / 4 | <= 4
+PASS L4-usb     USBC_DP/USBC_DM length | 32.04 / 32.20 mm | <= 50
+INFO L4-usb     USBC_DP/USBC_DM coupled / uncoupled length, gap range on coupled runs | 14.62 / 17.42 mm, gap 0.152-0.152 | 0.15 gap
+DEV  L4-usb     GND stitching via within 1 mm of every USB signal via | 15 vias, 4 without | 0 | [('USBC_DP', 49.75, 71.12, 2.23), ('USBC_DP', 47.75, 70.9, 1.67), ('USBC_DM', 38.35, 56.85, 1.2), ('USBC_DM', 51.15, 71.0, 1.48)] (D-112 j: USB-C J1 join vias and the USBC_DM dive via, no legal GND via site within 1 mm; nearest listed)
+PASS L4-usb     USB lines to other-net tracks (outside U9/U11/U1/U2/J1 courtyards, GND excluded) | 0.854 mm | >= 0.76 | ('USB_DP', 'VCC_3V3', [37.88, 45.47])
+PASS L4-eth     ETH lines to other-net tracks (outside the U9 courtyard, GND and ETH excluded) | 0.765 mm | >= 0.76 | ('ETH_RXN_J', 'ETH_RCT', [15.46, 25.93])
+PASS L4-sd      SDMMC_CMD length / vs clock 32.62 mm | 33.17 / +0.55 mm | <= 40, +-5
+PASS L4-sd      SDMMC_D0 length / vs clock 32.62 mm | 34.18 / +1.57 mm | <= 40, +-5
+PASS L4-sd      SDMMC_D1 length / vs clock 32.62 mm | 33.74 / +1.12 mm | <= 40, +-5
+PASS L4-sd      SDMMC_D2 length / vs clock 32.62 mm | 32.94 / +0.33 mm | <= 40, +-5
+PASS L4-sd      SDMMC_D3 length / vs clock 32.62 mm | 33.09 / +0.47 mm | <= 40, +-5
+PASS L4-fspi    FSPI_D0 length / vs clock 21.27 mm | 21.16 / -0.12 mm | <= 25, +-5
+PASS L4-fspi    FSPI_D1 length / vs clock 21.27 mm | 17.07 / -4.20 mm | <= 25, +-5
+DEV  L4-fspi    FSPI_D2 length / vs clock 21.27 mm | 12.52 / -8.76 mm | <= 25, +-5 | D-111 (e): engineering rule (UNVERIFIED, layout.md §4.4); see decisions
+DEV  L4-fspi    FSPI_D3 length / vs clock 21.27 mm | 25.76 / +4.49 mm | <= 25, +-5 | D-111 (e): engineering rule (UNVERIFIED, layout.md §4.4); see decisions
+DEV  L4-fspi    FSPI_CS0N+FSPI_CS0N_NAND length / vs clock 21.27 mm | 13.97 / -7.30 mm | <= 25, +-5 | D-111 (e): engineering rule (UNVERIFIED, layout.md §4.4); see decisions
+PASS L4-sd      SDMMC and FSPI on L1 only, no vias |  | 
+PASS L4-buck    U4 SW node (U4.3 -> L1.1) copper between the pads / width (outside the IC pad row, where it is the 0.6 mm pin width) | 0.85 mm / 1.20 mm | <= 3 / >= 1.2
+PASS L4-buck    U4 FB net copper (pin 5 + divider + C_FF) | 4.70 mm | <= 5
+PASS L4-buck    U4 FB tracks (outside the IC courtyard) to the SW node | 3.12 mm | >= 2.0
+PASS L4-buck    U4 SW node on L1 only | 0 | 0
+PASS L4-buck    U5 SW node (U5.3 -> L2.1) copper between the pads / width (outside the IC pad row, where it is the 0.6 mm pin width) | 0.85 mm / 1.20 mm | <= 3 / >= 1.2
+PASS L4-buck    U5 FB net copper (pin 5 + divider + C_FF) | 4.00 mm | <= 5
+PASS L4-buck    U5 FB tracks (outside the IC courtyard) to the SW node | 3.21 mm | >= 2.0
+PASS L4-buck    U5 SW node on L1 only | 0 | 0
+PASS L4-buck    U6 SW node (U6.3 -> L3.1) copper between the pads / width (outside the IC pad row, where it is the 0.6 mm pin width) | 0.85 mm / 1.20 mm | <= 3 / >= 1.2
+PASS L4-buck    U6 FB net copper (pin 5 + divider + C_FF) | 4.00 mm | <= 5
+PASS L4-buck    U6 FB tracks (outside the IC courtyard) to the SW node | 3.21 mm | >= 2.0
+PASS L4-buck    U6 SW node on L1 only | 0 | 0
+PASS L4-buck    U7 SW node (U7.3 -> L4.1) copper between the pads / width (outside the IC pad row, where it is the 0.6 mm pin width) | 0.85 mm / 1.20 mm | <= 3 / >= 1.2
+PASS L4-buck    U7 FB net copper (pin 5 + divider + C_FF) | 4.00 mm | <= 5
+PASS L4-buck    U7 FB tracks (outside the IC courtyard) to the SW node | 3.21 mm | >= 2.0
+PASS L4-buck    U7 SW node on L1 only | 0 | 0
+DEV  L4-power   VBUS_IN tracks below the class width 1.00 mm (pad-width necks at fine-pitch pins, load-free test/sense/decoupling branches) | 32.26 mm of 46.38 mm, min 0.30 mm | >= 0.30 for branches | D-111 (d)
+DEV  L4-power   VBUS_5V tracks below the class width 1.00 mm (pad-width necks at fine-pitch pins, load-free test/sense/decoupling branches) | 44.60 mm of 54.52 mm, min 0.30 mm | >= 0.30 for branches | D-111 (d)
+PASS L4-power   VDD_0V9_BUCK L4 tracks at the class width | min 0.80 mm | >= 0.80
+PASS L4-power   VCC_3V3_BUCK L4 tracks at the class width | min 0.50 mm | >= 0.50
+PASS L4-power   VCC_DDR_BUCK L4 tracks at the class width | min 0.50 mm | >= 0.50
+PASS L4-power   VCC_1V8_BUCK L4 tracks at the class width | min 0.40 mm | >= 0.40
+DEV  L4-power   VCC_DDR tracks below the class width 0.50 mm (pad-width necks at fine-pitch pins, load-free test/sense/decoupling branches) | 11.05 mm of 72.18 mm, min 0.30 mm | >= 0.30 for branches | D-111 (d)
+DEV  L4-power   VCC_1V8 tracks below the class width 0.40 mm (pad-width necks at fine-pitch pins, load-free test/sense/decoupling branches) | 9.72 mm of 181.38 mm, min 0.30 mm | >= 0.30 for branches | D-111 (d)
+PASS L4-power   VCC3V3_SD L4 tracks at the class width | min 0.40 mm | >= 0.40
+DEV  L4-power   VCC_DDR: >= 2 vias at every layer change (layout.md §3) | 8 vias, 2 single | 0 | [(44.49, 35.99), (62.67, 37.01)] D-111 (h) / D-112 i: no second site; branch vias of one decoupling cap / pull-up pair (load-free) and one rail via (0.74 A rating > 0.46 A design current)
+DEV  L4-power   VCC_1V8: >= 2 vias at every layer change (layout.md §3) | 22 vias, 2 single | 0 | [(44.96, 33.95), (37.71, 28.86)] D-111 (h) / D-112 i: no second site; branch vias of one decoupling cap / pull-up pair (load-free) and one rail via (0.74 A rating > 0.46 A design current)
+PASS L4-power   VCC3V3_SD: >= 2 vias at every layer change (layout.md §3) | 8 vias, 0 single | 0 | []
+PASS L4-usb     SoC -> U11 P/N skew, pad-to-pad paths USB_DP U9.27->U11.8 / USB_DM U9.26->U11.7 | 12.08 / 12.69 mm, skew -0.61 mm | <= 1.27
+PASS L4-usb     SoC -> U11 longest line (pad to pad) | 12.69 mm | <= 50
+PASS L4-usb     SoC -> U11 USB_DP: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 6.91 | 0.00 | 1.88 | 1.05 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     SoC -> U11 USB_DM: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 6.73 | 0.00 | 2.67 | 1.05 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U2 -> J4 P/N skew, pad-to-pad paths USBA_DP U11.3->J4.3 / USBA_DM U11.4->J4.2 | 14.57 / 15.07 mm, skew -0.50 mm | <= 1.27
+PASS L4-usb     U11 -> U2 -> J4 longest line (pad to pad) | 15.07 mm | <= 50
+PASS L4-usb     U11 -> U2 -> J4 USBA_DP: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 4.44 | 4.03 | 0.85 | 0.58 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U2 -> J4 USBA_DM: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 3.72 | 5.10 | 1.85 | 0.56 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U1 -> J1 (plug A side: A6/A7) P/N skew, pad-to-pad paths USBC_DP U11.1->J1.A6 / USBC_DM U11.2->J1.A7 | 30.74 / 30.74 mm, skew -0.00 mm | <= 1.27
+PASS L4-usb     U11 -> U1 -> J1 (plug A side: A6/A7) longest line (pad to pad) | 30.74 mm | <= 50
+PASS L4-usb     U11 -> U1 -> J1 (plug A side: A6/A7) USBC_DP: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 14.62 | 2.52 | 8.68 | 1.01 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U1 -> J1 (plug A side: A6/A7) USBC_DM: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 15.40 | 2.52 | 7.41 | 1.31 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U1 -> J1 (plug B side: B6/B7) P/N skew, pad-to-pad paths USBC_DP U11.1->J1.B6 / USBC_DM U11.2->J1.B7 | 30.74 / 30.74 mm, skew -0.00 mm | <= 1.27
+PASS L4-usb     U11 -> U1 -> J1 (plug B side: B6/B7) longest line (pad to pad) | 30.74 mm | <= 50
+PASS L4-usb     U11 -> U1 -> J1 (plug B side: B6/B7) USBC_DP: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 14.62 | 2.52 | 8.68 | 1.01 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     U11 -> U1 -> J1 (plug B side: B6/B7) USBC_DM: 90 ohm control along the path - coupled 0.255/0.152 | 0.42 mm Z0 45 ohm | hop (D-H5) | pin breakout | uncontrolled 0.255 mm | 15.40 | 2.52 | 7.41 | 1.31 | 0.00 mm | uncontrolled <= 1.0
+PASS L4-usb     USB copper off every pad-to-pad path (dangling stubs; the J1 join legs are on the A/B paths; copper inside the net's own pads excluded) | USBA_DM 0.00 USBA_DP 0.00 USBC_DM 0.00 USBC_DP 0.00 USB_DM 0.00 USB_DP 0.00 | <= 0.05 mm per net
+PASS L4-usb     USB-C J1 join stubs, plug side A (stubs to B6/B7): DP / DM | 1.57 / 1.65 mm | <= 2.0 each, |DP - DM| <= 0.3
+PASS L4-usb     USB-C J1 join stubs, plug side B (stubs to A6/A7): DP / DM | 1.57 / 1.65 mm | <= 2.0 each, |DP - DM| <= 0.3
+PASS L4-usb     USB lines >= 0.76 mm from other-net tracks, pads and vias (GND excluded; breakout parts U9/J1/U1/U2/U11 and the U9 ring-1 band excluded, D-112 b) | 0 below | >= 0.76
+DEV  L4-eth     ETH lines >= 0.76 mm from other-net tracks, pads and vias (GND excluded; breakout parts U9 and the U9 ring-1 band excluded, D-112 b) | 4 below | >= 0.76 | ETH_RXP_J pad J3.4 ETH_TCT 0.396 mm; ETH_TXP pad FB1.2 FEPHY_AVDD3V3 0.508 mm; ETH_RXN_J pad C83.1 ETH_RCT 0.563 mm; ETH_TXP via FEPHY_AVDD3V3 0.695 mm | DEV D-112 f: ETH_RXP_J-pad J3.4 ETH_TCT: J3 4|2 gap, approved D-108 b / D-H5 (ETH_TCT centre tap of the same jack); ETH_TXP-pad FB1.2 FEPHY_AVDD3V3: FEPHY_AVDD3V3 ferrite output pad (DC rail, C66-decoupled) next to the TX exit; TX-RX 0.76 mm leaves no room to move the TX run north; ETH_RXN_J-pad C83.1 ETH_RCT: ETH_RCT centre-tap cap at J3.5 (L2 carried minor, D-108 b); part of the jack's RX winding; ETH_TXP-via FEPHY_AVDD3V3: D-114 d via in the C66.1 pad (FEPHY_AVDD3V3, DC; the copper stays inside the C66.1 pad, which is in the U9 ring-1 band)
+DEV  L4-usb     USB-A path vs USB-C path separation (layout.md §10), outside / inside the D-108 a crossing field south of U11 | 6.835 / 0.169 mm | >= 0.76 | DEV D-108 a / D-112 a: the approved crossing (USB-C under the USB-A pair, 0.5 mm pin pitch) keeps the class clearance; 15 close pairs, all inside x 36.5-41.6, y 53.7-59.5
+PASS L4-bend    ETH/USB L4 copper outside the U9 ring-1 band (lane exits): every bend >= 135 deg (layout.md §4.6; meanders mitred, D-112 e) | 0 sharper | 0 | []
+PASS L4-buck    nothing on L4 (tracks) and no via under the four SW nodes (SW pads bounding box) | 0 | 0 | []
+PASS L4-power   VBUS_IN main path: vias per layer change (layout.md §3 PWR_5V >= 3; the TP21 0.30 mm test branch excluded) | 3 / 3 | >= 3 | []
+PASS L4-power   VBUS_IN main L4 runs at 1.0 mm (via-cluster stubs <= 1.3 mm and the 0.30 mm TP21 test branch excluded) | 0 thinner | 0 | []
+DEV  L4-power   VBUS_IN L1 pad necks below 1.0 mm (J1 A4/B9, A9/B4 pin pairs) | 7.52 mm at 0.40 mm | >= 1.0 | D-112 h: 0.40 mm for 2.1-2.3 mm per pin pair between the J1 GND pad vias and the USB-C J1 vias; each pin pair carries half the 2.0 A design current (both pairs are joined at the plug)
+DEV  L4-xtal    crystal guard on all copper: no other net's track (L1), via or L1 pad within 1 mm of the Y1/Y2/C76-C79 pads (GND and the crystal nets excluded; U9 pins excluded) | 6 | 0 | [('via VCC_3V3', 'C77.1', 0.633), ('track VCC_3V3', 'C77.1', 0.683), ('via VCC_3V3', 'C79.2', 0.795), ('track VCC_3V3', 'C79.2', 0.845), ('via VCC_3V3', 'C79.1', 0.934), ('track VCC_3V3', 'C79.1', 0.984)] | DEV D-112 l: L3 VCC_3V3 plane vias (and stubs) of R43.1 at (42.88, 27.44) and C84.1 at (36.41, 54.35); no legal site further away
+PASS L4-xtal    Y1 GND guard: GND vias within 1.5 mm of the courtyard | 5 | >= 4
+PASS L4-xtal    Y2 GND guard: GND vias within 1.5 mm of the courtyard | 4 | >= 4
+DEV  L4-eth     GND stitching via within 1 mm of every ETH TX hop via (D-112 j) | 1 without | 0 | [('ETH_TXN', 22.85, 31.1, 1.63)] DEV D-112 j: no legal GND site within 1 mm (nearest listed)
+INFO L4-hop     L3 plane under the L4 hop copper of the pairs (length per net and L3 net) | ETH_TXN over VCC_3V3 2.36 mm; ETH_TXN over none 1.13 mm; ETH_TXP over VCC_3V3 2.71 mm; ETH_TXP over none 1.11 mm; USBA_DM over GND 0.26 mm; USBA_DM over none 1.12 mm; USBC_DM over GND 2.45 mm; USBC_DM over none 2.64 mm; USBC_DP over GND 3.00 mm; USBC_DP over none 2.78 mm; USB_DM over VCC_3V3 1.17 mm; USB_DM over none 1.17 mm |  | void 9.95 mm in all

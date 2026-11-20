@@ -1,0 +1,277 @@
+functional,pin,net,source
+# Expected connections written by hand from the sources (NOT generated from the SKiDL code). check_schematic.py S5 verifies each row against out/board.net.
+# pin '*' = the part has a pin on that net (2-terminal non-polar parts); otherwise the symbol pin number.
+# [LF] = Luckfox Pico Pro/Max schematic, refs/luckfox-pico-pro-max-sch/Luckfox-Pico-Pro-Max.pdf (single sheet; block names quoted)
+J_USBC,A4,VBUS_IN,[LF] Type-C: A4/B9 VBUS
+J_USBC,B4,VBUS_IN,[LF] Type-C: A9/B4 VBUS
+J_USBC,A5,CC1,[LF] Type-C: A5 CC1 -> R3
+J_USBC,B5,CC2,[LF] Type-C: B5 CC2 -> R6
+J_USBC,A6,USBC_DP,[LF] Type-C: A6 USB_P
+J_USBC,B6,USBC_DP,[LF] Type-C: B6 USB_P
+J_USBC,A7,USBC_DM,[LF] Type-C: A7 USB_N
+J_USBC,B7,USBC_DM,[LF] Type-C: B7 USB_N
+J_USBC,A1,GND,[LF] Type-C: A1/B12 GND
+J_USBC,SH,GND,[LF] Type-C: MTB to GND
+R_CC1,*,CC1,[LF] R3 5.1K
+R_CC1,*,GND,[LF] R3 5.1K to GND
+R_CC2,*,CC2,[LF] R6 5.1K
+R_CC2,*,GND,[LF] R6 5.1K to GND
+R_DET_TOP,*,VCC5V0_SYS,[LF] R2 10K (top on VBUS) -> deviation D-27: switched VCC5V0_SYS
+R_DET_TOP,*,USB_DET_IN,[LF] R2/R5 junction USB_DET_IN
+R_DET_BOT,*,USB_DET_IN,[LF] R5 18K
+R_DET_BOT,*,GND,[LF] R5 18K to GND
+C_USBDET,*,USB_DET_IN,[LF] C7 100nF on USB_DET_IN
+C_USBDET,*,GND,[LF] C7 to GND
+C_VBUS,*,VBUS_5V,[LF] C4 2.2uF on VBUS (after F1 here; power.md §4)
+F1,*,VBUS_IN,power.md §1 tree: J1 VBUS_IN -> F1
+F1,*,VBUS_5V,power.md §1 tree: F1 -> VBUS_5V
+D_TVS,1,VBUS_5V,power.md §4 TVS after F1 (cathode on VBUS_5V)
+D_TVS,2,GND,power.md §4 TVS anode GND
+U_ONOFF,1,VBUS_5V,power.md §6.1 VIN = VBUS_5V
+U_ONOFF,2,PB_IN,power.md §6.1 PB <- 0R <- SW_PWR
+U_ONOFF,4,GND,LTC2954 p.2 pin 4 GND
+U_ONOFF,5,PB_INT_N,power.md §6.1 INT -> PB_INT_N -> SoC pin 60
+U_ONOFF,6,ONOFF_EN,power.md §6.4a EN (-1) with R_ENPU to VBUS_5V
+U_ONOFF,7,ONOFF_PDT,power.md §6.1 PDT -> C_PDT
+U_ONOFF,8,PWR_KILL_N,power.md §6.1 KILL <- Q_KILL drain + R_KU
+C_PDT,*,ONOFF_PDT,power.md §6.1 C_PDT 2.2 uF (D-117 c)
+C_PDT,*,GND,power.md §6.1
+R_ENPU,*,VBUS_5V,power.md §6.4a R_ENPU 100k to VBUS_5V
+R_ENPU,*,ONOFF_EN,power.md §6.4a
+Q_EN,1,ONOFF_EN,power.md §6.4a Q_EN gate = LTC2954-1 EN
+Q_EN,2,GND,power.md §6.4a Q_EN source GND
+Q_EN,3,EN_N,power.md §6.4a Q_EN drain = EN-bar node (TP8a)
+R_G,*,EN_N,power.md §6.1 R_G 47k to EN-bar node
+R_G,*,QPWR_G,power.md §6.1 R_G to Q_PWR gate
+Q_PWR,1,QPWR_G,power.md §6.1 Q_PWR gate
+Q_PWR,2,VBUS_5V,power.md §6.1 Q_PWR source = VBUS_5V
+Q_PWR,3,VCC5V0_SYS,power.md §6.1 Q_PWR drain = VCC5V0_SYS
+R_GS,*,QPWR_G,power.md §6.1 R_GS gate-source
+R_GS,*,VBUS_5V,power.md §6.1
+C_GS,*,QPWR_G,power.md §6.1 C_GS gate-source
+C_GS,*,VBUS_5V,power.md §6.1
+C_GD,*,QPWR_G,power.md §6.1 C_GD gate-drain
+C_GD,*,VCC5V0_SYS,power.md §6.1
+R_BL5,*,VCC5V0_SYS,power.md §1 R_BL5 470R bleeder
+R_INTPU,*,PB_INT_N,D-19 4.7k pull-up
+R_INTPU,*,VCC_3V3,D-19
+R_KU,*,PWR_KILL_N,power.md §6.1 KILL pull-up 100k
+R_KU,*,VCC_3V3,power.md §6.1 to VCC_3V3 (D-33)
+Q_KILL,1,PWR_KILL,power.md §6.1 Q_KILL gate = PWR_KILL (pin 63)
+Q_KILL,2,GND,power.md §6.1
+Q_KILL,3,PWR_KILL_N,power.md §6.1
+R_KILLPD,*,PWR_KILL,D-20 100k pull-down
+R_KILLPD,*,GND,D-20
+U4,4,VCC5V0_SYS,TLV p.3 VIN pin 4; power.md §1
+U4,1,U4_EN,power.md §3 U4 EN via R35 10k from VCC5V0_SYS ([LF] R35)
+R35,*,VCC5V0_SYS,[LF] R35 10K / power.md §3
+R35,*,U4_EN,[LF] R35
+U5,1,VCC_DDR_1V8_EN,[LF] U5/U7 EN net VCC_DDR_1V8_EN
+U7,1,VCC_DDR_1V8_EN,[LF] U5/U7 EN net VCC_DDR_1V8_EN
+R14,*,VCC5V0_SYS,[LF] R14 200K / power.md §3
+R14,*,VCC_DDR_1V8_EN,[LF] R14
+C77,*,VCC_DDR_1V8_EN,[LF] C77 100nF
+C77,*,GND,[LF] C77
+R41,*,VCC_1V8,D-34/D-38: R41 1k fed from VCC_1V8 (deviation from [LF] VCC5V0_SYS)
+R41,*,PWR_EN,[LF] R41 -> PWR_EN
+R43,*,PWR_EN,[LF] R43 200K from PWR_EN
+R43,*,U6_EN,[LF] R43 to U6 EN
+C65,*,U6_EN,power.md §3 C65 150 nF at U6 EN (R43C65 = 201k x 150n in check_power P7)
+U6,1,U6_EN,power.md §3
+U4,3,U4_SW,TLV p.3 SW
+L_U4,*,U4_SW,TLV §8.2 L between SW and output
+L_U4,*,VDD_0V9_BUCK,D-68 U4 side of JP_MEAS_0V9
+R_FBT_U4,*,VDD_0V9_BUCK,D-68: FB divider top taps U4 side of the jumper
+R_FBT_U4,*,U4_FB,TLV §8.2.2.2
+R_FBB_U4,*,U4_FB,TLV §8.2.2.2
+R_FBB_U4,*,GND,TLV §8.2.2.2
+JP_MEAS_0V9,*,VDD_0V9_BUCK,D-68
+JP_MEAS_0V9,*,VDD_0V9,D-68
+NT_ARM,*,VDD_0V9,D-68 / [LF] R32 VDD_0V9 -> VDD_ARM
+NT_ARM,*,VDD_ARM,D-68 / [LF] R32
+R_MEAS_1V8,*,VCC_1V8_BUCK,D-32/D-68 0R at U5 output
+R_MEAS_1V8,*,VCC_1V8,D-32
+R_MEAS_3V3,*,VCC_3V3_BUCK,D-32/D-68 0R at U6 output
+R_MEAS_3V3,*,VCC_3V3,D-32
+R_MEAS_DDR,*,VCC_DDR_BUCK,D-32/D-68 0R at U7 output
+R_MEAS_DDR,*,VCC_DDR,D-32
+R_FBT_U5,*,VCC_1V8_BUCK,FB on regulator side (D-68 principle)
+R_FBT_U6,*,VCC_3V3_BUCK,FB on regulator side (D-68 principle)
+R_FBT_U7,*,VCC_DDR_BUCK,FB on regulator side (D-68 principle)
+R_BL09,*,VDD_0V9,D-42
+R_BL135,*,VCC_DDR,D-42
+R_BL18,*,VCC_1V8,D-42
+R_BL33,*,VCC_3V3,D-42
+R31,*,VCC_1V8,[LF] R31 1R from VCC_1V8
+R31,*,MIPI_CSI_AVDD_1V8,[LF] R31 -> pin 1 MIPI_CSI_AVDD_1V8
+R8,*,VCC_1V8,[LF] R8 1R from VCC_1V8
+R8,*,AVDD1V8_USB,[LF] R8 -> AVDD1V8_USB (pin 24)
+FB1,*,VCC_3V3,[LF] FB1 from VCC_3V3
+FB1,*,FEPHY_AVDD3V3,[LF] FB1 -> pin 101
+FB2,*,VCC_1V8,[LF] FB2 from VCC_1V8
+FB2,*,VCC1V8_CODEC,[LF] FB2 -> VCC1V8_CODEC
+FB3,*,VCC_1V8,[LF] FB3 from VCC_1V8
+FB3,*,ETH_AVDD1V8,[LF] FB3 -> pin 96
+D_RTC,2,VCC_3V3,[LF] RTC Power D3 anode VCC_3V3
+D_RTC,1,VCC3V3_RTC_IN,[LF] D3 cathode -> RTC node
+R11,*,VCC3V3_RTC_IN,[LF] R11 100R
+R11,*,VCC3V3_RTC,[LF] R11 -> pin 19
+Q_SD,1,SD_PWR_G,[LF] Card Power Q1 pin 1 gate
+Q_SD,2,VCC_3V3,[LF] Q1 pin 2 = VCC_3V3
+Q_SD,3,VCC3V3_SD,[LF] Q1 pin 3 = VCC3V3_SD
+R51,*,VCC_3V3,[LF] R51 100K
+R51,*,SD_PWR_G,[LF] R51 to gate
+R55,*,SD_PWR_G,[LF] R55 10K
+R55,*,SDMMC_PWREN,[LF] R55 -> SDMMC_PWREN
+C69,*,VCC_3V3,[LF] C69 100nF
+C70,*,VCC3V3_SD,[LF] C70 100nF
+C71,*,VCC3V3_SD,[LF] C71 10uF
+C72,*,VCC3V3_SD,[LF] C72 100nF
+R_SD_BL,*,VCC3V3_SD,[LF] R52 10K
+R_SD_BL,*,GND,[LF] R52 to GND
+U_USBA,5,VCC5V0_SYS,AN_SY6280 p.2 IN pin 5; power.md §1
+U_USBA,1,VBUS_USBA,AN_SY6280 p.2 OUT pin 1
+U_USBA,4,USBA_VBUS_EN,AN_SY6280 p.2 EN pin 4; pinmap pin 64
+U_USBA,3,USBA_ISET,AN_SY6280 p.2 ISET -> RSET to GND
+R_SET,*,USBA_ISET,AN_SY6280 p.2
+R_SET,*,GND,AN_SY6280 p.2
+C_USBA_IN,*,VCC5V0_SYS,D-57
+R_USBAEN,*,USBA_VBUS_EN,D-20 10k pull-down
+R_USBAEN,*,GND,D-20
+U_MUX,9,USB_SEL,D-05 / TS3USB221A p.3 S pin 9
+U_MUX,6,GND,TS3USB221A p.13 OE = L enables
+U_MUX,1,USBC_DP,TS3USB221A p.13 S=L -> 1D; D-05 USB-C on S=L (pinmap pin 65)
+U_MUX,2,USBC_DM,TS3USB221A p.3 1D- pin 2
+U_MUX,3,USBA_DP,TS3USB221A p.3 2D+ pin 3
+U_MUX,4,USBA_DM,TS3USB221A p.3 2D- pin 4
+U_MUX,8,USB_DP,TS3USB221A p.3 D+ pin 8 -> SoC pin 27
+U_MUX,7,USB_DM,TS3USB221A p.3 D- pin 7 -> SoC pin 26
+U_MUX,10,VCC_3V3,architecture.md IF-22 (mux supply VCC_3V3)
+R_USBSEL,*,USB_SEL,D-20 10k pull-down
+R_USBSEL,*,GND,D-20
+J_USBA,1,VBUS_USBA,USB-A pin 1 VBUS
+J_USBA,2,USBA_DM,USB-A pin 2 D-
+J_USBA,3,USBA_DP,USB-A pin 3 D+
+J_USBA,4,GND,USB-A pin 4 GND
+C_USBA_BULK,1,VBUS_USBA,D-58 polymer + on VBUS_USBA
+U_ESD_C,1,USBC_DP,USBLC6 p.1 I/O1
+U_ESD_C,3,USBC_DM,USBLC6 p.1 I/O2
+U_ESD_C,2,GND,USBLC6 p.1 GND
+U_ESD_A,1,USBA_DP,USBLC6 p.1 I/O1
+U_ESD_A,3,USBA_DM,USBLC6 p.1 I/O2
+U_ESD_A,2,GND,USBLC6 p.1 GND
+R1,*,DRAM_ZQ,[LF] R1 240R on DRAM_ZQ
+R1,*,GND,[LF] R1 to GND
+R7,*,ETH_EXTR,[LF] R7 6.04K FEPHY_REXT
+R7,*,GND,[LF] R7 to GND
+R12,*,VCC_3V3,[LF] R12 1K
+R12,*,NPOR,[LF] R12 on NPOR
+C38,*,NPOR,[LF] C38 10nF (Rev A 100 nF D-117 c)
+C38,*,GND,[LF] C38
+R_RECOV_PU,*,VCC_1V8,[LF] R21 10K to VCC_1V8
+R_RECOV_PU,*,RECOVERY,[LF] R21
+C_RECOV,*,RECOVERY,[LF] C44 1nF
+R_RECOV,*,RECOVERY,[LF] R23 100R
+R_RECOV,*,RECOVERY_KEY,[LF] R23 -> RECOVERY_KEY -> Key2
+SW_RECOV,1,RECOVERY_KEY,[LF] Key2
+SW_RECOV,3,GND,[LF] Key2 to GND
+R22,*,NPOR,[LF] Power Reset R22 100R
+R22,*,NPOR_KEY,[LF] R22 -> Key1
+SW_RESET,1,NPOR_KEY,[LF] Key1
+SW_RESET,3,GND,[LF] Key1 to GND
+R_ADC1_PU,*,VCC_1V8,[LF] R57 10K to VCC_1V8
+R_ADC1_PU,*,SARADC_IN1,[LF] R57
+C_ADC1,*,SARADC_IN1,[LF] C73 1nF
+C_CODEC_VCM,*,CODEC_VCM,[LF] C3 4.7uF on CODEC_VCM
+R_PD58,*,GPIO0_A0_PD,D-26 pin 58 100k pull-down
+R_PD58,*,GND,D-26
+Y1,1,OSC_XIN,[LF] Y1 X1 -> pin 68
+Y1,3,OSC_XOUT_X,[LF] Y1 X2 -> R9
+Y1,2,GND,[LF] Y1 GND
+Y1,4,GND,[LF] Y1 GND
+R_Y1_SER,*,OSC_XOUT,[LF] R9 22R from pin 69
+R_Y1_SER,*,OSC_XOUT_X,[LF] R9 to Y1 X2
+R_Y1_FB,*,OSC_XOUT,[LF] R10 1M pin 69 side
+R_Y1_FB,*,OSC_XIN,[LF] R10 1M pin 68 side
+C_Y1_XOUT,*,OSC_XOUT_X,[LF] C29 18pF at Y1 X2
+C_Y1_XIN,*,OSC_XIN,[LF] C30 18pF at Y1 X1
+Y2,*,RTC_XIN,[LF] Y2 between pins 20/21
+Y2,*,RTC_XOUT,[LF] Y2
+C_Y2_XIN,*,RTC_XIN,[LF] C34 18pF
+C_Y2_XOUT,*,RTC_XOUT,[LF] C33 18pF
+U_NAND,1,FSPI_CS0N_NAND,[LF] SPI Flash /CS FSPI_CS0N via D-25 0R link
+U_NAND,2,FSPI_D1,[LF] U2 pin 2 DO(D1) FSPI_D1
+U_NAND,3,FSPI_D2,[LF] U2 pin 3 WP(D2) FSPI_D2
+U_NAND,4,GND,[LF] U2 pin 4 VSS
+U_NAND,5,FSPI_D0,[LF] U2 pin 5 DI(D0) FSPI_D0
+U_NAND,6,FSPI_CLK_NAND,[LF] U2 pin 6 CLK (FSPI_CLK after R15 22R)
+U_NAND,7,FSPI_D3,[LF] U2 pin 7 HOLD(D3) FSPI_D3
+U_NAND,8,VCC_3V3,[LF] U2 pin 8 VCC = VCCIO_FLASH = VCC_3V3
+U_NAND,9,GND,[LF] U2 EPAD 9 to GND
+R_FSPI_CLK,*,FSPI_CLK,[LF] R15 22R at SoC pin 48
+R_NANDDIS,*,FSPI_CS0N,D-25
+R_NANDDIS,*,FSPI_CS0N_NAND,D-25
+R_CSPU,*,FSPI_CS0N_NAND,D-25 10k CS# pull-up NAND side
+R_CSPU,*,VCC_3V3,D-25
+R18,*,FSPI_D3,[LF] R18 10K / pinmap pin 39
+R19,*,FSPI_D2,[LF] R19 10K / pinmap pin 44
+C42,*,VCC_3V3,[LF] C42 10uF
+C43,*,VCC_3V3,[LF] C43 100nF
+J_SD,1,SDMMC_D2,[LF] TF1 pin 1 D2
+J_SD,2,SDMMC_D3,[LF] TF1 pin 2 CD/D3
+J_SD,3,SDMMC_CMD,[LF] TF1 pin 3 CMD
+J_SD,4,VCC3V3_SD,[LF] TF1 pin 4 VDD = VCC3V3_SD
+J_SD,5,SDMMC_CLK_SD,[LF] TF1 pin 5 CLK (via R16 22R)
+J_SD,6,GND,[LF] TF1 pin 6 VSS
+J_SD,7,SDMMC_D0,[LF] TF1 pin 7 D0
+J_SD,8,SDMMC_D1,[LF] TF1 pin 8 D1
+J_SD,9,SD_CD_SW,[LF] TF1 CD2 -> R54 100R -> SDMMC_DET
+J_SD,SH,GND,[LF] TF1 shell/CD1 GND
+R_SD_CLK,*,SDMMC_CLK,[LF] R16 22R at SoC pin 15
+R_SD_DET,*,SDMMC_DET,[LF] R54 100R
+R_ETH_TXP,*,ETH_TXP,[LF] R46 0R ETH_T_P
+R_ETH_TXP,*,ETH_TXP_J,[LF] R46 -> J2 pin 1 TD+
+R_ETH_TXN,*,ETH_TXN,[LF] R47 0R ETH_T_N
+R_ETH_RXP,*,ETH_RXP,[LF] R48 0R ETH_R_P
+R_ETH_RXN,*,ETH_RXN,[LF] R49 0R ETH_R_N
+J_RJ45,1,ETH_TXP_J,[LF] J2 pin 1 TD+ / HR911105A p.1 P1 TD+
+J_RJ45,2,ETH_TXN_J,[LF] J2 pin 2 TD- / HR911105A P2 TD-
+J_RJ45,3,ETH_RXP_J,[LF] J2 pin 3 RD+ / HR911105A P3 RD+
+J_RJ45,6,ETH_RXN_J,[LF] J2 pin 6 RD- / HR911105A P6 RD-
+J_RJ45,4,ETH_TCT,[LF] J2 pin 4 CT -> C66 / HR911105A P4
+J_RJ45,5,ETH_RCT,[LF] J2 pin 5 CT -> C67 / HR911105A P5
+J_RJ45,8,GND,HR911105A p.1 note: CHS GND (P8) to PCB ground
+C_CT_TX,*,ETH_TCT,[LF] C66 103
+C_CT_TX,*,GND,[LF] C66 to GND
+C_CT_RX,*,ETH_RCT,[LF] C67 103
+C_CT_RX,*,GND,[LF] C67 to GND
+R_I2C3_SCL,*,HDR_I2C3_SCL,D-29 2.2k
+R_I2C3_SDA,*,HDR_I2C3_SDA,D-29 2.2k
+R_I2C1_SCL,*,HDR_I2C1_SCL,D-29 4.7k
+R_I2C1_SDA,*,HDR_I2C1_SDA,D-29 4.7k
+J_HDR,1,VCC_3V3,D-22 3V3 on 1
+J_HDR,17,VCC_3V3,D-22 3V3 on 17
+J_HDR,2,VCC5V0_SYS,D-22/D-08 5V on 2 (switched)
+J_HDR,4,VCC5V0_SYS,D-22 5V on 4
+J_HDR,6,GND,D-22
+J_HDR,39,GND,D-22
+J_HDR,3,HDR_I2C3_SDA,pinmap pin 86 header 3
+J_HDR,5,HDR_I2C3_SCL,pinmap pin 85 header 5
+J_HDR,8,HDR_UART3_TX,pinmap pin 89 header 8
+J_HDR,10,HDR_UART3_RX,pinmap pin 87 header 10
+J_UART,1,GND,architecture.md uart block (GND/TX/RX)
+J_UART,2,UART2_TX_HDR,D-30 TX via 1k
+J_UART,3,UART2_RX_HDR,D-30 RX via 1k
+R_UART_TX,*,UART2_TX,D-30 SoC side (pin 79)
+R_UART_RX,*,UART2_RX,D-30 SoC side (pin 80)
+LED_STAT,1,LED_STATUS,pinmap pin 62: VCC_3V3 -> R -> LED -> pin (active-low; cathode on pin)
+LED_STAT,2,LED_STAT_A,pinmap pin 62
+R_LED_STAT,*,VCC_3V3,pinmap pin 62
+R_LED_ETH,*,LED_ETH,pinmap pin 74: pin -> R -> LED -> GND
+LED_ETH,1,GND,pinmap pin 74 (cathode GND)
+LED_PWR,1,GND,D-09 power LED on VCC_3V3
+R_LED_PWR,*,VCC_3V3,D-09
+SW_PWR,1,PWR_BTN_N,power.md §6.1 SW_PWR to GND
+SW_PWR,3,GND,power.md §6.1
+R_PB,*,PWR_BTN_N,power.md §6.1 0R link
+R_PB,*,PB_IN,power.md §6.1

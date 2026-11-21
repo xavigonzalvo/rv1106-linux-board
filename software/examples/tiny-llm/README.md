@@ -33,10 +33,18 @@ The capital of France is Paris.
 [prompt 19 tok 5.9 s, reply 84 tok 2.5 tok/s, context 147/512]
 ```
 
-* **2.5–2.6 tok/s** replies. The prompt is read at ~3.3 tok/s (no vocab matmul for prompt tokens); the default system
-  prompt + first question is 37 tokens, so the first answer starts after ~11 s.
-* **Memory: 147 MB peak** with a 512-token conversation (weights 143 MB + fp16 KV cache 11.8 MB, ~23 kB per token),
-  of 164 MB available. `chat 768` should still fit (~153 MB, not tried); much more will push the weights out of RAM.
+* **2.5–2.6 tok/s** for short replies, slower as the conversation grows (attention reads every earlier token):
+  2.0 tok/s averaged over a 474-token reply, 1.7 over 730. The prompt is read at ~3.3 tok/s (no vocab matmul for
+  prompt tokens); the default system prompt + first question is 37 tokens, so the first answer starts after ~11 s.
+* **Memory** (peak RSS, conversation filled to the end, ai-detect running alongside, 164 MB available):
+
+  | `chat` context | peak RSS | |
+  |---|---|---|
+  | 512 (default) | 155 MB | weights 143 MB + fp16 KV cache 11.8 MB (~23 kB per token) |
+  | 768 | 160 MB | still no page-ins from the card (99 % CPU), ~3 MB to spare |
+
+  More than ~768 will push the weights out of RAM and every token re-reads the microSD; stop ai-detect
+  (`/etc/init.d/S99ai-detect stop`) if you need the room.
 * **Cold start 20 s** (after `drop_caches`): llm.c reads the model file once, sequentially, before running. Without
   that read the mmap faulted the model in 4 kB at a time from the card: 228 s and 26 000 major page faults.
 * The whole conversation shares the `-n` budget; when it is full, `chat` says so and exits.

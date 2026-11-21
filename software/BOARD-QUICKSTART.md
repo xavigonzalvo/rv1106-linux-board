@@ -93,7 +93,7 @@ curl http://<board-ip>:8080/
 ```
 First run answered: `Hello from the RV1106 Rev A board! uptime 356.29 s, SoC 41.0 C`.
 It does not start by itself after a reboot; add an `/etc/init.d/S99hello` script for that.
-Root filesystem has ~26 MB free; `/userdata` 4.5 MB.
+Root filesystem: ~26 MB free on a fresh flash, 18 MB on board #1 with ai-detect and tiny-llm installed (2026-11-21); `/userdata` 4.5 MB. Put big files on the microSD.
 
 ## 5b. AI demo: object detection on the NPU (ai-detect)
 

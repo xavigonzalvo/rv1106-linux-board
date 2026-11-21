@@ -1,7 +1,7 @@
 #!/bin/sh
 # chat: talk to SmolLM2-135M-Instruct on the board's CPU. Type a message, Enter; /quit or Ctrl-D to leave.
 #   chat                      default system prompt, 512-token conversation
-#   chat 768                  longer conversation (more RAM: ~23 kB per token)
+#   chat 768                  longer conversation (160 MB peak: the most that fits next to ai-detect)
 #   chat 512 "You are a pirate. Answer like one."
 # Model and tokenizer live on the microSD; the binary on the root filesystem (the FAT32 card is noexec).
 SD=/mnt/sdcard/tiny-llm

@@ -817,6 +817,7 @@ void generate_bpe(Transformer* tr, Bpe* t, Sampler* sampler, const char* prompt,
     int* toks = malloc((strlen(prompt) + 1) * sizeof(int)); int n = 0;
     bpe_encode(t, prompt, toks, &n);
     if (n == 0) { fprintf(stderr, "empty prompt\n"); exit(EXIT_FAILURE); }
+    if (n >= steps) { fprintf(stderr, "prompt is %d tokens; -n %d leaves no room to generate\n", n, steps); exit(EXIT_FAILURE); }
     if (getenv("LLM_SHOW_TOKENS")) { for (int i = 0; i < n; i++) printf("%d ", toks[i]); printf("\n"); exit(0); }  // test hook
     fwrite(prompt, 1, strlen(prompt), stdout);
     long start = 0; int pos = 0, gen = 0;
@@ -837,7 +838,8 @@ void generate_bpe(Transformer* tr, Bpe* t, Sampler* sampler, const char* prompt,
 // ChatML: <|im_start|>role\ncontent<|im_end|>\n ... <|im_start|>assistant\n
 void chat_ml(Transformer* tr, Bpe* t, Sampler* sampler, const char* cli_user, const char* sys, int steps) {
     char user[2048], text[2100];
-    int* toks = malloc((steps + sizeof(text) + 16) * sizeof(int));
+    // one turn is at most "system\n"+sys and "user\n"+user (each < sizeof(text) bytes, >= 1 byte per token) + 8 ids
+    int* toks = malloc((2 * sizeof(text) + 16) * sizeof(int));
     int pos = 0, turn = 0;
     if (!sys) sys = "You are a helpful AI assistant named SmolLM, trained by Hugging Face";
     for (;;) {

@@ -22,6 +22,8 @@ software/examples/ai-detect/detector/build/
 software/examples/ai-detect/detector/build-host/
 software/examples/hello-http/hello-http
 software/examples/hello-c/hello-c
+software/examples/tiny-llm/llm
+software/examples/tiny-llm/llm-host
 
 # --- stray files ---
 skidl_REPL.*

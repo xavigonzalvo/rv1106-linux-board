@@ -106,6 +106,17 @@ sh software/examples/ai-detect/deploy.sh      # build (Docker + Go), install, st
 Open http://localhost:8080 (USB, via `adb forward tcp:8080 tcp:8080`) or http://<board-ip>:8080 on the LAN.
 Board #1: bus test photo → 4 people + bus, 165 ms per photo (NPU 81 ms).
 
+## 5c. Tiny LLM: a 135M-parameter chat model on the CPU (tiny-llm)
+
+SmolLM2-135M-Instruct (Hugging Face, Llama architecture), int8, on the Cortex-A7. Needs the microSD (model 143 MB).
+Details, memory budget and checks: `software/examples/tiny-llm/README.md`.
+
+```sh
+sh software/examples/tiny-llm/deploy.sh      # download + convert model (once), build, install
+adb shell                                    # then on the board: chat   (/quit to leave)
+```
+Board #1: replies at 2.5 tok/s, first answer ~20 s after start, 147 MB RAM.
+
 ## 6. Next
 
 * Our own image (`software/README.md`): STAT/ETH LEDs, USB-A host, the power button's clean shutdown and

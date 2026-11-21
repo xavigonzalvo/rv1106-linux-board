@@ -1,0 +1,13 @@
+#!/bin/sh
+# chat: talk to SmolLM2-135M-Instruct on the board's CPU. Type a message, Enter; /quit or Ctrl-D to leave.
+#   chat                      default system prompt, 512-token conversation
+#   chat 768                  longer conversation (more RAM: ~23 kB per token)
+#   chat 512 "You are a pirate. Answer like one."
+# Model and tokenizer live on the microSD; the binary on the root filesystem (the FAT32 card is noexec).
+SD=/mnt/sdcard/tiny-llm
+M=$SD/smollm2-135m-instruct
+[ -f "$M.bin" ] || { echo "chat: $M.bin not found (microSD in? run deploy.sh)"; exit 1; }
+if [ -n "$2" ]; then
+	exec /root/tiny-llm/llm "$M.bin" -z "$M.tok" -m chat -n "${1:-512}" -t 0.3 -p 0.9 -y "$2"
+fi
+exec /root/tiny-llm/llm "$M.bin" -z "$M.tok" -m chat -n "${1:-512}" -t 0.3 -p 0.9

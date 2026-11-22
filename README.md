@@ -5,6 +5,16 @@ SPI NAND, microSD, 100 Mb Ethernet, USB-C (power + OTG), USB-A host and a 2×20 
 Board #1 boots Linux, is on the network, runs YOLOv5 on the NPU (2026-11-20) and a 135M-parameter chat model on
 the CPU (2026-11-21).
 
+![Board #1 running, powered from USB-C, PWR LED on](docs/images/board-rev-a.jpg)
+
+First bring-up (2026-11-20, details in `design/LOG.md` and `software/BOARD-QUICKSTART.md`): the blank board
+appeared on the Mac as a Rockchip device in recovery mode, then booted Linux from its own flash and got on the
+network.
+
+| Recovery mode over USB-C | Linux on Ethernet |
+|---|---|
+| ![Mac sees the board as Rockchip 2207:110c in recovery mode](docs/images/bringup-maskrom.png) | ![Ethernet link, DHCP lease and internet ping](docs/images/bringup-ethernet.png) |
+
 | Folder | What |
 |---|---|
 | `PLAN.md` | the project plan and phases |

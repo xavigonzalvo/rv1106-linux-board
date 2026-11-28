@@ -24,6 +24,8 @@ network.
 | `software/examples/ai-detect/` | object detection on the NPU with a web UI |
 | `software/examples/tiny-llm/` | SmolLM2-135M-Instruct chat on the CPU (`chat` in the board shell) |
 | `dashboard/` | project status page |
+| `case/` | 3D-printable enclosure (OpenSCAD source + STLs, with and without the V-cut rails) |
+| `release/rev-a/` | **ordering bundle**: JLCPCB upload zip, BOM, CPL, order notes, case STLs, device trees; rebuilt by `release/make_release.sh` |
 
 ## Not in this repo (fetch again when needed)
 
